@@ -2,11 +2,8 @@ using System;
 
 public class MessageController
 {
-    private DALManager dalManager;
-
-    public MessageController(DALManager dalManager)
+    public MessageController()
     {
-        this.dalManager = dalManager;
     }
 
     public void SendMessage(MessageModel messageModel)
