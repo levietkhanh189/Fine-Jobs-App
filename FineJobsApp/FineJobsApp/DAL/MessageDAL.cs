@@ -53,4 +53,15 @@ public class MessageDAL
             connection.Close();
         }
     }
+
+    private Task<int> SomeLongRunningOperationAsync()
+    {
+        return Task.Run(() =>
+        {
+            // Simulate a long-running task
+            Thread.Sleep(5000);
+            return 123; // Return some result
+        });
+    }
+
 }
