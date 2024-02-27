@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Npgsql; // Use Npgsql for PostgreSQL
 using System.Linq;
 
 public class CompanyProfileDAL
@@ -14,14 +14,14 @@ public class CompanyProfileDAL
 
     public CompanyProfileModel GetCompanyProfileByUserID(int userId)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "SELECT * FROM CompanyProfile WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", userId);
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (NpgsqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
@@ -34,7 +34,7 @@ public class CompanyProfileDAL
                             Industry = (string)reader["Industry"],
                             Website = (string)reader["Website"],
                             ContactInfo = (string)reader["ContactInfo"],
-                            CreatedAt = Convert.ToDateTime(reader["ApplyDate"])
+                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"]) // Assuming ApplyDate is a mistake and should be CreatedAt
                         };
                     }
                 }
@@ -45,11 +45,11 @@ public class CompanyProfileDAL
 
     public void AddCompanyProfile(CompanyProfileModel companyProfile)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "INSERT INTO CompanyProfile (UserID, CompanyName, Description, Industry, Website, ContactInfo, CreatedAt) VALUES (@UserID, @CompanyName, @Description, @Industry, @Website, @ContactInfo, @CreatedAt)";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", companyProfile.UserID);
                 command.Parameters.AddWithValue("@CompanyName", companyProfile.CompanyName);
@@ -65,11 +65,11 @@ public class CompanyProfileDAL
 
     public void UpdateCompanyProfile(CompanyProfileModel companyProfile)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "UPDATE CompanyProfile SET CompanyName = @CompanyName, Description = @Description, Industry = @Industry, Website = @Website, ContactInfo = @ContactInfo WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@CompanyName", companyProfile.CompanyName);
                 command.Parameters.AddWithValue("@Description", companyProfile.Description);
@@ -81,5 +81,4 @@ public class CompanyProfileDAL
             }
         }
     }
-
 }

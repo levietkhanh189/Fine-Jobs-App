@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Npgsql; // Replaced System.Data.SqlClient with Npgsql
 using System.Linq;
 
 public class ApplicationDAL
@@ -15,13 +15,13 @@ public class ApplicationDAL
     public List<ApplicationModel> GetApplicationsByJobID(int jobID)
     {
         List<ApplicationModel> applications = new List<ApplicationModel>();
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             string sql = "SELECT * FROM Applications WHERE JobID = @JobID";
-            SqlCommand command = new SqlCommand(sql, connection);
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@JobID", jobID);
             connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
+            NpgsqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 ApplicationModel application = new ApplicationModel();
@@ -35,14 +35,14 @@ public class ApplicationDAL
             connection.Close();
         }
         return applications;
-    }   
-    
+    }
+
     public void AddApplication(ApplicationModel application)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             string sql = "INSERT INTO Application (JobID, ApplicantID, Status, ApplyDate) VALUES (@JobID, @UserID, @Status, @ApplyDate)";
-            SqlCommand command = new SqlCommand(sql, connection);
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@JobID", application.JobID);
             command.Parameters.AddWithValue("@UserID", application.ApplicantID);
             command.Parameters.AddWithValue("@Status", application.Status);
@@ -55,10 +55,10 @@ public class ApplicationDAL
 
     public void UpdateApplicationStatus(int applicationId, string status)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             string sql = "UPDATE Applications SET Status = @Status WHERE ApplicationID = @ApplicationID";
-            SqlCommand command = new SqlCommand(sql, connection);
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@Status", status);
             command.Parameters.AddWithValue("@ApplicationID", applicationId);
             connection.Open();
@@ -66,5 +66,4 @@ public class ApplicationDAL
             connection.Close();
         }
     }
-
 }

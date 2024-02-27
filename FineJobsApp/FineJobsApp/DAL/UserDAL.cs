@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Npgsql; // Use Npgsql for PostgreSQL
 using System.Linq;
 
 public class UserDAL
@@ -14,14 +14,14 @@ public class UserDAL
 
     public UserModel GetUserByID(int userID)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "SELECT * FROM Users WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", userID);
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (NpgsqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
@@ -41,14 +41,13 @@ public class UserDAL
         return null;
     }
 
-
     public void AddUser(UserModel user)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "INSERT INTO Users (Username, Password, Email, UserType, CreatedAt) VALUES (@Username, @Password, @Email, @UserType, @CreatedAt)";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@Username", user.Username);
                 command.Parameters.AddWithValue("@Password", user.Password);
@@ -62,11 +61,11 @@ public class UserDAL
 
     public void UpdateUser(UserModel user)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "UPDATE Users SET Username = @Username, Password = @Password, Email = @Email, UserType = @UserType WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@Username", user.Username);
                 command.Parameters.AddWithValue("@Password", user.Password);
@@ -80,11 +79,11 @@ public class UserDAL
 
     public void DeleteUser(int userID)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "DELETE FROM Users WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", userID);
                 command.ExecuteNonQuery();

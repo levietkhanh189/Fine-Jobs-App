@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Npgsql; // Use Npgsql for PostgreSQL
 using System.Linq;
 
 public class ProfileDAL
@@ -14,14 +14,14 @@ public class ProfileDAL
 
     public ProfileModel GetProfileByUserID(int userId)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "SELECT * FROM Profile WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", userId);
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (NpgsqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
@@ -44,11 +44,11 @@ public class ProfileDAL
 
     public void AddProfile(ProfileModel profile)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "INSERT INTO Profile (UserID, FullName, Skills, Experience, Education, ResumeLink) VALUES (@UserID, @FullName, @Skills, @Experience, @Education, @ResumeLink)";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", profile.UserID);
                 command.Parameters.AddWithValue("@FullName", profile.FullName);
@@ -63,11 +63,11 @@ public class ProfileDAL
 
     public void UpdateProfile(ProfileModel profile)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
             string sql = "UPDATE Profile SET FullName = @FullName, Skills = @Skills, Experience = @Experience, Education = @Education, ResumeLink = @ResumeLink WHERE UserID = @UserID";
-            using (SqlCommand command = new SqlCommand(sql, connection))
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", profile.UserID);
                 command.Parameters.AddWithValue("@FullName", profile.FullName);
@@ -79,5 +79,4 @@ public class ProfileDAL
             }
         }
     }
-
 }

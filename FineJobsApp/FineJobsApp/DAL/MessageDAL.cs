@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Npgsql; // Use Npgsql for PostgreSQL
 using System.Linq;
 
 public class MessageDAL
@@ -15,14 +15,14 @@ public class MessageDAL
     public List<MessageModel> GetMessagesBetweenUsers(int user1ID, int user2ID)
     {
         List<MessageModel> messages = new List<MessageModel>();
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             string sql = "SELECT * FROM Messages WHERE (SenderID = @User1ID AND ReceiverID = @User2ID) OR (SenderID = @User2ID AND ReceiverID = @User1ID)";
-            SqlCommand command = new SqlCommand(sql, connection);
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@User1ID", user1ID);
             command.Parameters.AddWithValue("@User2ID", user2ID);
             connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
+            NpgsqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 MessageModel message = new MessageModel();
@@ -40,10 +40,10 @@ public class MessageDAL
 
     public void SendMessage(MessageModel message)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             string sql = "INSERT INTO Messages (SenderID, ReceiverID, MessageText, SentAt) VALUES (@SenderID, @ReceiverID, @MessageText, @SentAt)";
-            SqlCommand command = new SqlCommand(sql, connection);
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@SenderID", message.SenderID);
             command.Parameters.AddWithValue("@ReceiverID", message.ReceiverID);
             command.Parameters.AddWithValue("@MessageText", message.MessageText);
@@ -53,5 +53,4 @@ public class MessageDAL
             connection.Close();
         }
     }
-
 }
