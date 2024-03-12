@@ -43,6 +43,28 @@ namespace FineJobsApp
                 forms[type].Hide();
             }
         }
+        public static void ExitApplication()
+        {
+            foreach (var form in forms.Values)
+            {
+                form.Close();
+            }
+
+            forms.Clear();
+
+            Application.Exit();
+        }
+        public static void HideAll()
+        {
+            foreach (var form in forms.Values)
+            {
+                if (form.Visible)
+                {
+                    form.Hide();
+                }
+            }
+        }
+
     }
 
 }

@@ -61,6 +61,8 @@ namespace FineJobsApp
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            FormManager.ShowForm<CPNHomeForm>();
 
         }
 
