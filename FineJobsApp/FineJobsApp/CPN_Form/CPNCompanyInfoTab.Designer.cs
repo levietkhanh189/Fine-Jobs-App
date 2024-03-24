@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            PictureBox pictureBox1;
             CompanyName = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -44,11 +45,22 @@
             Address = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             Email = new MaterialSkin.Controls.MaterialTextBox();
-            materialCard1 = new MaterialSkin.Controls.MaterialCard();
             UpdateBtn = new MaterialSkin.Controls.MaterialButton();
             SaveBtn = new MaterialSkin.Controls.MaterialButton();
             CancleBtn = new MaterialSkin.Controls.MaterialButton();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Image = Properties.Resources.images;
+            pictureBox1.Location = new Point(1082, 115);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(350, 350);
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
             // 
             // CompanyName
             // 
@@ -122,7 +134,7 @@
             Description.AnimateReadOnly = false;
             Description.BorderStyle = BorderStyle.None;
             Description.Depth = 0;
-            Description.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Description.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Description.LeadingIcon = null;
             Description.Location = new Point(71, 370);
             Description.MaxLength = 50;
@@ -151,7 +163,7 @@
             materialTextBox2.AnimateReadOnly = false;
             materialTextBox2.BorderStyle = BorderStyle.None;
             materialTextBox2.Depth = 0;
-            materialTextBox2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialTextBox2.LeadingIcon = null;
             materialTextBox2.Location = new Point(71, 282);
             materialTextBox2.MaxLength = 50;
@@ -181,7 +193,7 @@
             Website.AnimateReadOnly = false;
             Website.BorderStyle = BorderStyle.None;
             Website.Depth = 0;
-            Website.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Website.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Website.LeadingIcon = null;
             Website.Location = new Point(71, 468);
             Website.MaxLength = 50;
@@ -211,7 +223,7 @@
             Phone.AnimateReadOnly = false;
             Phone.BorderStyle = BorderStyle.None;
             Phone.Depth = 0;
-            Phone.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Phone.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Phone.LeadingIcon = null;
             Phone.Location = new Point(71, 562);
             Phone.MaxLength = 50;
@@ -240,7 +252,7 @@
             Address.AnimateReadOnly = false;
             Address.BorderStyle = BorderStyle.None;
             Address.Depth = 0;
-            Address.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Address.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Address.LeadingIcon = null;
             Address.Location = new Point(71, 741);
             Address.MaxLength = 50;
@@ -270,7 +282,7 @@
             Email.AnimateReadOnly = false;
             Email.BorderStyle = BorderStyle.None;
             Email.Depth = 0;
-            Email.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Email.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             Email.LeadingIcon = null;
             Email.Location = new Point(71, 653);
             Email.MaxLength = 50;
@@ -281,19 +293,6 @@
             Email.TabIndex = 14;
             Email.Text = "";
             Email.TrailingIcon = null;
-            // 
-            // materialCard1
-            // 
-            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Depth = 0;
-            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(1035, 118);
-            materialCard1.Margin = new Padding(14);
-            materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(458, 520);
-            materialCard1.TabIndex = 16;
             // 
             // UpdateBtn
             // 
@@ -359,10 +358,10 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pictureBox1);
             Controls.Add(CancleBtn);
             Controls.Add(SaveBtn);
             Controls.Add(UpdateBtn);
-            Controls.Add(materialCard1);
             Controls.Add(materialLabel9);
             Controls.Add(Email);
             Controls.Add(materialLabel8);
@@ -383,6 +382,7 @@
             MinimumSize = new Size(1592, 824);
             Name = "CPNCompanyInfoTab";
             Size = new Size(1592, 824);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -405,9 +405,9 @@
         private MaterialSkin.Controls.MaterialTextBox Address;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialTextBox Email;
-        private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialButton UpdateBtn;
         private MaterialSkin.Controls.MaterialButton SaveBtn;
         private MaterialSkin.Controls.MaterialButton CancleBtn;
+        private PictureBox pictureBox1;
     }
 }

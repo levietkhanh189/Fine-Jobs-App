@@ -201,7 +201,7 @@
             PasswordTextbox2.AnimateReadOnly = false;
             PasswordTextbox2.BorderStyle = BorderStyle.None;
             PasswordTextbox2.Depth = 0;
-            PasswordTextbox2.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             PasswordTextbox2.LeadingIcon = null;
             PasswordTextbox2.Location = new Point(100, 411);
             PasswordTextbox2.MaxLength = 50;
@@ -308,7 +308,6 @@
             MaximumSize = new Size(940, 994);
             MinimumSize = new Size(470, 497);
             Name = "CPNSignUpForm";
-            Opacity = 0.98D;
             Sizable = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "COMPANY SIGN UP";

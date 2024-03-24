@@ -22,8 +22,18 @@ namespace FineJobsApp.CPN_Form
 
         }
 
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         //CustomList Using UserControl And FlowLayoutPanel
-        
+
 
     }
 }

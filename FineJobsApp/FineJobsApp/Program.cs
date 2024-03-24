@@ -1,3 +1,5 @@
+using FineJobsApp.Controller;
+
 namespace FineJobsApp
 {
     internal static class Program

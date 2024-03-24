@@ -50,12 +50,12 @@
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
             // 
-            // CPNHomeTab
+            // CPNDashboardTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(materialButton1);
-            Name = "CPNHomeTab";
+            Name = "CPNDashboardTab";
             Size = new Size(1592, 824);
             ResumeLayout(false);
             PerformLayout();

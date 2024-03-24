@@ -4,5 +4,5 @@ public class ApplicationModel
     public int JobID;
     public int ApplicantID;
     public DateTime ApplyDate;
-    public string Status; // 'Pending', 'Accepted', 'Rejected'
+    public string Status; // 'Pending', 'Accepted', 'Rejected', 'Interview', 'New'
 }

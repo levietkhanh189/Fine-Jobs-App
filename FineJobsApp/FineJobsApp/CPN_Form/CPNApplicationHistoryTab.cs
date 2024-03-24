@@ -24,5 +24,15 @@ namespace FineJobsApp.CPN_Form
                 scrollview.Controls.Add(new CPNApplication());
             }
         }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace FineJobsApp.CPN_Form
 {
-    public partial class CPNListJobsTab : UserControl
+    public partial class CPNForgotPasswordForm : Form
     {
-        public CPNListJobsTab()
+        public CPNForgotPasswordForm()
         {
             InitializeComponent();
-        }
-
-        private void CPNListJobsTab_Load(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                scrollview.Controls.Add(new CPNJob());
-            }
         }
     }
 }

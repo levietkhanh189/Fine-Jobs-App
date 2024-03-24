@@ -37,8 +37,8 @@
             ApplicationHistoryTab = new TabPage();
             MessagesTab = new TabPage();
             SettingTab = new TabPage();
-            imageList1 = new ImageList(components);
             Logout = new TabPage();
+            imageList1 = new ImageList(components);
             HomeTabControl.SuspendLayout();
             SuspendLayout();
             // 
@@ -124,6 +124,16 @@
             SettingTab.Text = "Setting";
             SettingTab.UseVisualStyleBackColor = true;
             // 
+            // Logout
+            // 
+            Logout.ImageIndex = 7;
+            Logout.Location = new Point(10, 58);
+            Logout.Name = "Logout";
+            Logout.Size = new Size(1592, 824);
+            Logout.TabIndex = 6;
+            Logout.Text = "Logout | Exit";
+            Logout.UseVisualStyleBackColor = true;
+            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
@@ -136,15 +146,8 @@
             imageList1.Images.SetKeyName(4, "icons8-myspace-100.png");
             imageList1.Images.SetKeyName(5, "icons8-speech-bubble-100.png");
             imageList1.Images.SetKeyName(6, "icons8-support-100.png");
-            // 
-            // Logout
-            // 
-            Logout.Location = new Point(10, 58);
-            Logout.Name = "Logout";
-            Logout.Size = new Size(1592, 824);
-            Logout.TabIndex = 6;
-            Logout.Text = "Logout | Exit";
-            Logout.UseVisualStyleBackColor = true;
+            imageList1.Images.SetKeyName(7, "icons8-logout-100.png");
+            imageList1.Images.SetKeyName(8, "icons8-search-128.png");
             // 
             // CPNHomeForm
             // 
@@ -155,7 +158,6 @@
             DrawerShowIconsWhenHidden = true;
             DrawerTabControl = HomeTabControl;
             Name = "CPNHomeForm";
-            Opacity = 0.98D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Company Home";
             HomeTabControl.ResumeLayout(false);

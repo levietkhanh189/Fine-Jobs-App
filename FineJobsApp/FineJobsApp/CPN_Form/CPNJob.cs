@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace FineJobsApp.CPN_Form
 {
-    public partial class CPNListJobsTab : UserControl
+    public partial class CPNJob : UserControl
     {
-        public CPNListJobsTab()
+        public CPNJob()
         {
             InitializeComponent();
         }
 
-        private void CPNListJobsTab_Load(object sender, EventArgs e)
+        private void FindApplication_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                scrollview.Controls.Add(new CPNJob());
-            }
+
         }
     }
 }

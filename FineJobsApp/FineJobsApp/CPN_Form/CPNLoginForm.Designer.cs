@@ -198,7 +198,6 @@
             MaximumSize = new Size(940, 994);
             MinimumSize = new Size(470, 497);
             Name = "CPNLoginForm";
-            Opacity = 0.98D;
             Sizable = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Company Login";
