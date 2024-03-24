@@ -6,4 +6,23 @@ public class UserModel
     public string Email;
     public string UserType; // 'Applicant' hoặc 'Company'
     public DateTime CreatedAt;
+
+    public UserModel(string username, string password, string email, string userType, DateTime createdAt)
+    {
+        Username = username;
+        Password = password;
+        Email = email;
+        UserType = userType;
+        CreatedAt = createdAt;
+    }
+
+    public UserModel(int userID, string username, string password, string email, string userType, DateTime createdAt)
+    {
+        UserID = userID;
+        Username = username;
+        Password = password;
+        Email = email;
+        UserType = userType;
+        CreatedAt = createdAt;
+    }
 }

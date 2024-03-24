@@ -2,6 +2,18 @@ using System;
 
 public class ControllerManager
 {
+    private static ControllerManager instance;
+    public static ControllerManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new ControllerManager();
+            }
+            return instance;
+        }
+    }
     public UserController UserController { get; private set; }
     public ProfileController ProfileController { get; private set; }
     public JobController JobController { get; private set; }

@@ -53,9 +53,9 @@
             EmailTextbox.Name = "EmailTextbox";
             EmailTextbox.Size = new Size(316, 50);
             EmailTextbox.TabIndex = 1;
-            EmailTextbox.Text = "levietkhanh189@gmail.com";
+            EmailTextbox.Text = "Enter your email";
             EmailTextbox.TrailingIcon = null;
-            EmailTextbox.TextChanged += EmailTextbox_TextChanged;
+            EmailTextbox.Click += EmailTextbox_Click;
             // 
             // PasswordTextbox
             // 
@@ -73,8 +73,9 @@
             PasswordTextbox.Password = true;
             PasswordTextbox.Size = new Size(316, 50);
             PasswordTextbox.TabIndex = 2;
-            PasswordTextbox.Text = "123456789";
+            PasswordTextbox.Text = "Password";
             PasswordTextbox.TrailingIcon = null;
+            PasswordTextbox.Click += PasswordTextbox_Click_1;
             // 
             // TittleLable
             // 

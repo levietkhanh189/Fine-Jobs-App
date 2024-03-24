@@ -24,5 +24,10 @@ namespace FineJobsApp.CPN_Form
                 scrollview.Controls.Add(new CPNJob());
             }
         }
+
+        private void CreatJobBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

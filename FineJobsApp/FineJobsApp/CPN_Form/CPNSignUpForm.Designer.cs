@@ -211,7 +211,7 @@
             PasswordTextbox2.Password = true;
             PasswordTextbox2.Size = new Size(316, 50);
             PasswordTextbox2.TabIndex = 9;
-            PasswordTextbox2.Text = "";
+            PasswordTextbox2.Text = "123456789";
             PasswordTextbox2.TrailingIcon = null;
             // 
             // materialLabel5
@@ -317,7 +317,6 @@
 
         private void EmailTextbox_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion

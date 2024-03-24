@@ -36,6 +36,7 @@
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             RightBtn = new MaterialSkin.Controls.MaterialButton();
             LeftBtn = new MaterialSkin.Controls.MaterialButton();
+            CreatJobBtn = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // materialLabel2
@@ -71,7 +72,7 @@
             SearchBtn.Depth = 0;
             SearchBtn.HighEmphasis = true;
             SearchBtn.Icon = Properties.Resources.icons8_search_128;
-            SearchBtn.Location = new Point(1400, 28);
+            SearchBtn.Location = new Point(1313, 58);
             SearchBtn.Margin = new Padding(4, 6, 4, 6);
             SearchBtn.MouseState = MaterialSkin.MouseState.HOVER;
             SearchBtn.Name = "SearchBtn";
@@ -90,7 +91,7 @@
             SearchTextbox.Depth = 0;
             SearchTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             SearchTextbox.LeadingIcon = null;
-            SearchTextbox.Location = new Point(1018, 28);
+            SearchTextbox.Location = new Point(931, 58);
             SearchTextbox.MaxLength = 50;
             SearchTextbox.MouseState = MaterialSkin.MouseState.OUT;
             SearchTextbox.Multiline = false;
@@ -158,10 +159,32 @@
             LeftBtn.UseAccentColor = false;
             LeftBtn.UseVisualStyleBackColor = true;
             // 
+            // CreatJobBtn
+            // 
+            CreatJobBtn.AutoSize = false;
+            CreatJobBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            CreatJobBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            CreatJobBtn.Depth = 0;
+            CreatJobBtn.HighEmphasis = true;
+            CreatJobBtn.Icon = Properties.Resources.icons8_create_90;
+            CreatJobBtn.Location = new Point(1428, 58);
+            CreatJobBtn.Margin = new Padding(4, 6, 4, 6);
+            CreatJobBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            CreatJobBtn.Name = "CreatJobBtn";
+            CreatJobBtn.NoAccentTextColor = Color.Empty;
+            CreatJobBtn.Size = new Size(105, 50);
+            CreatJobBtn.TabIndex = 13;
+            CreatJobBtn.Text = "Create";
+            CreatJobBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            CreatJobBtn.UseAccentColor = true;
+            CreatJobBtn.UseVisualStyleBackColor = true;
+            CreatJobBtn.Click += CreatJobBtn_Click;
+            // 
             // CPNListJobsTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(CreatJobBtn);
             Controls.Add(materialLabel3);
             Controls.Add(RightBtn);
             Controls.Add(LeftBtn);
@@ -187,5 +210,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialButton RightBtn;
         private MaterialSkin.Controls.MaterialButton LeftBtn;
+        private MaterialSkin.Controls.MaterialButton CreatJobBtn;
     }
 }

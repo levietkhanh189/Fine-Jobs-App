@@ -25,21 +25,47 @@ public class UserDAL
                 {
                     if (reader.Read())
                     {
-                        return new UserModel
-                        {
-                            UserID = (int)reader["UserID"],
-                            Username = (string)reader["Username"],
-                            Password = (string)reader["Password"],
-                            Email = (string)reader["Email"],
-                            UserType = (string)reader["UserType"],
-                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
-                        };
+                        return new UserModel((int)reader["UserID"],
+                            (string)reader["Username"],
+                            (string)reader["Password"],
+                            (string)reader["Email"],
+                            (string)reader["UserType"],
+                            Convert.ToDateTime(reader["CreatedAt"])
+                        );
                     }
                 }
             }
         }
         return null;
     }
+
+    public UserModel GetUserByEmail(string email)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "SELECT * FROM Users WHERE Email = @Email";
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@Email", email);
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new UserModel((int)reader["UserID"],
+                            (string)reader["Username"],
+                            (string)reader["Password"],
+                            (string)reader["Email"],
+                            (string)reader["UserType"],
+                            Convert.ToDateTime(reader["CreatedAt"])
+                        );
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
 
     public void AddUser(UserModel user)
     {

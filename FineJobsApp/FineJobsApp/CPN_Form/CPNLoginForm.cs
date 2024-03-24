@@ -61,9 +61,15 @@ namespace FineJobsApp
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormManager.ShowForm<CPNHomeForm>();
-
+            if (ControllerManager.Instance.UserController.Login(EmailTextbox.Text, PasswordTextbox.Text, "Company"))
+            {
+                this.Hide();
+                FormManager.ShowForm<CPNHomeForm>();
+            }
+            else
+            {
+                MessageBox.Show("Email or Password is incorrect");
+            }
         }
 
         private void SignupButton_Click(object sender, EventArgs e)
@@ -72,9 +78,20 @@ namespace FineJobsApp
             FormManager.ShowForm<CPNSignUpForm>();
         }
 
-        private void EmailTextbox_TextChanged(object sender, EventArgs e)
+        private void PasswordTextbox_Click_1(object sender, EventArgs e)
         {
+            if (PasswordTextbox.Text == "Password")
+            {
+                PasswordTextbox.Text = "";
+            }
+        }
 
+        private void EmailTextbox_Click(object sender, EventArgs e)
+        {
+            if (EmailTextbox.Text == "Enter your email")
+            {
+                EmailTextbox.Text = "";
+            }
         }
     }
 }

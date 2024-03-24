@@ -18,12 +18,12 @@ public class DALManager
 
     private string connectionString = "Server=ep-falling-sea-a1pnxa8v.ap-southeast-1.aws.neon.tech;Database=neondb;User Id=levietkhanh189;Password=60lOBpFIbshP;Port=5432";
 
-    public UserDAL User { get; private set; }
-    public ProfileDAL Profile { get; private set; }
-    public JobDAL Job { get; private set; }
-    public ApplicationDAL Application { get; private set; }
-    public MessageDAL Message { get; private set; }
-    public CompanyProfileDAL CompanyProfile { get; private set; }
+    public UserDAL User;
+    public ProfileDAL Profile;
+    public JobDAL Job;
+    public ApplicationDAL Application;
+    public MessageDAL Message;
+    public CompanyProfileDAL CompanyProfile;
 
     public DALManager()
     {

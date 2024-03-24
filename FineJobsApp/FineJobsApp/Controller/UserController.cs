@@ -1,23 +1,47 @@
+using FineJobsApp.Controller;
 using System;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 public class UserController
 {
+    public static int userCode;
     public UserController()
     {
     }
 
-    public void Login(string username, string password)
+    public bool Login(string username, string password, string type)
     {
-        // Xử lý đăng nhập
+        UserModel user = DALManager.Instance.User.GetUserByEmail(username);
+        if(user == null || user.Password != password || user.UserType != type)
+        {
+            return false;
+        }
+        return true;
     }
 
-    public void Register(UserModel userModel)
+    public void SendCode(string username)
     {
-        // Xử lý đăng ký
+        userCode = MailController.SendEmailCode(username);
     }
 
-    public void UpdateUser(UserModel userModel)
+    public bool Register(UserModel userModel,string code)
     {
-        // Xử lý cập nhật thông tin người dùng
+        if(userCode != int.Parse(code))
+        {
+            return false;
+        }
+        DALManager.Instance.User.AddUser(userModel);
+        return true;
+    }
+
+    public bool UpdateUser(UserModel userModel)
+    {
+        UserModel user = DALManager.Instance.User.GetUserByID(userModel.UserID);
+        if (user == null)
+        {
+            return false;
+        }
+        DALManager.Instance.User.UpdateUser(userModel);
+        return true;
     }
 }
