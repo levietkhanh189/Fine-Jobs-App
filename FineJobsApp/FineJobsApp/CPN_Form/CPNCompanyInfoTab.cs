@@ -16,5 +16,10 @@ namespace FineJobsApp.CPN_Form
         {
             InitializeComponent();
         }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

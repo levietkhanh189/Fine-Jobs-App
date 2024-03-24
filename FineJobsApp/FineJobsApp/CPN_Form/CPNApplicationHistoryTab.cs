@@ -16,5 +16,13 @@ namespace FineJobsApp.CPN_Form
         {
             InitializeComponent();
         }
+
+        private void CPNApplicationHistoryTab_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                scrollview.Controls.Add(new CPNApplication());
+            }
+        }
     }
 }

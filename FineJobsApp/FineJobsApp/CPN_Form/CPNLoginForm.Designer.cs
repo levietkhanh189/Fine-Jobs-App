@@ -55,6 +55,7 @@
             EmailTextbox.TabIndex = 1;
             EmailTextbox.Text = "levietkhanh189@gmail.com";
             EmailTextbox.TrailingIcon = null;
+            EmailTextbox.TextChanged += EmailTextbox_TextChanged;
             // 
             // PasswordTextbox
             // 

@@ -28,10 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            scrollview = new FlowLayoutPanel();
+            SuspendLayout();
+            // 
+            // scrollview
+            // 
+            scrollview.AutoScroll = true;
+            scrollview.Location = new Point(108, 63);
+            scrollview.Name = "scrollview";
+            scrollview.Size = new Size(1378, 526);
+            scrollview.TabIndex = 0;
+            // 
+            // CPNApplicationHistoryTab
+            // 
+            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(scrollview);
+            Name = "CPNApplicationHistoryTab";
+            Size = new Size(1592, 824);
+            Load += CPNApplicationHistoryTab_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private FlowLayoutPanel scrollview;
     }
 }

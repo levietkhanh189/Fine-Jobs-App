@@ -71,5 +71,10 @@ namespace FineJobsApp
             this.Hide();
             FormManager.ShowForm<CPNSignUpForm>();
         }
+
+        private void EmailTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
