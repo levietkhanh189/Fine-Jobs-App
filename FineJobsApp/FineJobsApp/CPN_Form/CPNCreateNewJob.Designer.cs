@@ -33,7 +33,7 @@
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             SaveButton = new MaterialSkin.Controls.MaterialButton();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            JobType = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -42,10 +42,11 @@
             SkillTextBox = new MaterialSkin.Controls.MaterialTextBox();
             AddSkillBtn = new MaterialSkin.Controls.MaterialButton();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            DescriptionTextbox = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
             SkillText = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            materialCard3 = new MaterialSkin.Controls.MaterialCard();
             materialCard1.SuspendLayout();
             materialCard2.SuspendLayout();
             SuspendLayout();
@@ -70,6 +71,7 @@
             JobNameTextbox.BorderStyle = BorderStyle.None;
             JobNameTextbox.Depth = 0;
             JobNameTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            JobNameTextbox.Hint = "Enter job name";
             JobNameTextbox.LeadingIcon = null;
             JobNameTextbox.Location = new Point(17, 32);
             JobNameTextbox.MaxLength = 50;
@@ -78,7 +80,7 @@
             JobNameTextbox.Name = "JobNameTextbox";
             JobNameTextbox.Size = new Size(296, 50);
             JobNameTextbox.TabIndex = 25;
-            JobNameTextbox.Text = "Enter job name";
+            JobNameTextbox.Text = "";
             JobNameTextbox.TrailingIcon = null;
             // 
             // materialLabel3
@@ -129,28 +131,28 @@
             materialLabel1.TabIndex = 27;
             materialLabel1.Text = "Job Type";
             // 
-            // materialComboBox1
+            // JobType
             // 
-            materialComboBox1.AutoResize = false;
-            materialComboBox1.BackColor = Color.FromArgb(255, 255, 255);
-            materialComboBox1.Depth = 0;
-            materialComboBox1.DrawMode = DrawMode.OwnerDrawVariable;
-            materialComboBox1.DropDownHeight = 174;
-            materialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            materialComboBox1.DropDownWidth = 121;
-            materialComboBox1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialComboBox1.FormattingEnabled = true;
-            materialComboBox1.IntegralHeight = false;
-            materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Items.AddRange(new object[] { "Part-Time", "Full-Time" });
-            materialComboBox1.Location = new Point(17, 658);
-            materialComboBox1.MaxDropDownItems = 4;
-            materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialComboBox1.Name = "materialComboBox1";
-            materialComboBox1.Size = new Size(134, 49);
-            materialComboBox1.StartIndex = 0;
-            materialComboBox1.TabIndex = 28;
+            JobType.AutoResize = false;
+            JobType.BackColor = Color.FromArgb(255, 255, 255);
+            JobType.Depth = 0;
+            JobType.DrawMode = DrawMode.OwnerDrawVariable;
+            JobType.DropDownHeight = 174;
+            JobType.DropDownStyle = ComboBoxStyle.DropDownList;
+            JobType.DropDownWidth = 121;
+            JobType.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            JobType.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            JobType.FormattingEnabled = true;
+            JobType.IntegralHeight = false;
+            JobType.ItemHeight = 43;
+            JobType.Items.AddRange(new object[] { "Part-Time", "Full-Time" });
+            JobType.Location = new Point(17, 658);
+            JobType.MaxDropDownItems = 4;
+            JobType.MouseState = MaterialSkin.MouseState.OUT;
+            JobType.Name = "JobType";
+            JobType.Size = new Size(134, 49);
+            JobType.StartIndex = 0;
+            JobType.TabIndex = 28;
             // 
             // materialLabel2
             // 
@@ -172,6 +174,7 @@
             materialTextBox1.BorderStyle = BorderStyle.None;
             materialTextBox1.Depth = 0;
             materialTextBox1.Font = new Font("Microsoft Sans Serif", 4.8F);
+            materialTextBox1.Hint = "Enter location";
             materialTextBox1.LeadingIcon = null;
             materialTextBox1.Location = new Point(187, 657);
             materialTextBox1.MaxLength = 50;
@@ -180,7 +183,7 @@
             materialTextBox1.Name = "materialTextBox1";
             materialTextBox1.Size = new Size(296, 50);
             materialTextBox1.TabIndex = 29;
-            materialTextBox1.Text = "Enter location";
+            materialTextBox1.Text = "";
             materialTextBox1.TrailingIcon = null;
             // 
             // materialLabel4
@@ -203,6 +206,7 @@
             SalaryTextbox.BorderStyle = BorderStyle.None;
             SalaryTextbox.Depth = 0;
             SalaryTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            SalaryTextbox.Hint = "10.000.000-50.000.000";
             SalaryTextbox.LeadingIcon = null;
             SalaryTextbox.Location = new Point(384, 32);
             SalaryTextbox.MaxLength = 50;
@@ -211,7 +215,7 @@
             SalaryTextbox.Name = "SalaryTextbox";
             SalaryTextbox.Size = new Size(182, 50);
             SalaryTextbox.TabIndex = 31;
-            SalaryTextbox.Text = "10.000.000-50.000.000";
+            SalaryTextbox.Text = "";
             SalaryTextbox.TrailingIcon = null;
             // 
             // materialLabel6
@@ -234,6 +238,7 @@
             SkillTextBox.BorderStyle = BorderStyle.None;
             SkillTextBox.Depth = 0;
             SkillTextBox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            SkillTextBox.Hint = "Enter here";
             SkillTextBox.LeadingIcon = null;
             SkillTextBox.Location = new Point(17, 118);
             SkillTextBox.MaxLength = 50;
@@ -242,8 +247,10 @@
             SkillTextBox.Name = "SkillTextBox";
             SkillTextBox.Size = new Size(94, 50);
             SkillTextBox.TabIndex = 33;
-            SkillTextBox.Text = "Enter here";
+            SkillTextBox.Text = "";
             SkillTextBox.TrailingIcon = null;
+            SkillTextBox.Click += SkillTextBox_Click;
+            SkillTextBox.TextChanged += SkillTextBox_TextChanged;
             // 
             // AddSkillBtn
             // 
@@ -252,7 +259,7 @@
             AddSkillBtn.Depth = 0;
             AddSkillBtn.HighEmphasis = true;
             AddSkillBtn.Icon = null;
-            AddSkillBtn.Location = new Point(152, 132);
+            AddSkillBtn.Location = new Point(136, 132);
             AddSkillBtn.Margin = new Padding(4, 6, 4, 6);
             AddSkillBtn.MouseState = MaterialSkin.MouseState.HOVER;
             AddSkillBtn.Name = "AddSkillBtn";
@@ -268,7 +275,8 @@
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Controls.Add(materialMultiLineTextBox1);
+            materialCard1.Controls.Add(materialCard3);
+            materialCard1.Controls.Add(DescriptionTextbox);
             materialCard1.Controls.Add(materialLabel7);
             materialCard1.Controls.Add(materialCard2);
             materialCard1.Controls.Add(AddSkillBtn);
@@ -278,7 +286,7 @@
             materialCard1.Controls.Add(SalaryTextbox);
             materialCard1.Controls.Add(materialLabel2);
             materialCard1.Controls.Add(materialTextBox1);
-            materialCard1.Controls.Add(materialComboBox1);
+            materialCard1.Controls.Add(JobType);
             materialCard1.Controls.Add(materialLabel1);
             materialCard1.Controls.Add(materialLabel5);
             materialCard1.Controls.Add(JobNameTextbox);
@@ -292,6 +300,36 @@
             materialCard1.Padding = new Padding(14);
             materialCard1.Size = new Size(717, 729);
             materialCard1.TabIndex = 36;
+            // 
+            // DescriptionTextbox
+            // 
+            DescriptionTextbox.BackColor = Color.FromArgb(255, 255, 255);
+            DescriptionTextbox.BorderStyle = BorderStyle.None;
+            DescriptionTextbox.Depth = 0;
+            DescriptionTextbox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            DescriptionTextbox.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            DescriptionTextbox.Hint = "Please fill this";
+            DescriptionTextbox.LeaveOnEnterKey = true;
+            DescriptionTextbox.Location = new Point(34, 226);
+            DescriptionTextbox.MouseState = MaterialSkin.MouseState.HOVER;
+            DescriptionTextbox.Name = "DescriptionTextbox";
+            DescriptionTextbox.ShowSelectionMargin = true;
+            DescriptionTextbox.Size = new Size(649, 381);
+            DescriptionTextbox.TabIndex = 38;
+            DescriptionTextbox.Text = "";
+            // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel7.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            materialLabel7.Location = new Point(17, 189);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(74, 17);
+            materialLabel7.TabIndex = 37;
+            materialLabel7.Text = "Description";
             // 
             // materialCard2
             // 
@@ -319,32 +357,18 @@
             SkillText.TabIndex = 0;
             SkillText.Text = "You need to add direct skills.";
             // 
-            // materialLabel7
+            // materialCard3
             // 
-            materialLabel7.AutoSize = true;
-            materialLabel7.Depth = 0;
-            materialLabel7.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel7.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel7.Location = new Point(17, 189);
-            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel7.Name = "materialLabel7";
-            materialLabel7.Size = new Size(74, 17);
-            materialLabel7.TabIndex = 37;
-            materialLabel7.Text = "Description";
-            // 
-            // materialMultiLineTextBox1
-            // 
-            materialMultiLineTextBox1.BackColor = Color.FromArgb(255, 255, 255);
-            materialMultiLineTextBox1.BorderStyle = BorderStyle.None;
-            materialMultiLineTextBox1.Depth = 0;
-            materialMultiLineTextBox1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialMultiLineTextBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialMultiLineTextBox1.Location = new Point(17, 209);
-            materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            materialMultiLineTextBox1.Size = new Size(645, 423);
-            materialMultiLineTextBox1.TabIndex = 38;
-            materialMultiLineTextBox1.Text = "";
+            materialCard3.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard3.Depth = 0;
+            materialCard3.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard3.Location = new Point(17, 213);
+            materialCard3.Margin = new Padding(14);
+            materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCard3.Name = "materialCard3";
+            materialCard3.Padding = new Padding(14);
+            materialCard3.Size = new Size(683, 411);
+            materialCard3.TabIndex = 39;
             // 
             // CPNCreateNewJob
             // 
@@ -369,7 +393,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialButton SaveButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialComboBox JobType;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
@@ -380,7 +404,8 @@
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel SkillText;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox DescriptionTextbox;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialCard materialCard3;
     }
 }

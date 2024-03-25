@@ -21,5 +21,16 @@ namespace FineJobsApp.CPN_Form
         {
 
         }
+
+        public void InitializeJobComponents(string jobName, string jobType, string jobStatus, string countText)
+        {
+            JobName.Text = jobName;
+
+            JobType.Text = jobType;
+
+            JobStatus.Text = jobStatus;
+             CountText.Text = countText;
+        }
+
     }
 }

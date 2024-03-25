@@ -35,7 +35,7 @@
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             LeftBtn = new MaterialSkin.Controls.MaterialButton();
             RightBtn = new MaterialSkin.Controls.MaterialButton();
-            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            PageText = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // scrollview
@@ -148,23 +148,23 @@
             RightBtn.UseAccentColor = false;
             RightBtn.UseVisualStyleBackColor = true;
             // 
-            // materialLabel3
+            // PageText
             // 
-            materialLabel3.AutoSize = true;
-            materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(1337, 778);
-            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel3.Name = "materialLabel3";
-            materialLabel3.Size = new Size(10, 19);
-            materialLabel3.TabIndex = 7;
-            materialLabel3.Text = "1";
+            PageText.AutoSize = true;
+            PageText.Depth = 0;
+            PageText.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            PageText.Location = new Point(1337, 778);
+            PageText.MouseState = MaterialSkin.MouseState.HOVER;
+            PageText.Name = "PageText";
+            PageText.Size = new Size(10, 19);
+            PageText.TabIndex = 7;
+            PageText.Text = "1";
             // 
             // CPNApplicationHistoryTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(materialLabel3);
+            Controls.Add(PageText);
             Controls.Add(RightBtn);
             Controls.Add(LeftBtn);
             Controls.Add(materialLabel2);
@@ -188,6 +188,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialButton LeftBtn;
         private MaterialSkin.Controls.MaterialButton RightBtn;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel PageText;
     }
 }

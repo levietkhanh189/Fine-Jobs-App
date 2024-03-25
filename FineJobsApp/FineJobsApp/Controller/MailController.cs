@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Diagnostics;
 
 namespace FineJobsApp.Controller
 {
@@ -54,6 +55,29 @@ namespace FineJobsApp.Controller
             {
                 MessageBox.Show($"Không thể gửi email. Lỗi: {ex.Message}");
             }
+        }
+
+        public static void OpenGmailWithRecipient(string recipientEmail)
+        {
+            string subject = Uri.EscapeDataString("Tiêu đề của email"); // Tiêu đề email
+            string body = Uri.EscapeDataString("Nội dung của email."); // Nội dung email
+
+            string gmailUrl = $"https://mail.google.com/mail/?view=cm&fs=1&to={recipientEmail}&su={subject}&body={body}";
+
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = gmailUrl,
+                    UseShellExecute = true
+                };
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Không thể mở Gmail. Lỗi: {ex.Message}");
+            }
+
         }
 
     }

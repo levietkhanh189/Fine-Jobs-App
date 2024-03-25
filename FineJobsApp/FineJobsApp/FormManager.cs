@@ -28,11 +28,13 @@ namespace FineJobsApp
             }
         }
 
-        public static void ShowForm<T>() where T : Form, new()
+        public static T ShowForm<T>() where T : Form, new()
         {
             Form form = GetForm<T>();
+            form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             form.Show();
             form.BringToFront();
+            return GetForm<T>();
         }
 
         public static void HideForm<T>() where T : Form, new()

@@ -34,7 +34,7 @@
             CountText = new MaterialSkin.Controls.MaterialLabel();
             EditBtn = new MaterialSkin.Controls.MaterialButton();
             DeleteBtn = new MaterialSkin.Controls.MaterialButton();
-            materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            JobStatus = new MaterialSkin.Controls.MaterialComboBox();
             JobType = new MaterialSkin.Controls.MaterialLabel();
             materialCard1.SuspendLayout();
             SuspendLayout();
@@ -47,6 +47,7 @@
             JobName.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
             JobName.HighEmphasis = true;
             JobName.Location = new Point(37, 38);
+            JobName.MaximumSize = new Size(275, 41);
             JobName.MouseState = MaterialSkin.MouseState.HOVER;
             JobName.Name = "JobName";
             JobName.Size = new Size(235, 41);
@@ -61,7 +62,7 @@
             materialCard1.Controls.Add(CountText);
             materialCard1.Controls.Add(EditBtn);
             materialCard1.Controls.Add(DeleteBtn);
-            materialCard1.Controls.Add(materialComboBox1);
+            materialCard1.Controls.Add(JobStatus);
             materialCard1.Controls.Add(JobType);
             materialCard1.Controls.Add(JobName);
             materialCard1.Depth = 0;
@@ -99,7 +100,7 @@
             CountText.AutoSize = true;
             CountText.Depth = 0;
             CountText.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            CountText.Location = new Point(152, 90);
+            CountText.Location = new Point(37, 79);
             CountText.MouseState = MaterialSkin.MouseState.HOVER;
             CountText.Name = "CountText";
             CountText.Size = new Size(120, 19);
@@ -144,28 +145,28 @@
             DeleteBtn.UseAccentColor = false;
             DeleteBtn.UseVisualStyleBackColor = true;
             // 
-            // materialComboBox1
+            // JobStatus
             // 
-            materialComboBox1.AutoResize = false;
-            materialComboBox1.BackColor = Color.FromArgb(255, 255, 255);
-            materialComboBox1.Depth = 0;
-            materialComboBox1.DrawMode = DrawMode.OwnerDrawVariable;
-            materialComboBox1.DropDownHeight = 174;
-            materialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            materialComboBox1.DropDownWidth = 121;
-            materialComboBox1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialComboBox1.FormattingEnabled = true;
-            materialComboBox1.IntegralHeight = false;
-            materialComboBox1.ItemHeight = 43;
-            materialComboBox1.Items.AddRange(new object[] { "Open", "Close" });
-            materialComboBox1.Location = new Point(855, 38);
-            materialComboBox1.MaxDropDownItems = 4;
-            materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialComboBox1.Name = "materialComboBox1";
-            materialComboBox1.Size = new Size(186, 49);
-            materialComboBox1.StartIndex = 0;
-            materialComboBox1.TabIndex = 2;
+            JobStatus.AutoResize = false;
+            JobStatus.BackColor = Color.FromArgb(255, 255, 255);
+            JobStatus.Depth = 0;
+            JobStatus.DrawMode = DrawMode.OwnerDrawVariable;
+            JobStatus.DropDownHeight = 174;
+            JobStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            JobStatus.DropDownWidth = 121;
+            JobStatus.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            JobStatus.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            JobStatus.FormattingEnabled = true;
+            JobStatus.IntegralHeight = false;
+            JobStatus.ItemHeight = 43;
+            JobStatus.Items.AddRange(new object[] { "Open", "Close" });
+            JobStatus.Location = new Point(855, 38);
+            JobStatus.MaxDropDownItems = 4;
+            JobStatus.MouseState = MaterialSkin.MouseState.OUT;
+            JobStatus.Name = "JobStatus";
+            JobStatus.Size = new Size(186, 49);
+            JobStatus.StartIndex = 0;
+            JobStatus.TabIndex = 2;
             // 
             // JobType
             // 
@@ -174,7 +175,7 @@
             JobType.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             JobType.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             JobType.ForeColor = Color.Cyan;
-            JobType.Location = new Point(307, 47);
+            JobType.Location = new Point(363, 43);
             JobType.MouseState = MaterialSkin.MouseState.HOVER;
             JobType.Name = "JobType";
             JobType.Size = new Size(94, 29);
@@ -200,7 +201,7 @@
         private MaterialSkin.Controls.MaterialLabel JobType;
         private MaterialSkin.Controls.MaterialButton EditBtn;
         private MaterialSkin.Controls.MaterialButton DeleteBtn;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialComboBox JobStatus;
         private MaterialSkin.Controls.MaterialButton FindApplication;
         private MaterialSkin.Controls.MaterialLabel CountText;
     }

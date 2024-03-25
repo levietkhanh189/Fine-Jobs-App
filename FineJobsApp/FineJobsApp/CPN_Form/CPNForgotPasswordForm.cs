@@ -48,5 +48,16 @@ namespace FineJobsApp.CPN_Form
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManager.ShowForm<CPNLoginForm>();
+        }
+
+        private void SendCodeButton_Click(object sender, EventArgs e)
+        {
+            ControllerManager.Instance.UserController.SendCode(EmailTextbox.Text);
+        }
     }
 }

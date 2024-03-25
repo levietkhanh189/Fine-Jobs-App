@@ -45,6 +45,7 @@
             EmailTextbox.BorderStyle = BorderStyle.None;
             EmailTextbox.Depth = 0;
             EmailTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            EmailTextbox.Hint = "Enter your email";
             EmailTextbox.LeadingIcon = null;
             EmailTextbox.Location = new Point(98, 192);
             EmailTextbox.MaxLength = 50;
@@ -53,7 +54,7 @@
             EmailTextbox.Name = "EmailTextbox";
             EmailTextbox.Size = new Size(316, 50);
             EmailTextbox.TabIndex = 1;
-            EmailTextbox.Text = "Enter your email";
+            EmailTextbox.Text = "";
             EmailTextbox.TrailingIcon = null;
             EmailTextbox.Click += EmailTextbox_Click;
             // 
@@ -64,6 +65,7 @@
             PasswordTextbox.BorderStyle = BorderStyle.None;
             PasswordTextbox.Depth = 0;
             PasswordTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox.Hint = "Enter your password";
             PasswordTextbox.LeadingIcon = null;
             PasswordTextbox.Location = new Point(98, 287);
             PasswordTextbox.MaxLength = 50;
@@ -73,7 +75,7 @@
             PasswordTextbox.Password = true;
             PasswordTextbox.Size = new Size(316, 50);
             PasswordTextbox.TabIndex = 2;
-            PasswordTextbox.Text = "Password";
+            PasswordTextbox.Text = "";
             PasswordTextbox.TrailingIcon = null;
             PasswordTextbox.Click += PasswordTextbox_Click_1;
             // 
@@ -180,6 +182,7 @@
             materialLabel3.Size = new Size(138, 17);
             materialLabel3.TabIndex = 8;
             materialLabel3.Text = "Forgot your password";
+            materialLabel3.Click += materialLabel3_Click;
             // 
             // CPNLoginForm
             // 
@@ -202,6 +205,7 @@
             Sizable = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Company Login";
+            Load += CPNLoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

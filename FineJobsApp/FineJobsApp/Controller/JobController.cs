@@ -15,4 +15,14 @@ public class JobController
     {
         // Xử lý ứng tuyển công việc
     }
+
+    public JobModel GetJob(int jobId)
+    {
+        return DALManager.Instance.Job.GetJob(jobId);
+    }
+
+    public List<JobModel> GetJobsByCurrentComapy()
+    {
+        return DALManager.Instance.Job.GetJobsByCompany(ControllerManager.Instance.UserModel.UserID);
+    }
 }

@@ -20,9 +20,7 @@ public class ControllerManager
     public ApplicationController ApplicationController { get; private set; }
     public MessageController MessageController { get; private set; }
     public CompanyProfileController CompanyProfileController { get; private set; }
-
-    private DALManager dalManager;
-
+    public UserModel UserModel { get; private set; }
     public ControllerManager()
     {
         InitializeControllers();
@@ -36,5 +34,10 @@ public class ControllerManager
         ApplicationController = new ApplicationController();
         MessageController = new MessageController();
         CompanyProfileController = new CompanyProfileController();
+    }
+
+    public void SetUserModel(UserModel userModel)
+    {
+        UserModel = userModel;
     }
 }

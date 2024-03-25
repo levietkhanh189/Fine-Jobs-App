@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using FineJobsApp.CPN_Form;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -80,18 +81,22 @@ namespace FineJobsApp
 
         private void PasswordTextbox_Click_1(object sender, EventArgs e)
         {
-            if (PasswordTextbox.Text == "Password")
-            {
-                PasswordTextbox.Text = "";
-            }
+            
         }
 
         private void EmailTextbox_Click(object sender, EventArgs e)
         {
-            if (EmailTextbox.Text == "Enter your email")
-            {
-                EmailTextbox.Text = "";
-            }
+            
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManager.ShowForm<CPNForgotPasswordForm>();
+        }
+
+        private void CPNLoginForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -51,6 +51,7 @@
             EmailTextbox.BorderStyle = BorderStyle.None;
             EmailTextbox.Depth = 0;
             EmailTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            EmailTextbox.Hint = "Enter your email";
             EmailTextbox.LeadingIcon = null;
             EmailTextbox.Location = new Point(100, 247);
             EmailTextbox.MaxLength = 50;
@@ -59,7 +60,7 @@
             EmailTextbox.Name = "EmailTextbox";
             EmailTextbox.Size = new Size(316, 50);
             EmailTextbox.TabIndex = 1;
-            EmailTextbox.Text = "Enter your email";
+            EmailTextbox.Text = "";
             EmailTextbox.TrailingIcon = null;
             EmailTextbox.Click += EmailTextbox_Click;
             // 
@@ -70,6 +71,7 @@
             PasswordTextbox.BorderStyle = BorderStyle.None;
             PasswordTextbox.Depth = 0;
             PasswordTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox.Hint = "Enter your password";
             PasswordTextbox.LeadingIcon = null;
             PasswordTextbox.Location = new Point(100, 329);
             PasswordTextbox.MaxLength = 50;
@@ -77,9 +79,10 @@
             PasswordTextbox.Multiline = false;
             PasswordTextbox.Name = "PasswordTextbox";
             PasswordTextbox.Password = true;
+            PasswordTextbox.ScrollBars = RichTextBoxScrollBars.None;
             PasswordTextbox.Size = new Size(316, 50);
             PasswordTextbox.TabIndex = 2;
-            PasswordTextbox.Text = "123456789";
+            PasswordTextbox.Text = "";
             PasswordTextbox.TrailingIcon = null;
             // 
             // TittleLable
@@ -201,7 +204,8 @@
             PasswordTextbox2.AnimateReadOnly = false;
             PasswordTextbox2.BorderStyle = BorderStyle.None;
             PasswordTextbox2.Depth = 0;
-            PasswordTextbox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            PasswordTextbox2.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox2.Hint = "Enter your password again";
             PasswordTextbox2.LeadingIcon = null;
             PasswordTextbox2.Location = new Point(100, 411);
             PasswordTextbox2.MaxLength = 50;
@@ -211,7 +215,7 @@
             PasswordTextbox2.Password = true;
             PasswordTextbox2.Size = new Size(316, 50);
             PasswordTextbox2.TabIndex = 9;
-            PasswordTextbox2.Text = "123456789";
+            PasswordTextbox2.Text = "";
             PasswordTextbox2.TrailingIcon = null;
             // 
             // materialLabel5
@@ -234,6 +238,7 @@
             CompanyNameTextbox.BorderStyle = BorderStyle.None;
             CompanyNameTextbox.Depth = 0;
             CompanyNameTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            CompanyNameTextbox.Hint = "Enter your company name";
             CompanyNameTextbox.LeadingIcon = null;
             CompanyNameTextbox.Location = new Point(100, 172);
             CompanyNameTextbox.MaxLength = 50;
@@ -242,7 +247,7 @@
             CompanyNameTextbox.Name = "CompanyNameTextbox";
             CompanyNameTextbox.Size = new Size(316, 50);
             CompanyNameTextbox.TabIndex = 11;
-            CompanyNameTextbox.Text = "Enter your company name";
+            CompanyNameTextbox.Text = "";
             CompanyNameTextbox.TrailingIcon = null;
             CompanyNameTextbox.Click += CompanyNameTextbox_Click;
             // 
@@ -252,6 +257,7 @@
             CodeTextbox.BorderStyle = BorderStyle.None;
             CodeTextbox.Depth = 0;
             CodeTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            CodeTextbox.Hint = "Enter your code";
             CodeTextbox.LeadingIcon = null;
             CodeTextbox.Location = new Point(100, 468);
             CodeTextbox.MaxLength = 50;
@@ -260,7 +266,7 @@
             CodeTextbox.Name = "CodeTextbox";
             CodeTextbox.Size = new Size(208, 50);
             CodeTextbox.TabIndex = 13;
-            CodeTextbox.Text = "Enter your code";
+            CodeTextbox.Text = "";
             CodeTextbox.TrailingIcon = null;
             CodeTextbox.Click += CompanyNameTextbox_Click;
             // 

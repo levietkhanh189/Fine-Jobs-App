@@ -16,6 +16,7 @@ public class UserController
         {
             return false;
         }
+        ControllerManager.Instance.SetUserModel(user);
         return true;
     }
 

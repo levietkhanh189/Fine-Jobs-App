@@ -41,6 +41,67 @@ public class JobDAL
         return jobs;
     }
 
+    public List<JobModel> GetJobsByCompany(int companyId)
+    {
+        List<JobModel> jobs = new List<JobModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Jobs WHERE CompanyID = @CompanyID";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@CompanyID", companyId);
+
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                JobModel job = new JobModel();
+                job.JobID = Convert.ToInt32(reader["JobID"]);
+                job.CompanyID = Convert.ToInt32(reader["CompanyID"]);
+                job.Title = reader["Title"].ToString();
+                job.Description = reader["Description"].ToString();
+                job.SkillRequirements = reader["SkillRequirements"].ToString();
+                job.Location = reader["Location"].ToString();
+                job.SalaryRange = reader["SalaryRange"].ToString();
+                job.JobType = reader["JobType"].ToString();
+                job.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                job.Status = reader["Status"].ToString();
+                jobs.Add(job);
+            }
+            connection.Close();
+        }
+        return jobs;
+    }
+
+    public JobModel GetJob(int jobID)
+    {
+        JobModel job = new JobModel();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Jobs WHERE JobID = @JobID";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@JobID", jobID);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                job.JobID = Convert.ToInt32(reader["JobID"]);
+                job.CompanyID = Convert.ToInt32(reader["CompanyID"]);
+                job.Title = reader["Title"].ToString();
+                job.Description = reader["Description"].ToString();
+                job.SkillRequirements = reader["SkillRequirements"].ToString();
+                job.Location = reader["Location"].ToString();
+                job.SalaryRange = reader["SalaryRange"].ToString();
+                job.JobType = reader["JobType"].ToString();
+                job.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                job.Status = reader["Status"].ToString();
+            }
+            connection.Close();
+        }
+        return job;
+    }
+
+
+
     public void AddJob(JobModel job)
     {
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))

@@ -33,6 +33,16 @@ namespace FineJobsApp.CPN_Form
         }
 
         //CustomList Using UserControl And FlowLayoutPanel
+        public void InitializeComponentsValues(string appName, string jobTitle, string education, string experience, string skills, string statusOption)
+        {
+            ApplicationName.Text = appName;
+            JobTittle.Text = jobTitle;
+            Education.Text = education;
+            Experience.Text = experience;
+            Skills.Text = skills;
+            StatusCombox.Text = statusOption;
+            StatusCombox.Enabled = false;
+        }
 
 
     }

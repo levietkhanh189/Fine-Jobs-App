@@ -12,6 +12,9 @@ namespace FineJobsApp.CPN_Form
 {
     public partial class CPNApplicationHistoryTab : UserControl
     {
+        List<CPNApplication> applications = new List<CPNApplication>();
+        List<ApplicationModel> models = new List<ApplicationModel>();
+
         public CPNApplicationHistoryTab()
         {
             InitializeComponent();
@@ -19,10 +22,27 @@ namespace FineJobsApp.CPN_Form
 
         private void CPNApplicationHistoryTab_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
+            models = ControllerManager.Instance.ApplicationController.GetApplicationsByCurrentCompany();
+            LoadApplications(models);
+        }
+
+        public void LoadApplications(List<ApplicationModel> applicationModels)
+        {
+            scrollview.Controls.Clear();
+            foreach (var application in applicationModels)
             {
-                scrollview.Controls.Add(new CPNApplication());
+                scrollview.Controls.Add(CreateApplication(application));
             }
+        }
+
+        public CPNApplication CreateApplication(ApplicationModel model)
+        {
+            CPNApplication application = new CPNApplication();
+            ProfileModel profile = ControllerManager.Instance.ProfileController.GetProfile(model.ApplicantID);
+            JobModel job = ControllerManager.Instance.JobController.GetJob(model.JobID);
+
+            application.InitializeComponentsValues(profile.FullName, job.Title, profile.Education, profile.Experience, profile.Skills, model.Status);
+            return application;
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)

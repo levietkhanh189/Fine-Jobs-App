@@ -53,5 +53,29 @@ namespace FineJobsApp.CPN_Form
         {
 
         }
+
+        public void InitializeJobComponents(string jobName = "", string jobType = "", string salary = "", string skill = "", string description = "")
+        {
+            JobNameTextbox.Text = jobName;
+
+            JobType.SelectedIndex = JobType.Items.IndexOf(jobType);
+            SalaryTextbox.Text = salary;
+
+            DescriptionTextbox.Text = description;
+            if (skill != "")
+                SkillText.Text = $"Skills: {skill}";
+            else
+                SkillText.Text = "You need to add direct skills.";
+        }
+
+        private void SkillTextBox_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SkillTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,13 +60,15 @@
             SendCodeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             SendCodeButton.UseAccentColor = false;
             SendCodeButton.UseVisualStyleBackColor = true;
+            SendCodeButton.Click += SendCodeButton_Click;
             // 
             // CodeTextbox
             // 
             CodeTextbox.AnimateReadOnly = false;
             CodeTextbox.BorderStyle = BorderStyle.None;
             CodeTextbox.Depth = 0;
-            CodeTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            CodeTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            CodeTextbox.Hint = "Enter your code";
             CodeTextbox.LeadingIcon = null;
             CodeTextbox.Location = new Point(111, 436);
             CodeTextbox.MaxLength = 50;
@@ -75,7 +77,7 @@
             CodeTextbox.Name = "CodeTextbox";
             CodeTextbox.Size = new Size(208, 50);
             CodeTextbox.TabIndex = 27;
-            CodeTextbox.Text = "Enter your code";
+            CodeTextbox.Text = "";
             CodeTextbox.TrailingIcon = null;
             // 
             // materialLabel4
@@ -97,7 +99,8 @@
             PasswordTextbox2.AnimateReadOnly = false;
             PasswordTextbox2.BorderStyle = BorderStyle.None;
             PasswordTextbox2.Depth = 0;
-            PasswordTextbox2.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            PasswordTextbox2.Hint = "Enter your new password";
             PasswordTextbox2.LeadingIcon = null;
             PasswordTextbox2.Location = new Point(111, 379);
             PasswordTextbox2.MaxLength = 50;
@@ -107,7 +110,7 @@
             PasswordTextbox2.Password = true;
             PasswordTextbox2.Size = new Size(316, 50);
             PasswordTextbox2.TabIndex = 23;
-            PasswordTextbox2.Text = "123456789";
+            PasswordTextbox2.Text = "";
             PasswordTextbox2.TrailingIcon = null;
             // 
             // materialLabel3
@@ -143,6 +146,7 @@
             LoginButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             LoginButton.UseAccentColor = false;
             LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
             // materialLabel2
             // 
@@ -192,7 +196,8 @@
             PasswordTextbox.AnimateReadOnly = false;
             PasswordTextbox.BorderStyle = BorderStyle.None;
             PasswordTextbox.Depth = 0;
-            PasswordTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            PasswordTextbox.Hint = "Enter your new password";
             PasswordTextbox.LeadingIcon = null;
             PasswordTextbox.Location = new Point(111, 297);
             PasswordTextbox.MaxLength = 50;
@@ -202,7 +207,7 @@
             PasswordTextbox.Password = true;
             PasswordTextbox.Size = new Size(316, 50);
             PasswordTextbox.TabIndex = 16;
-            PasswordTextbox.Text = "123456789";
+            PasswordTextbox.Text = "";
             PasswordTextbox.TrailingIcon = null;
             // 
             // EmailTextbox
@@ -211,16 +216,18 @@
             EmailTextbox.AnimateReadOnly = false;
             EmailTextbox.BorderStyle = BorderStyle.None;
             EmailTextbox.Depth = 0;
-            EmailTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            EmailTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            EmailTextbox.Hint = "Enter your email";
             EmailTextbox.LeadingIcon = null;
             EmailTextbox.Location = new Point(111, 215);
             EmailTextbox.MaxLength = 50;
             EmailTextbox.MouseState = MaterialSkin.MouseState.OUT;
             EmailTextbox.Multiline = false;
             EmailTextbox.Name = "EmailTextbox";
+            EmailTextbox.ScrollBars = RichTextBoxScrollBars.None;
             EmailTextbox.Size = new Size(316, 50);
             EmailTextbox.TabIndex = 15;
-            EmailTextbox.Text = "Enter your email";
+            EmailTextbox.Text = "";
             EmailTextbox.TrailingIcon = null;
             // 
             // CPNForgotPasswordForm
