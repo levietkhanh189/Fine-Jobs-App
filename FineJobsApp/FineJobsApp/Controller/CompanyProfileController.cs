@@ -6,9 +6,27 @@ public class CompanyProfileController
     {
     }
 
+    public void CreateFirstCompanyProfile(UserModel userModel)
+    {
+        CompanyProfileModel companyProfile = new CompanyProfileModel();
+        companyProfile.UserID = ControllerManager.Instance.UserController.GetUserID(userModel.Email);
+        companyProfile.CompanyName = userModel.Username;
+        companyProfile.CreatedAt = userModel.CreatedAt;
+        companyProfile.Industry = "Unknown";
+        companyProfile.Description = "Unknown";
+        companyProfile.Website = "Unknown";
+        companyProfile.ContactInfo = "Unknown";
+        DALManager.Instance.CompanyProfile.AddCompanyProfile(companyProfile);
+
+    }
+
     public void UpdateCompanyProfile(CompanyProfileModel companyProfileModel)
     {
-        // Xử lý cập nhật hồ sơ công ty
+        DALManager.Instance.CompanyProfile.UpdateCompanyProfile(companyProfileModel);
+    }
 
+    public CompanyProfileModel GetCompanyProfileByUserID(int userID)
+    {
+        return DALManager.Instance.CompanyProfile.GetCompanyProfileByUserID(userID);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FineJobsApp.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace FineJobsApp.CPN_Form
 {
     public partial class CPNApplication : UserControl
     {
+        private ProfileModel profile;
+        private UserModel user;
+        private ApplicationModel application;
         public CPNApplication()
         {
             InitializeComponent();
@@ -43,7 +47,37 @@ namespace FineJobsApp.CPN_Form
             StatusCombox.Text = statusOption;
             StatusCombox.Enabled = false;
         }
+        public void AddData(UserModel user, ProfileModel profile, ApplicationModel application)
+        {
+            this.profile = profile;
+            this.user = user;
+            this.application = application;
+        }
 
+        private void ContactBtn_Click(object sender, EventArgs e)
+        {
+            MailController.OpenGmailWithRecipient(this.user.Email);
+        }
 
+        private void ResumeBtn_Click(object sender, EventArgs e)
+        {
+            ServiceManager.Instance.OpenLink.OpenUrl(this.profile.ResumeLink);
+        }
+        bool isShow = false;
+        private void StatusBtn_Click(object sender, EventArgs e)
+        {
+            isShow = !isShow;
+            StatusCombox.Enabled = isShow;
+
+            if (isShow)
+            {
+                StatusBtn.Text = "Save";
+            }
+            else
+            {
+                ControllerManager.Instance.ApplicationController.UpdateApplicationStatus(application.ApplicationID, StatusCombox.Text);
+                StatusBtn.Text = "Change";
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ public class CompanyProfileDAL
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
-            string sql = "SELECT * FROM CompanyProfile WHERE UserID = @UserID";
+            string sql = "SELECT * FROM CompanyProfiles WHERE UserID = @UserID";
             using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", userId);
@@ -48,7 +48,7 @@ public class CompanyProfileDAL
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
-            string sql = "INSERT INTO CompanyProfile (UserID, CompanyName, Description, Industry, Website, ContactInfo, CreatedAt) VALUES (@UserID, @CompanyName, @Description, @Industry, @Website, @ContactInfo, @CreatedAt)";
+            string sql = "INSERT INTO CompanyProfiles (UserID, CompanyName, Description, Industry, Website, ContactInfo, CreatedAt) VALUES (@UserID, @CompanyName, @Description, @Industry, @Website, @ContactInfo, @CreatedAt)";
             using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@UserID", companyProfile.UserID);
@@ -68,7 +68,7 @@ public class CompanyProfileDAL
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
-            string sql = "UPDATE CompanyProfile SET CompanyName = @CompanyName, Description = @Description, Industry = @Industry, Website = @Website, ContactInfo = @ContactInfo WHERE UserID = @UserID";
+            string sql = "UPDATE CompanyProfiles SET CompanyName = @CompanyName, Description = @Description, Industry = @Industry, Website = @Website, ContactInfo = @ContactInfo WHERE UserID = @UserID";
             using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@CompanyName", companyProfile.CompanyName);

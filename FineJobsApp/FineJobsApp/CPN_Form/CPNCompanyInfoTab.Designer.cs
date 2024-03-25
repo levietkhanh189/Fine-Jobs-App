@@ -36,7 +36,7 @@
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             Description = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            Industry = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             Website = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
@@ -158,22 +158,22 @@
             materialLabel5.TabIndex = 7;
             materialLabel5.Text = "Industry*";
             // 
-            // materialTextBox2
+            // Industry
             // 
-            materialTextBox2.AnimateReadOnly = false;
-            materialTextBox2.BorderStyle = BorderStyle.None;
-            materialTextBox2.Depth = 0;
-            materialTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox2.LeadingIcon = null;
-            materialTextBox2.Location = new Point(71, 282);
-            materialTextBox2.MaxLength = 50;
-            materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox2.Multiline = false;
-            materialTextBox2.Name = "materialTextBox2";
-            materialTextBox2.Size = new Size(297, 50);
-            materialTextBox2.TabIndex = 6;
-            materialTextBox2.Text = "";
-            materialTextBox2.TrailingIcon = null;
+            Industry.AnimateReadOnly = false;
+            Industry.BorderStyle = BorderStyle.None;
+            Industry.Depth = 0;
+            Industry.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Industry.LeadingIcon = null;
+            Industry.Location = new Point(71, 282);
+            Industry.MaxLength = 50;
+            Industry.MouseState = MaterialSkin.MouseState.OUT;
+            Industry.Multiline = false;
+            Industry.Name = "Industry";
+            Industry.Size = new Size(297, 50);
+            Industry.TabIndex = 6;
+            Industry.Text = "";
+            Industry.TrailingIcon = null;
             // 
             // materialLabel6
             // 
@@ -313,6 +313,7 @@
             UpdateBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             UpdateBtn.UseAccentColor = false;
             UpdateBtn.UseVisualStyleBackColor = true;
+            UpdateBtn.Click += UpdateBtn_Click;
             // 
             // SaveBtn
             // 
@@ -333,6 +334,7 @@
             SaveBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             SaveBtn.UseAccentColor = true;
             SaveBtn.UseVisualStyleBackColor = true;
+            SaveBtn.Click += SaveBtn_Click;
             // 
             // CancleBtn
             // 
@@ -353,6 +355,7 @@
             CancleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             CancleBtn.UseAccentColor = true;
             CancleBtn.UseVisualStyleBackColor = true;
+            CancleBtn.Click += CancleBtn_Click;
             // 
             // CPNCompanyInfoTab
             // 
@@ -371,7 +374,7 @@
             Controls.Add(materialLabel6);
             Controls.Add(Website);
             Controls.Add(materialLabel5);
-            Controls.Add(materialTextBox2);
+            Controls.Add(Industry);
             Controls.Add(materialLabel4);
             Controls.Add(Description);
             Controls.Add(materialLabel3);
@@ -382,6 +385,7 @@
             MinimumSize = new Size(1592, 824);
             Name = "CPNCompanyInfoTab";
             Size = new Size(1592, 824);
+            Load += CPNCompanyInfoTab_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -396,7 +400,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialTextBox Description;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox Industry;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialTextBox Website;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;

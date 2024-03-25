@@ -74,6 +74,7 @@
             materialCard1.Padding = new Padding(14);
             materialCard1.Size = new Size(1246, 133);
             materialCard1.TabIndex = 1;
+            materialCard1.Paint += materialCard1_Paint;
             // 
             // FindApplication
             // 
@@ -83,7 +84,7 @@
             FindApplication.Depth = 0;
             FindApplication.HighEmphasis = true;
             FindApplication.Icon = Properties.Resources.icons8_contacts_100;
-            FindApplication.Location = new Point(1133, 41);
+            FindApplication.Location = new Point(1133, 43);
             FindApplication.Margin = new Padding(4, 6, 4, 6);
             FindApplication.MouseState = MaterialSkin.MouseState.HOVER;
             FindApplication.Name = "FindApplication";
@@ -115,16 +116,18 @@
             EditBtn.Depth = 0;
             EditBtn.HighEmphasis = true;
             EditBtn.Icon = Properties.Resources.icons8_edit_144;
-            EditBtn.Location = new Point(1063, 41);
+            EditBtn.Location = new Point(998, 43);
             EditBtn.Margin = new Padding(4, 6, 4, 6);
             EditBtn.MouseState = MaterialSkin.MouseState.HOVER;
             EditBtn.Name = "EditBtn";
             EditBtn.NoAccentTextColor = Color.Empty;
-            EditBtn.Size = new Size(43, 43);
+            EditBtn.Size = new Size(108, 43);
             EditBtn.TabIndex = 4;
+            EditBtn.Text = "Change";
             EditBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             EditBtn.UseAccentColor = false;
             EditBtn.UseVisualStyleBackColor = true;
+            EditBtn.Click += EditBtn_Click;
             // 
             // DeleteBtn
             // 
@@ -160,7 +163,7 @@
             JobStatus.IntegralHeight = false;
             JobStatus.ItemHeight = 43;
             JobStatus.Items.AddRange(new object[] { "Open", "Close" });
-            JobStatus.Location = new Point(855, 38);
+            JobStatus.Location = new Point(805, 38);
             JobStatus.MaxDropDownItems = 4;
             JobStatus.MouseState = MaterialSkin.MouseState.OUT;
             JobStatus.Name = "JobStatus";

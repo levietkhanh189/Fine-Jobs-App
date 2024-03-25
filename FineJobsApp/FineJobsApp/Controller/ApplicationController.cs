@@ -18,6 +18,6 @@ public class ApplicationController
 
     public void UpdateApplicationStatus(int applicationId, string status)
     {
-        // Xử lý cập nhật trạng thái của ứng dụng/job apply
+        ApplicationModel application = DALManager.Instance.Application.GetApplicationByApplicationID(applicationId);
     }
 }

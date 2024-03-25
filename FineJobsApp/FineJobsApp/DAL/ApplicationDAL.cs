@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Npgsql; // Replaced System.Data.SqlClient with Npgsql
 using System.Linq;
@@ -36,6 +36,34 @@ public class ApplicationDAL
         }
         return applications;
     }
+
+    public ApplicationModel GetApplicationByApplicationID(int applicationID)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Applications WHERE ApplicationID = @ApplicationID";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@ApplicationID", applicationID);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read()) // Sử dụng if thay vì while vì chỉ có một kết quả
+            {
+                ApplicationModel application = new ApplicationModel
+                {
+                    ApplicationID = Convert.ToInt32(reader["ApplicationID"]),
+                    JobID = Convert.ToInt32(reader["JobID"]),
+                    ApplicantID = Convert.ToInt32(reader["ApplicantID"]),
+                    Status = reader["Status"].ToString(),
+                    ApplyDate = Convert.ToDateTime(reader["ApplyDate"])
+                };
+                connection.Close();
+                return application;
+            }
+        }
+        return null; // Trả về null nếu không tìm thấy Application với ID cung cấp
+    }
+
 
     public void AddApplication(ApplicationModel application)
     {

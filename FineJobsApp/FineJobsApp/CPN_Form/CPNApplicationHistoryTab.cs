@@ -40,8 +40,9 @@ namespace FineJobsApp.CPN_Form
             CPNApplication application = new CPNApplication();
             ProfileModel profile = ControllerManager.Instance.ProfileController.GetProfile(model.ApplicantID);
             JobModel job = ControllerManager.Instance.JobController.GetJob(model.JobID);
-
+            UserModel user = ControllerManager.Instance.UserController.GetUserByUserID(model.ApplicantID);
             application.InitializeComponentsValues(profile.FullName, job.Title, profile.Education, profile.Experience, profile.Skills, model.Status);
+            application.AddData(user, profile,model);
             return application;
         }
 

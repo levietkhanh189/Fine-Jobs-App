@@ -64,5 +64,26 @@ namespace FineJobsApp
         {
 
         }
+
+        private void SendCodeButton_Click(object sender, EventArgs e)
+        {
+            ControllerManager.Instance.UserController.SendCode(EmailTextbox.Text);
+        }
+
+        private void SignupButton_Click(object sender, EventArgs e)
+        {
+            UserModel userModel = new UserModel(CompanyNameTextbox.Text, PasswordTextbox.Text, EmailTextbox.Text,"Company",DateTime.Now);
+            bool status = ControllerManager.Instance.UserController.RegisterCompany(userModel,CodeTextbox.Text);
+            if(status)
+            {
+                ControllerManager.Instance.CompanyProfileController.CreateFirstCompanyProfile(userModel);
+                this.Hide();
+                FormManager.ShowForm<CPNLoginForm>();
+            }
+            else
+            {
+                MessageBox.Show("Code or password is not correct");
+            }
+        }
     }
 }

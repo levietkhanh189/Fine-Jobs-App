@@ -35,6 +35,28 @@ public class UserController
         return true;
     }
 
+    public bool RegisterCompany(UserModel userModel, string code)
+    {
+        if (userCode != int.Parse(code))
+        {
+            return false;
+        }
+        DALManager.Instance.User.AddUser(userModel);
+        return true;
+    }
+
+    public int GetUserID(string email)
+    {
+        UserModel user = DALManager.Instance.User.GetUserByEmail(email);
+        return user.UserID;
+    }
+
+    public UserModel GetUserByUserID(int userId)
+    {
+        UserModel user = DALManager.Instance.User.GetUserByID(userId);
+        return user;
+    }
+
     public bool UpdateUser(UserModel userModel)
     {
         UserModel user = DALManager.Instance.User.GetUserByID(userModel.UserID);

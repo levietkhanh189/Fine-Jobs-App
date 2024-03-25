@@ -12,6 +12,7 @@ namespace FineJobsApp.CPN_Form
 {
     public partial class CPNJob : UserControl
     {
+        private JobModel jobModel;
         public CPNJob()
         {
             InitializeComponent();
@@ -22,15 +23,39 @@ namespace FineJobsApp.CPN_Form
 
         }
 
-        public void InitializeJobComponents(string jobName, string jobType, string jobStatus, string countText)
+        public void InitializeJobComponents(JobModel jobModel, string jobName, string jobType, string jobStatus, string countText)
         {
+            this.jobModel = jobModel;
             JobName.Text = jobName;
 
             JobType.Text = jobType;
 
             JobStatus.Text = jobStatus;
-             CountText.Text = countText;
+            CountText.Text = countText;
+            JobStatus.Enabled = false;
         }
 
+        private bool isEdit = false;
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            isEdit = !isEdit;
+            if (isEdit)
+            {
+                EditBtn.Text = "Save";
+                JobStatus.Enabled = true;
+            }
+            else
+            {
+                EditBtn.Text = "Edit";
+                JobStatus.Enabled = false;
+                jobModel.Status = JobStatus.Text;
+                ControllerManager.Instance.JobController.UpdateJob(jobModel);
+            }
+        }
+
+        private void materialCard1_Paint(object sender, PaintEventArgs e)
+        {
+            FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(jobModel.Title,jobModel.JobType,jobModel.SalaryRange,jobModel.SkillRequirements,jobModel.Description);
+        }
     }
 }

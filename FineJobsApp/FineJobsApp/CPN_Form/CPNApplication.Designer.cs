@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             StatusBtn = new MaterialSkin.Controls.MaterialButton();
-            materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            ContactBtn = new MaterialSkin.Controls.MaterialButton();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             StatusCombox = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -72,26 +72,28 @@
             StatusBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             StatusBtn.UseAccentColor = false;
             StatusBtn.UseVisualStyleBackColor = true;
+            StatusBtn.Click += StatusBtn_Click;
             // 
-            // materialButton2
+            // ContactBtn
             // 
-            materialButton2.AutoSize = false;
-            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton2.Depth = 0;
-            materialButton2.HighEmphasis = true;
-            materialButton2.Icon = null;
-            materialButton2.Location = new Point(102, 175);
-            materialButton2.Margin = new Padding(4, 6, 4, 6);
-            materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton2.Name = "materialButton2";
-            materialButton2.NoAccentTextColor = Color.Empty;
-            materialButton2.Size = new Size(195, 44);
-            materialButton2.TabIndex = 4;
-            materialButton2.Text = "Contact";
-            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton2.UseAccentColor = true;
-            materialButton2.UseVisualStyleBackColor = true;
+            ContactBtn.AutoSize = false;
+            ContactBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ContactBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            ContactBtn.Depth = 0;
+            ContactBtn.HighEmphasis = true;
+            ContactBtn.Icon = null;
+            ContactBtn.Location = new Point(102, 175);
+            ContactBtn.Margin = new Padding(4, 6, 4, 6);
+            ContactBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            ContactBtn.Name = "ContactBtn";
+            ContactBtn.NoAccentTextColor = Color.Empty;
+            ContactBtn.Size = new Size(195, 44);
+            ContactBtn.TabIndex = 4;
+            ContactBtn.Text = "Contact";
+            ContactBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            ContactBtn.UseAccentColor = true;
+            ContactBtn.UseVisualStyleBackColor = true;
+            ContactBtn.Click += ContactBtn_Click;
             // 
             // materialLabel2
             // 
@@ -160,7 +162,7 @@
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.Controls.Add(materialDivider1);
             materialCard1.Controls.Add(ResumeBtn);
-            materialCard1.Controls.Add(materialButton2);
+            materialCard1.Controls.Add(ContactBtn);
             materialCard1.Controls.Add(StatusBtn);
             materialCard1.Controls.Add(materialLabel2);
             materialCard1.Controls.Add(StatusCombox);
@@ -204,6 +206,7 @@
             ResumeBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             ResumeBtn.UseAccentColor = false;
             ResumeBtn.UseVisualStyleBackColor = true;
+            ResumeBtn.Click += ResumeBtn_Click;
             // 
             // materialCard2
             // 
@@ -371,7 +374,7 @@
         private MaterialSkin.Controls.MaterialButton StatusBtn;
         private MaterialSkin.Controls.MaterialComboBox StatusCombox;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton ContactBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialCard materialCard1;

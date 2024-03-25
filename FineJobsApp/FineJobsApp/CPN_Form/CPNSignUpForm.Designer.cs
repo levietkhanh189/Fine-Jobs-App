@@ -50,7 +50,7 @@
             EmailTextbox.AnimateReadOnly = false;
             EmailTextbox.BorderStyle = BorderStyle.None;
             EmailTextbox.Depth = 0;
-            EmailTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            EmailTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             EmailTextbox.Hint = "Enter your email";
             EmailTextbox.LeadingIcon = null;
             EmailTextbox.Location = new Point(100, 247);
@@ -70,7 +70,7 @@
             PasswordTextbox.AnimateReadOnly = false;
             PasswordTextbox.BorderStyle = BorderStyle.None;
             PasswordTextbox.Depth = 0;
-            PasswordTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             PasswordTextbox.Hint = "Enter your password";
             PasswordTextbox.LeadingIcon = null;
             PasswordTextbox.Location = new Point(100, 329);
@@ -171,6 +171,7 @@
             SignupButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             SignupButton.UseAccentColor = false;
             SignupButton.UseVisualStyleBackColor = false;
+            SignupButton.Click += SignupButton_Click;
             // 
             // materialLabel3
             // 
@@ -204,7 +205,7 @@
             PasswordTextbox2.AnimateReadOnly = false;
             PasswordTextbox2.BorderStyle = BorderStyle.None;
             PasswordTextbox2.Depth = 0;
-            PasswordTextbox2.Font = new Font("Microsoft Sans Serif", 4.8F);
+            PasswordTextbox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             PasswordTextbox2.Hint = "Enter your password again";
             PasswordTextbox2.LeadingIcon = null;
             PasswordTextbox2.Location = new Point(100, 411);
@@ -237,7 +238,7 @@
             CompanyNameTextbox.AnimateReadOnly = false;
             CompanyNameTextbox.BorderStyle = BorderStyle.None;
             CompanyNameTextbox.Depth = 0;
-            CompanyNameTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            CompanyNameTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             CompanyNameTextbox.Hint = "Enter your company name";
             CompanyNameTextbox.LeadingIcon = null;
             CompanyNameTextbox.Location = new Point(100, 172);
@@ -256,7 +257,7 @@
             CodeTextbox.AnimateReadOnly = false;
             CodeTextbox.BorderStyle = BorderStyle.None;
             CodeTextbox.Depth = 0;
-            CodeTextbox.Font = new Font("Microsoft Sans Serif", 4.8F);
+            CodeTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             CodeTextbox.Hint = "Enter your code";
             CodeTextbox.LeadingIcon = null;
             CodeTextbox.Location = new Point(100, 468);
@@ -289,6 +290,7 @@
             SendCodeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             SendCodeButton.UseAccentColor = false;
             SendCodeButton.UseVisualStyleBackColor = true;
+            SendCodeButton.Click += SendCodeButton_Click;
             // 
             // CPNSignUpForm
             // 
