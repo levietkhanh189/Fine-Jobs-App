@@ -81,4 +81,74 @@ public class CompanyProfileDAL
             }
         }
     }
+
+    public List<CompanyProfileModel> GetAllCompanies()
+    {
+        List<CompanyProfileModel> companies = new List<CompanyProfileModel>();
+
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "SELECT * FROM CompanyProfiles";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CompanyProfileModel company = new CompanyProfileModel
+                        {
+                            CompanyProfileID = (int)reader["CompanyProfileID"],
+                            UserID = (int)reader["UserID"],
+                            CompanyName = (string)reader["CompanyName"],
+                            Description = (string)reader["Description"],
+                            Industry = (string)reader["Industry"],
+                            Website = (string)reader["Website"],
+                            ContactInfo = (string)reader["ContactInfo"],
+                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
+                        };
+
+                        companies.Add(company);
+                    }
+                }
+            }
+        }
+
+        return companies;
+    }
+
+    public CompanyProfileModel GetCompanyProfileByCompanyID(int companyId)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "SELECT * FROM CompanyProfiles WHERE CompanyId = @CompanyId";
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@CompanyId", companyId);
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new CompanyProfileModel
+                        {
+                            CompanyProfileID = (int)reader["CompanyProfileID"],
+                            UserID = (int)reader["UserID"],
+                            CompanyName = (string)reader["CompanyName"],
+                            Description = (string)reader["Description"],
+                            Industry = (string)reader["Industry"],
+                            Website = (string)reader["Website"],
+                            ContactInfo = (string)reader["ContactInfo"],
+                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"]) // Assuming ApplyDate is a mistake and should be CreatedAt
+                        };
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+
 }

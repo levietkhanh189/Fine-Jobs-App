@@ -94,4 +94,30 @@ public class ApplicationDAL
             connection.Close();
         }
     }
+
+    public List<ApplicationModel> GetApplicationsByUserID(int userID)
+    {
+        List<ApplicationModel> applications = new List<ApplicationModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Applications WHERE ApplicantID = @UserID";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@UserID", userID);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ApplicationModel application = new ApplicationModel();
+                application.ApplicationID = Convert.ToInt32(reader["ApplicationID"]);
+                application.JobID = Convert.ToInt32(reader["JobID"]);
+                application.ApplicantID = Convert.ToInt32(reader["ApplicantID"]);
+                application.Status = reader["Status"].ToString();
+                application.ApplyDate = Convert.ToDateTime(reader["ApplyDate"]);
+                applications.Add(application);
+            }
+            connection.Close();
+        }
+        return applications;
+    }
+
 }
