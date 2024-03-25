@@ -31,13 +31,13 @@ namespace FineJobsApp.CPN_Form
         {
             CPNJob job = new CPNJob();
             int count = ControllerManager.Instance.ApplicationController.CountApplicationsByJobID(model.JobID);
-            job.InitializeJobComponents(model.Title, model.JobType, model.Status,count+" Applications");
+            job.InitializeJobComponents(model,model.Title, model.JobType, model.Status,count+" Applications");
             return job;
         }
 
         private void CreatJobBtn_Click(object sender, EventArgs e)
         {
-             FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents();
+             FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Create);
         }
     }
 }

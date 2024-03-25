@@ -55,7 +55,7 @@ namespace FineJobsApp.CPN_Form
 
         private void materialCard1_Paint(object sender, PaintEventArgs e)
         {
-            FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(jobModel.Title,jobModel.JobType,jobModel.SalaryRange,jobModel.SkillRequirements,jobModel.Description);
+            FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Update,jobModel.Title,jobModel.JobType,jobModel.SalaryRange,jobModel.SkillRequirements,jobModel.Description);
         }
     }
 }
