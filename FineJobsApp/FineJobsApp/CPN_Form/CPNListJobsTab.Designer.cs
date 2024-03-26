@@ -37,6 +37,7 @@
             RightBtn = new MaterialSkin.Controls.MaterialButton();
             LeftBtn = new MaterialSkin.Controls.MaterialButton();
             CreatJobBtn = new MaterialSkin.Controls.MaterialButton();
+            ReloadBtn = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // materialLabel2
@@ -180,10 +181,31 @@
             CreatJobBtn.UseVisualStyleBackColor = true;
             CreatJobBtn.Click += CreatJobBtn_Click;
             // 
+            // ReloadBtn
+            // 
+            ReloadBtn.AutoSize = false;
+            ReloadBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ReloadBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            ReloadBtn.Depth = 0;
+            ReloadBtn.HighEmphasis = true;
+            ReloadBtn.Icon = Properties.Resources.icons8_reload_90;
+            ReloadBtn.Location = new Point(1515, 768);
+            ReloadBtn.Margin = new Padding(4, 6, 4, 6);
+            ReloadBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            ReloadBtn.Name = "ReloadBtn";
+            ReloadBtn.NoAccentTextColor = Color.Empty;
+            ReloadBtn.Size = new Size(39, 36);
+            ReloadBtn.TabIndex = 14;
+            ReloadBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            ReloadBtn.UseAccentColor = false;
+            ReloadBtn.UseVisualStyleBackColor = true;
+            ReloadBtn.Click += ReloadBtn_Click;
+            // 
             // CPNListJobsTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(ReloadBtn);
             Controls.Add(CreatJobBtn);
             Controls.Add(materialLabel3);
             Controls.Add(RightBtn);
@@ -211,5 +233,6 @@
         private MaterialSkin.Controls.MaterialButton RightBtn;
         private MaterialSkin.Controls.MaterialButton LeftBtn;
         private MaterialSkin.Controls.MaterialButton CreatJobBtn;
+        private MaterialSkin.Controls.MaterialButton ReloadBtn;
     }
 }

@@ -36,6 +36,7 @@
             LeftBtn = new MaterialSkin.Controls.MaterialButton();
             RightBtn = new MaterialSkin.Controls.MaterialButton();
             PageText = new MaterialSkin.Controls.MaterialLabel();
+            ReloadBtn = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // scrollview
@@ -160,10 +161,31 @@
             PageText.TabIndex = 7;
             PageText.Text = "1";
             // 
+            // ReloadBtn
+            // 
+            ReloadBtn.AutoSize = false;
+            ReloadBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ReloadBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            ReloadBtn.Depth = 0;
+            ReloadBtn.HighEmphasis = true;
+            ReloadBtn.Icon = Properties.Resources.icons8_reload_90;
+            ReloadBtn.Location = new Point(1447, 770);
+            ReloadBtn.Margin = new Padding(4, 6, 4, 6);
+            ReloadBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            ReloadBtn.Name = "ReloadBtn";
+            ReloadBtn.NoAccentTextColor = Color.Empty;
+            ReloadBtn.Size = new Size(39, 36);
+            ReloadBtn.TabIndex = 8;
+            ReloadBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            ReloadBtn.UseAccentColor = false;
+            ReloadBtn.UseVisualStyleBackColor = true;
+            ReloadBtn.Click += ReloadBtn_Click;
+            // 
             // CPNApplicationHistoryTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(ReloadBtn);
             Controls.Add(PageText);
             Controls.Add(RightBtn);
             Controls.Add(LeftBtn);
@@ -189,5 +211,6 @@
         private MaterialSkin.Controls.MaterialButton LeftBtn;
         private MaterialSkin.Controls.MaterialButton RightBtn;
         private MaterialSkin.Controls.MaterialLabel PageText;
+        private MaterialSkin.Controls.MaterialButton ReloadBtn;
     }
 }

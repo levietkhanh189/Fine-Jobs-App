@@ -22,6 +22,11 @@ namespace FineJobsApp.CPN_Form
 
         private void CPNApplicationHistoryTab_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             models = ControllerManager.Instance.ApplicationController.GetApplicationsByCurrentCompany();
             LoadApplications(models);
         }
@@ -42,7 +47,7 @@ namespace FineJobsApp.CPN_Form
             JobModel job = ControllerManager.Instance.JobController.GetJob(model.JobID);
             UserModel user = ControllerManager.Instance.UserController.GetUserByUserID(model.ApplicantID);
             application.InitializeComponentsValues(profile.FullName, job.Title, profile.Education, profile.Experience, profile.Skills, model.Status);
-            application.AddData(user, profile,model);
+            application.AddData(user, profile, model);
             return application;
         }
 
@@ -54,6 +59,11 @@ namespace FineJobsApp.CPN_Form
         private void SearchBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ReloadBtn_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

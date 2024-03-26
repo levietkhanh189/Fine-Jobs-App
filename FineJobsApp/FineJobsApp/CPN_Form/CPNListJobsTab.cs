@@ -20,6 +20,11 @@ namespace FineJobsApp.CPN_Form
 
         private void CPNListJobsTab_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             models = ControllerManager.Instance.JobController.GetJobsByCurrentComapy();
             foreach (var job in models)
             {
@@ -31,13 +36,18 @@ namespace FineJobsApp.CPN_Form
         {
             CPNJob job = new CPNJob();
             int count = ControllerManager.Instance.ApplicationController.CountApplicationsByJobID(model.JobID);
-            job.InitializeJobComponents(model,model.Title, model.JobType, model.Status,count+" Applications");
+            job.InitializeJobComponents(model, model.Title, model.JobType, model.Status, count + " Applications");
             return job;
         }
 
         private void CreatJobBtn_Click(object sender, EventArgs e)
         {
-             FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Create);
+            FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Create);
+        }
+
+        private void ReloadBtn_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
