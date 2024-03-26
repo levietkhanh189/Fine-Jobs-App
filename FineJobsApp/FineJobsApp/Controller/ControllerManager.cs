@@ -1,3 +1,4 @@
+using FineJobsApp.Controller;
 using System;
 
 public class ControllerManager
@@ -15,6 +16,9 @@ public class ControllerManager
         }
     }
     public UserController UserController { get; private set; }
+
+    public CTM_UserController CTM_UserController { get; private set; }
+
     public ProfileController ProfileController { get; private set; }
     public JobController JobController { get; private set; }
     public ApplicationController ApplicationController { get; private set; }
@@ -29,6 +33,7 @@ public class ControllerManager
     private void InitializeControllers()
     {
         UserController = new UserController();
+        CTM_UserController = new CTM_UserController();
         ProfileController = new ProfileController();
         JobController = new JobController();
         ApplicationController = new ApplicationController();

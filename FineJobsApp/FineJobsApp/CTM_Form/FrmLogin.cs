@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using FineJobsApp.CPN_Form;
+using FineJobsApp;
+using MaterialSkin.Controls;
+using MaterialSkin;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,118 +10,96 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AnimationSliding_Sign_In_Sign_Up
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : MaterialForm
     {
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nLeftRect,     // x-coordinate of upper-left corner
+             int nTopRect,      // y-coordinate of upper-left corner
+             int nRightRect,    // x-coordinate of lower-right corner
+             int nBottomRect,   // y-coordinate of lower-right corner
+             int nWidthEllipse, // width of ellipse
+             int nHeightEllipse // height of ellipse
+        );
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            // Tạo vùng bo tròn cho form
+            IntPtr ptr = CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20); // 20, 20 đại diện cho độ rộng và độ cao của elip dùng để tạo góc bo tròn.
+            this.Region = Region.FromHrgn(ptr);
+            // Giải phóng vùng đã tạo
+            DeleteObject(ptr);
+        }
+
+        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        public static extern bool DeleteObject(IntPtr hObject);
+
         public FrmLogin()
         {
             InitializeComponent();
-            webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            webView21.EnsureCoreWebView2Async();
-            InitLoadHtml();
 
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
-        private void InitLoadHtml()
-        {          
-
-            webView21.CoreWebView2InitializationCompleted += WebView21_CoreWebView2InitializationCompleted;
-            webView21.Dock = DockStyle.Fill;
-            this.Controls.Add(webView21);
-        }
-
-        private void WebView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
+        private void EmailLabel_Click(object sender, EventArgs e)
         {
-            string curDir = Directory.GetCurrentDirectory();
-            var uri = new Uri(String.Format("file:///{0}/html/index.html", curDir));
-            webView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
-          
-            webView21.CoreWebView2.Navigate(uri.ToString());
-            webView21.WebMessageReceived += WebView21_WebMessageReceived;
-        }
-        public struct JsonObject
-        {
-            public string Key;
-            public string Value;
+
         }
 
-        private  async Task<string> GetTextboxValue(string elementId)
+        private void TittleLable_Click(object sender, EventArgs e)
         {
-            string script = $"document.getElementById('{elementId}').value";
-            var result = await webView21.CoreWebView2.ExecuteScriptAsync(script);
-            return result.Trim('"');
+
         }
 
-        private async Task SetFocus(string elementId)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
-            string script = $"setFocusOnInput('{elementId}');";
-            var result = await webView21.CoreWebView2.ExecuteScriptAsync(script);
-           
-        }
-
-        private async Task ShowSnackBar(string message, int timeout = 3000)
-        {
-            message = $"<i class=\"fa fa-exclamation-triangle\" style=\"color: white; font-size: 16px;\"> </i> {message}";
-            string script = $"showSnackbar('{message}', {timeout});";
-            var result = await webView21.CoreWebView2.ExecuteScriptAsync(script);
-          
-        }
-
-        private async void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
-        {
-            var jsonObject = JsonConvert.DeserializeObject<JsonObject>(e.WebMessageAsJson);
-            var idElemnt = jsonObject.Value;
-            switch (jsonObject.Key)
+            if (ControllerManager.Instance.CTM_UserController.Login(EmailTextbox.Text, PasswordTextbox.Text, "Company"))
             {
-                case "click":
-                    if(idElemnt != null && idElemnt != "")
-                    {
-                        if(idElemnt == "btnLogin")
-                        {
-                           await ProcessLogin();
-                        }
-                    }
-                    break;
-
-            }
-        }
-
-        private async Task ProcessLogin()
-        {
-            var username = await GetTextboxValue("txtUsername");
-            var password = await GetTextboxValue("txtPassword");
-            if(username == "")
-            {
-                await ShowSnackBar("Chưa nhập tên đăng nhập.");
-                await SetFocus("txtUsername");
-                return;
-            }
-
-            if (password == "")
-            {
-                await ShowSnackBar("Chưa nhập mật khẩu.");
-                await SetFocus("txtPassword");
-                return;
-            }
-
-            if( password == "123")
-            {
-                //hiện FrmHome
-                FrmHome frm = new FrmHome();
-                frm.Show();
                 this.Hide();
+                FormManager.ShowForm<FrmHome>();
             }
             else
             {
-                await ShowSnackBar("Tên đăng nhập hoặc mật khẩu không đúng.");
+                MessageBox.Show("Email or Password is incorrect");
             }
+        }
 
+        private void SignupButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManager.ShowForm<CPNSignUpForm>();
+        }
+
+        private void PasswordTextbox_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmailTextbox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManager.ShowForm<CPNForgotPasswordForm>();
+        }
+
+        private void CPNLoginForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -41,8 +41,8 @@
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             SkillTextBox = new MaterialSkin.Controls.MaterialTextBox();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             DescriptionTextbox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             materialCard1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +52,8 @@
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel5.Location = new Point(17, 10);
+            materialLabel5.Location = new Point(8, 5);
+            materialLabel5.Margin = new Padding(1, 0, 1, 0);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(66, 17);
@@ -68,12 +69,13 @@
             JobNameTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             JobNameTextbox.Hint = "Enter job name";
             JobNameTextbox.LeadingIcon = null;
-            JobNameTextbox.Location = new Point(17, 32);
+            JobNameTextbox.Location = new Point(8, 16);
+            JobNameTextbox.Margin = new Padding(1, 1, 1, 1);
             JobNameTextbox.MaxLength = 50;
             JobNameTextbox.MouseState = MaterialSkin.MouseState.OUT;
             JobNameTextbox.Multiline = false;
             JobNameTextbox.Name = "JobNameTextbox";
-            JobNameTextbox.Size = new Size(296, 50);
+            JobNameTextbox.Size = new Size(139, 50);
             JobNameTextbox.TabIndex = 25;
             JobNameTextbox.Text = "";
             JobNameTextbox.TrailingIcon = null;
@@ -85,7 +87,8 @@
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Button;
             materialLabel3.HighEmphasis = true;
-            materialLabel3.Location = new Point(405, 354);
+            materialLabel3.Location = new Point(191, 173);
+            materialLabel3.Margin = new Padding(1, 0, 1, 0);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(1, 0);
@@ -101,12 +104,12 @@
             SaveButton.Depth = 0;
             SaveButton.HighEmphasis = false;
             SaveButton.Icon = null;
-            SaveButton.Location = new Point(505, 833);
-            SaveButton.Margin = new Padding(4, 6, 4, 6);
+            SaveButton.Location = new Point(238, 406);
+            SaveButton.Margin = new Padding(2, 3, 2, 3);
             SaveButton.MouseState = MaterialSkin.MouseState.HOVER;
             SaveButton.Name = "SaveButton";
             SaveButton.NoAccentTextColor = Color.Empty;
-            SaveButton.Size = new Size(247, 43);
+            SaveButton.Size = new Size(116, 21);
             SaveButton.TabIndex = 21;
             SaveButton.Text = "Save";
             SaveButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -120,7 +123,8 @@
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel1.Location = new Point(17, 638);
+            materialLabel1.Location = new Point(8, 311);
+            materialLabel1.Margin = new Padding(1, 0, 1, 0);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(60, 17);
@@ -142,11 +146,12 @@
             JobType.IntegralHeight = false;
             JobType.ItemHeight = 43;
             JobType.Items.AddRange(new object[] { "Part-Time", "Full-Time" });
-            JobType.Location = new Point(17, 658);
+            JobType.Location = new Point(8, 321);
+            JobType.Margin = new Padding(1, 1, 1, 1);
             JobType.MaxDropDownItems = 4;
             JobType.MouseState = MaterialSkin.MouseState.OUT;
             JobType.Name = "JobType";
-            JobType.Size = new Size(134, 49);
+            JobType.Size = new Size(65, 49);
             JobType.StartIndex = 0;
             JobType.TabIndex = 28;
             // 
@@ -156,7 +161,8 @@
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel2.Location = new Point(187, 635);
+            materialLabel2.Location = new Point(88, 310);
+            materialLabel2.Margin = new Padding(1, 0, 1, 0);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(57, 17);
@@ -172,12 +178,13 @@
             LocationTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             LocationTextbox.Hint = "Enter location";
             LocationTextbox.LeadingIcon = null;
-            LocationTextbox.Location = new Point(187, 657);
+            LocationTextbox.Location = new Point(88, 320);
+            LocationTextbox.Margin = new Padding(1, 1, 1, 1);
             LocationTextbox.MaxLength = 50;
             LocationTextbox.MouseState = MaterialSkin.MouseState.OUT;
             LocationTextbox.Multiline = false;
             LocationTextbox.Name = "LocationTextbox";
-            LocationTextbox.Size = new Size(296, 50);
+            LocationTextbox.Size = new Size(139, 50);
             LocationTextbox.TabIndex = 29;
             LocationTextbox.Text = "";
             LocationTextbox.TrailingIcon = null;
@@ -188,7 +195,8 @@
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel4.Location = new Point(351, 10);
+            materialLabel4.Location = new Point(165, 5);
+            materialLabel4.Margin = new Padding(1, 0, 1, 0);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(41, 17);
@@ -204,12 +212,13 @@
             SalaryTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             SalaryTextbox.Hint = "10.000.000-50.000.000";
             SalaryTextbox.LeadingIcon = null;
-            SalaryTextbox.Location = new Point(351, 32);
+            SalaryTextbox.Location = new Point(165, 16);
+            SalaryTextbox.Margin = new Padding(1, 1, 1, 1);
             SalaryTextbox.MaxLength = 50;
             SalaryTextbox.MouseState = MaterialSkin.MouseState.OUT;
             SalaryTextbox.Multiline = false;
             SalaryTextbox.Name = "SalaryTextbox";
-            SalaryTextbox.Size = new Size(182, 50);
+            SalaryTextbox.Size = new Size(86, 50);
             SalaryTextbox.TabIndex = 31;
             SalaryTextbox.Text = "";
             SalaryTextbox.TrailingIcon = null;
@@ -220,7 +229,8 @@
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel6.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel6.Location = new Point(17, 96);
+            materialLabel6.Location = new Point(8, 47);
+            materialLabel6.Margin = new Padding(1, 0, 1, 0);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             materialLabel6.Size = new Size(114, 17);
@@ -236,12 +246,13 @@
             SkillTextBox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             SkillTextBox.Hint = "Enter here";
             SkillTextBox.LeadingIcon = null;
-            SkillTextBox.Location = new Point(17, 118);
+            SkillTextBox.Location = new Point(8, 58);
+            SkillTextBox.Margin = new Padding(1, 1, 1, 1);
             SkillTextBox.MaxLength = 50;
             SkillTextBox.MouseState = MaterialSkin.MouseState.OUT;
             SkillTextBox.Multiline = false;
             SkillTextBox.Name = "SkillTextBox";
-            SkillTextBox.Size = new Size(675, 50);
+            SkillTextBox.Size = new Size(318, 50);
             SkillTextBox.TabIndex = 33;
             SkillTextBox.Text = "";
             SkillTextBox.TrailingIcon = null;
@@ -266,26 +277,13 @@
             materialCard1.Controls.Add(materialLabel3);
             materialCard1.Depth = 0;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(26, 84);
-            materialCard1.Margin = new Padding(14);
+            materialCard1.Location = new Point(12, 41);
+            materialCard1.Margin = new Padding(7, 7, 7, 7);
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(717, 729);
+            materialCard1.Padding = new Padding(7, 7, 7, 7);
+            materialCard1.Size = new Size(337, 356);
             materialCard1.TabIndex = 36;
-            // 
-            // materialLabel7
-            // 
-            materialLabel7.AutoSize = true;
-            materialLabel7.Depth = 0;
-            materialLabel7.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel7.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel7.Location = new Point(17, 189);
-            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel7.Name = "materialLabel7";
-            materialLabel7.Size = new Size(74, 17);
-            materialLabel7.TabIndex = 37;
-            materialLabel7.Text = "Description";
             // 
             // DescriptionTextbox
             // 
@@ -295,7 +293,8 @@
             DescriptionTextbox.Depth = 0;
             DescriptionTextbox.HideSelection = true;
             DescriptionTextbox.Hint = "Enter job description";
-            DescriptionTextbox.Location = new Point(17, 223);
+            DescriptionTextbox.Location = new Point(8, 109);
+            DescriptionTextbox.Margin = new Padding(1, 1, 1, 1);
             DescriptionTextbox.MaxLength = 32767;
             DescriptionTextbox.MouseState = MaterialSkin.MouseState.OUT;
             DescriptionTextbox.Name = "DescriptionTextbox";
@@ -306,20 +305,36 @@
             DescriptionTextbox.SelectionLength = 0;
             DescriptionTextbox.SelectionStart = 0;
             DescriptionTextbox.ShortcutsEnabled = true;
-            DescriptionTextbox.Size = new Size(675, 409);
+            DescriptionTextbox.Size = new Size(318, 200);
             DescriptionTextbox.TabIndex = 39;
             DescriptionTextbox.TabStop = false;
             DescriptionTextbox.TextAlign = HorizontalAlignment.Left;
             DescriptionTextbox.UseSystemPasswordChar = false;
             // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel7.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
+            materialLabel7.Location = new Point(8, 92);
+            materialLabel7.Margin = new Padding(1, 0, 1, 0);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(74, 17);
+            materialLabel7.TabIndex = 37;
+            materialLabel7.Text = "Description";
+            // 
             // CPNCreateNewJob
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(769, 897);
+            ClientSize = new Size(362, 438);
             Controls.Add(materialCard1);
             Controls.Add(SaveButton);
+            Margin = new Padding(1, 1, 1, 1);
             Name = "CPNCreateNewJob";
+            Padding = new Padding(1, 31, 1, 1);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Job Infomation";
             Load += CPNCreateNewJob_Load;

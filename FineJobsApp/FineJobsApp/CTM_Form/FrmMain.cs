@@ -52,18 +52,18 @@ namespace AnimationSliding_Sign_In_Sign_Up
 
         private void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
         {
-            var jsonObject = JsonConvert.DeserializeObject<JsonObject>(e.WebMessageAsJson);
-            var idElemnt = jsonObject.Value;
-            switch (jsonObject.Key)
-            {
-                case "click":
-                    if (idElemnt != null && idElemnt != "")
-                    {
-                        MessageBox.Show($"Bạn click: {idElemnt}", "Message");
-                    }
-                    break;
+            //var jsonObject = JsonConvert.DeserializeObject<JsonObject>(e.WebMessageAsJson);
+            //var idElemnt = jsonObject.Value;
+            //switch (jsonObject.Key)
+            //{
+            //    case "click":
+            //        if (idElemnt != null && idElemnt != "")
+            //        {
+            //            MessageBox.Show($"Bạn click: {idElemnt}", "Message");
+            //        }
+            //        break;
 
-            }
+            //}
         }
 
         private async Task SetUsername(string username)

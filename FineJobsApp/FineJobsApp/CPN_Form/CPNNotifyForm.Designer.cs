@@ -41,7 +41,8 @@
             TittleLable.Font = new Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel);
             TittleLable.FontType = MaterialSkin.MaterialSkinManager.fontType.H3;
             TittleLable.HighEmphasis = true;
-            TittleLable.Location = new Point(166, 155);
+            TittleLable.Location = new Point(78, 76);
+            TittleLable.Margin = new Padding(1, 0, 1, 0);
             TittleLable.MouseState = MaterialSkin.MouseState.HOVER;
             TittleLable.Name = "TittleLable";
             TittleLable.Size = new Size(251, 58);
@@ -58,12 +59,12 @@
             SubmitBtn.Depth = 0;
             SubmitBtn.HighEmphasis = true;
             SubmitBtn.Icon = null;
-            SubmitBtn.Location = new Point(124, 266);
-            SubmitBtn.Margin = new Padding(4, 6, 4, 6);
+            SubmitBtn.Location = new Point(58, 130);
+            SubmitBtn.Margin = new Padding(2, 3, 2, 3);
             SubmitBtn.MouseState = MaterialSkin.MouseState.HOVER;
             SubmitBtn.Name = "SubmitBtn";
             SubmitBtn.NoAccentTextColor = Color.Empty;
-            SubmitBtn.Size = new Size(348, 61);
+            SubmitBtn.Size = new Size(164, 30);
             SubmitBtn.TabIndex = 19;
             SubmitBtn.Text = "Submit";
             SubmitBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -79,12 +80,12 @@
             CancleBtn.Depth = 0;
             CancleBtn.HighEmphasis = true;
             CancleBtn.Icon = null;
-            CancleBtn.Location = new Point(126, 339);
-            CancleBtn.Margin = new Padding(4, 6, 4, 6);
+            CancleBtn.Location = new Point(59, 165);
+            CancleBtn.Margin = new Padding(2, 3, 2, 3);
             CancleBtn.MouseState = MaterialSkin.MouseState.HOVER;
             CancleBtn.Name = "CancleBtn";
             CancleBtn.NoAccentTextColor = Color.Empty;
-            CancleBtn.Size = new Size(346, 58);
+            CancleBtn.Size = new Size(163, 28);
             CancleBtn.TabIndex = 20;
             CancleBtn.Text = "Cancle";
             CancleBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -93,13 +94,15 @@
             // 
             // CPNNotifyForm
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(589, 466);
+            ClientSize = new Size(277, 227);
             Controls.Add(CancleBtn);
             Controls.Add(SubmitBtn);
             Controls.Add(TittleLable);
+            Margin = new Padding(1, 1, 1, 1);
             Name = "CPNNotifyForm";
+            Padding = new Padding(1, 31, 1, 1);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CPNNotifyForm";
             ResumeLayout(false);

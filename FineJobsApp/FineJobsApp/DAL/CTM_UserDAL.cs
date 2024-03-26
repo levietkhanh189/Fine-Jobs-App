@@ -15,7 +15,6 @@ namespace FineJobsApp.DAL
         {
             this.connectionString = connectionString;
         }
-        s
         public UserModel GetUserByID(int userID)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))

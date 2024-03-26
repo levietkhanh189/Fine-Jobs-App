@@ -93,6 +93,7 @@
             button2.TabIndex = 19;
             button2.Text = "SEND MY CV";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label7
             // 

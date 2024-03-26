@@ -26,5 +26,10 @@ namespace AnimationSliding_Sign_In_Sign_Up
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
