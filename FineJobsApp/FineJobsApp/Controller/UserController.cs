@@ -1,3 +1,5 @@
+using AnimationSliding_Sign_In_Sign_Up;
+using FineJobsApp;
 using FineJobsApp.Controller;
 using System;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -12,13 +14,15 @@ public class UserController
     public bool Login(string username, string password, string type)
     {
         UserModel user = DALManager.Instance.User.GetUserByEmail(username);
-        if(user == null || user.Password != password || user.UserType != type)
+        if (user == null || user.Password != password)
         {
-            return false;
+            return false;  
         }
+
         ControllerManager.Instance.SetUserModel(user);
         return true;
     }
+
 
     public void SendCode(string username)
     {

@@ -15,4 +15,9 @@ public class ProfileController
     {
         // Xử lý thêm hoặc cập nhật hồ sơ
     }
+
+    public void AddProfile(ProfileModel profile)
+    {
+        DALManager.Instance.Profile.AddProfile(profile);
+    }
 }

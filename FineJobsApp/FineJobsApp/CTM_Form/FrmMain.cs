@@ -50,7 +50,7 @@ namespace AnimationSliding_Sign_In_Sign_Up
             await SetUsername("Xin chào, " + _username.ToUpper());
         }
 
-        private  void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
+        private void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
         {
             var jsonObject = JsonConvert.DeserializeObject<JsonObject>(e.WebMessageAsJson);
             var idElemnt = jsonObject.Value;
@@ -73,9 +73,9 @@ namespace AnimationSliding_Sign_In_Sign_Up
 
         }
 
-        private  void FrmMain_Load(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
         {
-          
+
         }
     }
 }

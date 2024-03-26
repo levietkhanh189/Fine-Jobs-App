@@ -1,4 +1,5 @@
-﻿using FineJobsApp.Controller;
+﻿using AnimationSliding_Sign_In_Sign_Up;
+using FineJobsApp.Controller;
 using System.Diagnostics;
 
 namespace FineJobsApp
@@ -14,10 +15,12 @@ namespace FineJobsApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CPNLoginForm());
+            //Application.Run(new CPNLoginForm());
+
+            Application.Run(new FrmHome());
         }
 
-        
+
 
     }
 }

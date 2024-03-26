@@ -29,4 +29,22 @@ public class CompanyProfileController
     {
         return DALManager.Instance.CompanyProfile.GetCompanyProfileByUserID(userID);
     }
+
+    public List<CompanyProfileModel> GetAllCompanies()
+    {
+        return DALManager.Instance.CompanyProfile.GetAllCompanies();
+
+    }
+
+    public CompanyProfileModel GetCompanyProfile(int userID)
+    {
+        return DALManager.Instance.CompanyProfile.GetCompanyProfileByUserID(userID);
+
+    }
+
+    public CompanyProfileModel GetCompanyByID(int companyID)
+    {
+        return DALManager.Instance.CompanyProfile.GetCompanyProfileByUserID(companyID);
+
+    }
 }

@@ -37,6 +37,7 @@ namespace FineJobsApp.CTM_Form
             // Khởi tạo đối tượng ProfileModel và gán giá trị từ các control trên giao diện
             profile = new ProfileModel
             {
+                UserID = 3,
                 FullName = textBoxFullName.Text,
                 Skills = textBoxSkills.Text,
                 Experience = textBoxExperience.Text,

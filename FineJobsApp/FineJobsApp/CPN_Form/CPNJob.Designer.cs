@@ -46,8 +46,9 @@
             JobName.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
             JobName.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
             JobName.HighEmphasis = true;
-            JobName.Location = new Point(37, 38);
-            JobName.MaximumSize = new Size(275, 41);
+            JobName.Location = new Point(17, 19);
+            JobName.Margin = new Padding(1, 0, 1, 0);
+            JobName.MaximumSize = new Size(129, 20);
             JobName.MouseState = MaterialSkin.MouseState.HOVER;
             JobName.Name = "JobName";
             JobName.Size = new Size(235, 41);
@@ -67,12 +68,12 @@
             materialCard1.Controls.Add(JobName);
             materialCard1.Depth = 0;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(14, 0);
-            materialCard1.Margin = new Padding(14);
+            materialCard1.Location = new Point(7, 0);
+            materialCard1.Margin = new Padding(7, 7, 7, 7);
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(1246, 133);
+            materialCard1.Padding = new Padding(7, 7, 7, 7);
+            materialCard1.Size = new Size(586, 65);
             materialCard1.TabIndex = 1;
             materialCard1.Paint += materialCard1_Paint;
             // 
@@ -84,12 +85,12 @@
             FindApplication.Depth = 0;
             FindApplication.HighEmphasis = true;
             FindApplication.Icon = Properties.Resources.icons8_contacts_100;
-            FindApplication.Location = new Point(1133, 43);
-            FindApplication.Margin = new Padding(4, 6, 4, 6);
+            FindApplication.Location = new Point(533, 21);
+            FindApplication.Margin = new Padding(2, 3, 2, 3);
             FindApplication.MouseState = MaterialSkin.MouseState.HOVER;
             FindApplication.Name = "FindApplication";
             FindApplication.NoAccentTextColor = Color.Empty;
-            FindApplication.Size = new Size(43, 43);
+            FindApplication.Size = new Size(20, 21);
             FindApplication.TabIndex = 6;
             FindApplication.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             FindApplication.UseAccentColor = true;
@@ -101,7 +102,8 @@
             CountText.AutoSize = true;
             CountText.Depth = 0;
             CountText.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            CountText.Location = new Point(37, 79);
+            CountText.Location = new Point(17, 39);
+            CountText.Margin = new Padding(1, 0, 1, 0);
             CountText.MouseState = MaterialSkin.MouseState.HOVER;
             CountText.Name = "CountText";
             CountText.Size = new Size(120, 19);
@@ -116,12 +118,12 @@
             EditBtn.Depth = 0;
             EditBtn.HighEmphasis = true;
             EditBtn.Icon = Properties.Resources.icons8_edit_144;
-            EditBtn.Location = new Point(998, 43);
-            EditBtn.Margin = new Padding(4, 6, 4, 6);
+            EditBtn.Location = new Point(470, 21);
+            EditBtn.Margin = new Padding(2, 3, 2, 3);
             EditBtn.MouseState = MaterialSkin.MouseState.HOVER;
             EditBtn.Name = "EditBtn";
             EditBtn.NoAccentTextColor = Color.Empty;
-            EditBtn.Size = new Size(108, 43);
+            EditBtn.Size = new Size(51, 21);
             EditBtn.TabIndex = 4;
             EditBtn.Text = "Change";
             EditBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -137,12 +139,12 @@
             DeleteBtn.Depth = 0;
             DeleteBtn.HighEmphasis = true;
             DeleteBtn.Icon = Properties.Resources.icons8_delete_90;
-            DeleteBtn.Location = new Point(1184, 43);
-            DeleteBtn.Margin = new Padding(4, 6, 4, 6);
+            DeleteBtn.Location = new Point(557, 21);
+            DeleteBtn.Margin = new Padding(2, 3, 2, 3);
             DeleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             DeleteBtn.Name = "DeleteBtn";
             DeleteBtn.NoAccentTextColor = Color.Empty;
-            DeleteBtn.Size = new Size(44, 44);
+            DeleteBtn.Size = new Size(21, 21);
             DeleteBtn.TabIndex = 3;
             DeleteBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
             DeleteBtn.UseAccentColor = false;
@@ -163,11 +165,12 @@
             JobStatus.IntegralHeight = false;
             JobStatus.ItemHeight = 43;
             JobStatus.Items.AddRange(new object[] { "Open", "Close" });
-            JobStatus.Location = new Point(805, 38);
+            JobStatus.Location = new Point(379, 19);
+            JobStatus.Margin = new Padding(1, 1, 1, 1);
             JobStatus.MaxDropDownItems = 4;
             JobStatus.MouseState = MaterialSkin.MouseState.OUT;
             JobStatus.Name = "JobStatus";
-            JobStatus.Size = new Size(186, 49);
+            JobStatus.Size = new Size(90, 49);
             JobStatus.StartIndex = 0;
             JobStatus.TabIndex = 2;
             // 
@@ -178,7 +181,8 @@
             JobType.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             JobType.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             JobType.ForeColor = Color.Cyan;
-            JobType.Location = new Point(363, 43);
+            JobType.Location = new Point(171, 21);
+            JobType.Margin = new Padding(1, 0, 1, 0);
             JobType.MouseState = MaterialSkin.MouseState.HOVER;
             JobType.Name = "JobType";
             JobType.Size = new Size(94, 29);
@@ -187,11 +191,12 @@
             // 
             // CPNJob
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(materialCard1);
+            Margin = new Padding(1, 1, 1, 1);
             Name = "CPNJob";
-            Size = new Size(1274, 147);
+            Size = new Size(649, 176);
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             ResumeLayout(false);
