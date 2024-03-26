@@ -66,10 +66,7 @@ namespace FineJobsApp.CPN_Form
             SalaryTextbox.Text = salary;
             LocationTextbox.Text = location;
             DescriptionTextbox.Text = description;
-            if (skill != "")
-                SkillText.Text = $"Skills: {skill}";
-            else
-                SkillText.Text = "You need to add direct skills.";
+            SkillTextBox.Text = skill;
         }
 
         public void AddJobModel(JobModel jobModel)
