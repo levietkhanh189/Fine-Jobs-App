@@ -40,15 +40,10 @@
             SalaryTextbox = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             SkillTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            AddSkillBtn = new MaterialSkin.Controls.MaterialButton();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            DescriptionTextbox = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            SkillText = new MaterialSkin.Controls.MaterialLabel();
+            DescriptionTextbox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             materialCard1.SuspendLayout();
-            materialCard2.SuspendLayout();
             SuspendLayout();
             // 
             // materialLabel5
@@ -193,7 +188,7 @@
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel4.Location = new Point(384, 10);
+            materialLabel4.Location = new Point(351, 10);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(41, 17);
@@ -209,7 +204,7 @@
             SalaryTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             SalaryTextbox.Hint = "10.000.000-50.000.000";
             SalaryTextbox.LeadingIcon = null;
-            SalaryTextbox.Location = new Point(384, 32);
+            SalaryTextbox.Location = new Point(351, 32);
             SalaryTextbox.MaxLength = 50;
             SalaryTextbox.MouseState = MaterialSkin.MouseState.OUT;
             SalaryTextbox.Multiline = false;
@@ -246,41 +241,18 @@
             SkillTextBox.MouseState = MaterialSkin.MouseState.OUT;
             SkillTextBox.Multiline = false;
             SkillTextBox.Name = "SkillTextBox";
-            SkillTextBox.Size = new Size(94, 50);
+            SkillTextBox.Size = new Size(675, 50);
             SkillTextBox.TabIndex = 33;
             SkillTextBox.Text = "";
             SkillTextBox.TrailingIcon = null;
             SkillTextBox.Click += SkillTextBox_Click;
             SkillTextBox.TextChanged += SkillTextBox_TextChanged;
             // 
-            // AddSkillBtn
-            // 
-            AddSkillBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            AddSkillBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            AddSkillBtn.Depth = 0;
-            AddSkillBtn.HighEmphasis = true;
-            AddSkillBtn.Icon = null;
-            AddSkillBtn.Location = new Point(136, 132);
-            AddSkillBtn.Margin = new Padding(4, 6, 4, 6);
-            AddSkillBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            AddSkillBtn.Name = "AddSkillBtn";
-            AddSkillBtn.NoAccentTextColor = Color.Empty;
-            AddSkillBtn.Size = new Size(92, 36);
-            AddSkillBtn.TabIndex = 35;
-            AddSkillBtn.Text = "Add Skill";
-            AddSkillBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            AddSkillBtn.UseAccentColor = false;
-            AddSkillBtn.UseVisualStyleBackColor = true;
-            AddSkillBtn.Click += AddSkillBtn_Click;
-            // 
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Controls.Add(materialCard3);
             materialCard1.Controls.Add(DescriptionTextbox);
             materialCard1.Controls.Add(materialLabel7);
-            materialCard1.Controls.Add(materialCard2);
-            materialCard1.Controls.Add(AddSkillBtn);
             materialCard1.Controls.Add(materialLabel6);
             materialCard1.Controls.Add(SkillTextBox);
             materialCard1.Controls.Add(materialLabel4);
@@ -302,36 +274,6 @@
             materialCard1.Size = new Size(717, 729);
             materialCard1.TabIndex = 36;
             // 
-            // materialCard3
-            // 
-            materialCard3.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard3.Depth = 0;
-            materialCard3.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard3.Location = new Point(17, 213);
-            materialCard3.Margin = new Padding(14);
-            materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard3.Name = "materialCard3";
-            materialCard3.Padding = new Padding(14);
-            materialCard3.Size = new Size(683, 411);
-            materialCard3.TabIndex = 39;
-            // 
-            // DescriptionTextbox
-            // 
-            DescriptionTextbox.BackColor = Color.FromArgb(255, 255, 255);
-            DescriptionTextbox.BorderStyle = BorderStyle.None;
-            DescriptionTextbox.Depth = 0;
-            DescriptionTextbox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            DescriptionTextbox.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            DescriptionTextbox.Hint = "Please fill this";
-            DescriptionTextbox.LeaveOnEnterKey = true;
-            DescriptionTextbox.Location = new Point(34, 226);
-            DescriptionTextbox.MouseState = MaterialSkin.MouseState.HOVER;
-            DescriptionTextbox.Name = "DescriptionTextbox";
-            DescriptionTextbox.ShowSelectionMargin = true;
-            DescriptionTextbox.Size = new Size(649, 381);
-            DescriptionTextbox.TabIndex = 38;
-            DescriptionTextbox.Text = "";
-            // 
             // materialLabel7
             // 
             materialLabel7.AutoSize = true;
@@ -345,31 +287,30 @@
             materialLabel7.TabIndex = 37;
             materialLabel7.Text = "Description";
             // 
-            // materialCard2
+            // DescriptionTextbox
             // 
-            materialCard2.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard2.Controls.Add(SkillText);
-            materialCard2.Depth = 0;
-            materialCard2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard2.Location = new Point(288, 118);
-            materialCard2.Margin = new Padding(14);
-            materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard2.Name = "materialCard2";
-            materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(351, 50);
-            materialCard2.TabIndex = 36;
-            // 
-            // SkillText
-            // 
-            SkillText.AutoSize = true;
-            SkillText.Depth = 0;
-            SkillText.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            SkillText.Location = new Point(17, 17);
-            SkillText.MouseState = MaterialSkin.MouseState.HOVER;
-            SkillText.Name = "SkillText";
-            SkillText.Size = new Size(203, 19);
-            SkillText.TabIndex = 0;
-            SkillText.Text = "You need to add direct skills.";
+            DescriptionTextbox.AnimateReadOnly = false;
+            DescriptionTextbox.BackgroundImageLayout = ImageLayout.None;
+            DescriptionTextbox.CharacterCasing = CharacterCasing.Normal;
+            DescriptionTextbox.Depth = 0;
+            DescriptionTextbox.HideSelection = true;
+            DescriptionTextbox.Hint = "Enter job description";
+            DescriptionTextbox.Location = new Point(17, 223);
+            DescriptionTextbox.MaxLength = 32767;
+            DescriptionTextbox.MouseState = MaterialSkin.MouseState.OUT;
+            DescriptionTextbox.Name = "DescriptionTextbox";
+            DescriptionTextbox.PasswordChar = '\0';
+            DescriptionTextbox.ReadOnly = false;
+            DescriptionTextbox.ScrollBars = ScrollBars.None;
+            DescriptionTextbox.SelectedText = "";
+            DescriptionTextbox.SelectionLength = 0;
+            DescriptionTextbox.SelectionStart = 0;
+            DescriptionTextbox.ShortcutsEnabled = true;
+            DescriptionTextbox.Size = new Size(675, 409);
+            DescriptionTextbox.TabIndex = 39;
+            DescriptionTextbox.TabStop = false;
+            DescriptionTextbox.TextAlign = HorizontalAlignment.Left;
+            DescriptionTextbox.UseSystemPasswordChar = false;
             // 
             // CPNCreateNewJob
             // 
@@ -384,8 +325,6 @@
             Load += CPNCreateNewJob_Load;
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
-            materialCard2.ResumeLayout(false);
-            materialCard2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -402,12 +341,8 @@
         private MaterialSkin.Controls.MaterialTextBox SalaryTextbox;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialTextBox SkillTextBox;
-        private MaterialSkin.Controls.MaterialButton AddSkillBtn;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialCard materialCard2;
-        private MaterialSkin.Controls.MaterialLabel SkillText;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox DescriptionTextbox;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialCard materialCard3;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 DescriptionTextbox;
     }
 }
