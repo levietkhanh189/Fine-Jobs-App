@@ -33,7 +33,7 @@ namespace FineJobsApp.CTM_Form
             //createDate.Text = job.CreatedAt.ToString();
             //status.Text = job.Status;
             //description.Text = job.Description;
-            CompanyButton.Text = ControllerManager.Instance.CompanyProfileController.GetCompanyByID(job.CompanyID).CompanyName;
+           // CompanyButton.Text = ControllerManager.Instance.CompanyProfileController.GetCompanyByID(job.CompanyID).CompanyName;
         }
 
         public void UpdateApplicationModel(ApplicationModel app) 

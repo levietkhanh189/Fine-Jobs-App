@@ -37,6 +37,15 @@ namespace FineJobsApp
             return GetForm<T>();
         }
 
+        public static T ShowDialogForm<T>() where T : Form, new()
+        {
+            Form form = GetForm<T>();
+            form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            form.ShowDialog();
+            form.BringToFront();
+            return GetForm<T>();
+        }
+
         public static void HideForm<T>() where T : Form, new()
         {
             Type type = typeof(T);

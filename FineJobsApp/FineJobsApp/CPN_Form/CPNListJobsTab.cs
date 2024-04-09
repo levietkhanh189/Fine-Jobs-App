@@ -42,7 +42,7 @@ namespace FineJobsApp.CPN_Form
 
         private void CreatJobBtn_Click(object sender, EventArgs e)
         {
-            FormManager.ShowForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Create);
+            FormManager.ShowDialogForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Create);
         }
 
         private void ReloadBtn_Click(object sender, EventArgs e)
