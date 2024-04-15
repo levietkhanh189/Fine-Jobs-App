@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FineJobsApp.CPN_Form;
+using System.Reflection;
 
 namespace FineJobsApp
 {
@@ -62,10 +63,32 @@ namespace FineJobsApp
             AddUserControl(new CPNExitTab(), 6);
         }
 
-        public void AddUserControl(UserControl userControl,int index)
+        public void AddUserControl(UserControl userControl, int index)
         {
             userControl.Dock = DockStyle.Fill;
             HomeTabControl.TabPages[index].Controls.Add(userControl);
         }
+
+        public T ChangeTab<T>(HomeTab tab) where T : class
+        {
+            HomeTabControl.SelectedIndex = (int)tab;
+            return HomeTabControl.TabPages[(int)tab].Controls[0] as T;
+        }
+
+        private void HomeTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+    }
+
+    public enum HomeTab
+    {
+        DashboardTab,
+        CompanyInfoTab,
+        ListJobsTab,
+        ApplicationHistoryTab,
+        MessagesTab,
+        SettingTab,
+        ExitTab
     }
 }

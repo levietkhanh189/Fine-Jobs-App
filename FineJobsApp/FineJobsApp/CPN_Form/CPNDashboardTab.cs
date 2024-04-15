@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FineJobsApp.CPN_Form;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace FineJobsApp
         public CPNDashboardTab()
         {
             InitializeComponent();
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            FormManager.GetForm<CPNHomeForm>().ChangeTab<CPNApplicationHistoryTab>(HomeTab.ApplicationHistoryTab);
         }
     }
 }

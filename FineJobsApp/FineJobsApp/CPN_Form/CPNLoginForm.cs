@@ -81,12 +81,12 @@ namespace FineJobsApp
 
         private void PasswordTextbox_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void EmailTextbox_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void materialLabel3_Click(object sender, EventArgs e)
@@ -97,6 +97,13 @@ namespace FineJobsApp
 
         private void CPNLoginForm_Load(object sender, EventArgs e)
         {
+            EmailTextbox.Text = "info@techinc.com";
+            PasswordTextbox.Text = "hashed_password_4";
+        }
+
+        private void EmailTextbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

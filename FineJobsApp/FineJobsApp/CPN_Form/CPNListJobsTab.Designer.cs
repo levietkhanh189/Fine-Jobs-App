@@ -104,8 +104,11 @@
             // 
             // scrollview
             // 
+            scrollview.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             scrollview.AutoScroll = true;
             scrollview.Location = new Point(104, 150);
+            scrollview.MaximumSize = new Size(1385, 597);
+            scrollview.MinimumSize = new Size(1385, 597);
             scrollview.Name = "scrollview";
             scrollview.Size = new Size(1385, 597);
             scrollview.TabIndex = 5;
@@ -162,6 +165,7 @@
             // 
             // CreatJobBtn
             // 
+            CreatJobBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             CreatJobBtn.AutoSize = false;
             CreatJobBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             CreatJobBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -170,6 +174,8 @@
             CreatJobBtn.Icon = Properties.Resources.icons8_create_90;
             CreatJobBtn.Location = new Point(1428, 58);
             CreatJobBtn.Margin = new Padding(4, 6, 4, 6);
+            CreatJobBtn.MaximumSize = new Size(105, 50);
+            CreatJobBtn.MinimumSize = new Size(105, 50);
             CreatJobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             CreatJobBtn.Name = "CreatJobBtn";
             CreatJobBtn.NoAccentTextColor = Color.Empty;
@@ -205,6 +211,7 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(ReloadBtn);
             Controls.Add(CreatJobBtn);
             Controls.Add(materialLabel3);
@@ -215,6 +222,8 @@
             Controls.Add(SearchBtn);
             Controls.Add(SearchTextbox);
             Controls.Add(scrollview);
+            MaximumSize = new Size(1592, 824);
+            MinimumSize = new Size(1592, 824);
             Name = "CPNListJobsTab";
             Size = new Size(1592, 824);
             Load += CPNListJobsTab_Load;

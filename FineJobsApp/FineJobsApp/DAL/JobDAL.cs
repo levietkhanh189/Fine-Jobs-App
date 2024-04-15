@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Npgsql; // Use Npgsql for PostgreSQL
 using System.Linq;
@@ -11,6 +11,40 @@ public class JobDAL
     {
         this.connectionString = connectionString;
     }
+
+    public List<JobModel> GetJobsByStatus(string status)
+    {
+        List<JobModel> jobs = new List<JobModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            // Tạo câu truy vấn SQL để lấy tất cả các công việc có trạng thái chỉ định
+            string sql = "SELECT * FROM Jobs WHERE Status = @Status";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            // Thêm giá trị cho tham số @Status
+            command.Parameters.AddWithValue("@Status", status);
+
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                JobModel job = new JobModel();
+                job.JobID = Convert.ToInt32(reader["JobID"]);
+                job.CompanyID = Convert.ToInt32(reader["CompanyID"]);
+                job.Title = reader["Title"].ToString();
+                job.Description = reader["Description"].ToString();
+                job.SkillRequirements = reader["SkillRequirements"].ToString();
+                job.Location = reader["Location"].ToString();
+                job.SalaryRange = reader["SalaryRange"].ToString();
+                job.JobType = reader["JobType"].ToString();
+                job.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                job.Status = reader["Status"].ToString();
+                jobs.Add(job);
+            }
+            connection.Close();
+        }
+        return jobs;
+    }
+
 
     public List<JobModel> GetJobs()
     {

@@ -55,15 +55,22 @@
             HomeTabControl.Dock = DockStyle.Fill;
             HomeTabControl.ImageList = imageList1;
             HomeTabControl.Location = new Point(3, 64);
+            HomeTabControl.MaximumSize = new Size(1612, 892);
+            HomeTabControl.MinimumSize = new Size(1612, 892);
             HomeTabControl.MouseState = MaterialSkin.MouseState.HOVER;
             HomeTabControl.Multiline = true;
             HomeTabControl.Name = "HomeTabControl";
             HomeTabControl.SelectedIndex = 0;
             HomeTabControl.Size = new Size(1612, 892);
             HomeTabControl.TabIndex = 0;
+            HomeTabControl.SelectedIndexChanged += HomeTabControl_SelectedIndexChanged;
             // 
             // DashboardTab
             // 
+            DashboardTab.AutoScroll = true;
+            DashboardTab.AutoScrollMargin = new Size(1592, 824);
+            DashboardTab.AutoScrollMinSize = new Size(1592, 824);
+            DashboardTab.CausesValidation = false;
             DashboardTab.ImageKey = "icons8-home-100.png";
             DashboardTab.Location = new Point(10, 58);
             DashboardTab.Name = "DashboardTab";

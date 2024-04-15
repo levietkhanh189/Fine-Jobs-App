@@ -12,6 +12,57 @@ public class ApplicationDAL
         this.connectionString = connectionString;
     }
 
+    public List<ApplicationModel> GetApplicationsForToday()
+    {
+        List<ApplicationModel> applications = new List<ApplicationModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Applications WHERE ApplyDate >= CURRENT_DATE AND ApplyDate < CURRENT_DATE + INTERVAL '1 day'";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ApplicationModel application = new ApplicationModel();
+                application.ApplicationID = Convert.ToInt32(reader["ApplicationID"]);
+                application.JobID = Convert.ToInt32(reader["JobID"]);
+                application.ApplicantID = Convert.ToInt32(reader["ApplicantID"]);
+                application.Status = reader["Status"].ToString();
+                application.ApplyDate = Convert.ToDateTime(reader["ApplyDate"]);
+                applications.Add(application);
+            }
+            connection.Close();
+        }
+        return applications;
+    }
+
+    public List<ApplicationModel> GetApplicationsByStatus(string status)
+    {
+        List<ApplicationModel> applications = new List<ApplicationModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            // Chỉ lấy những application có trạng thái phù hợp với status được cung cấp
+            string sql = "SELECT * FROM Applications WHERE Status = @Status";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Status", status);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ApplicationModel application = new ApplicationModel();
+                application.ApplicationID = Convert.ToInt32(reader["ApplicationID"]);
+                application.JobID = Convert.ToInt32(reader["JobID"]);
+                application.ApplicantID = Convert.ToInt32(reader["ApplicantID"]);
+                application.Status = reader["Status"].ToString();
+                application.ApplyDate = Convert.ToDateTime(reader["ApplyDate"]);
+                applications.Add(application);
+            }
+            connection.Close();
+        }
+        return applications;
+    }
+
+
     public List<ApplicationModel> GetApplicationsByJobID(int jobID)
     {
         List<ApplicationModel> applications = new List<ApplicationModel>();

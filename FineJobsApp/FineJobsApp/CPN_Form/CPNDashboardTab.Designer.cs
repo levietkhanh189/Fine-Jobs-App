@@ -45,6 +45,7 @@
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialCard3.SuspendLayout();
             materialCard2.SuspendLayout();
             materialCard1.SuspendLayout();
@@ -291,10 +292,31 @@
             materialFloatingActionButton1.Text = "materialFloatingActionButton1";
             materialFloatingActionButton1.UseVisualStyleBackColor = true;
             // 
+            // materialButton1
+            // 
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(279, 545);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(158, 36);
+            materialButton1.TabIndex = 18;
+            materialButton1.Text = "materialButton1";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
+            // 
             // CPNDashboardTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(materialButton1);
             Controls.Add(materialCard3);
             Controls.Add(materialCard2);
             Controls.Add(materialLabel2);
@@ -331,5 +353,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

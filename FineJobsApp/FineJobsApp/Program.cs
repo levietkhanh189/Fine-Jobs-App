@@ -17,7 +17,7 @@ namespace FineJobsApp
             ApplicationConfiguration.Initialize();
             //Application.Run(new CPNLoginForm());
 
-            Application.Run(new FrmLogin());
+            Application.Run(new CPNLoginForm());
         }
 
 
