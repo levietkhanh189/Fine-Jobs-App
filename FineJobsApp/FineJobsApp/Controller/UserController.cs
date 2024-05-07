@@ -7,6 +7,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 public class UserController
 {
     public static int userCode;
+
     public UserController()
     {
     }
@@ -35,6 +36,12 @@ public class UserController
         {
             return false;
         }
+        DALManager.Instance.User.AddUser(userModel);
+        return true;
+    }
+
+    public bool RegisterHR(UserModel userModel)
+    {
         DALManager.Instance.User.AddUser(userModel);
         return true;
     }
@@ -70,5 +77,15 @@ public class UserController
         }
         DALManager.Instance.User.UpdateUser(userModel);
         return true;
+    }
+
+    public void DeleteUser(int userID)
+    {
+        DALManager.Instance.User.DeleteUser(userID);
+    }
+
+    public List<UserModel> GetUserModels(string userName)
+    {
+        return DALManager.Instance.User.GetUsersByUsername(userName);
     }
 }

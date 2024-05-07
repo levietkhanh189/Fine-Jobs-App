@@ -1,6 +1,6 @@
 ﻿namespace FineJobsApp.CPN_Form
 {
-    partial class CPNApplicationHistoryTab
+    partial class CPNApplicantTab
     {
         /// <summary> 
         /// Required designer variable.
@@ -94,9 +94,9 @@
             materialLabel1.Location = new Point(101, 39);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(267, 58);
+            materialLabel1.Size = new Size(228, 58);
             materialLabel1.TabIndex = 3;
-            materialLabel1.Text = "Applications";
+            materialLabel1.Text = "Applicants";
             materialLabel1.Click += materialLabel1_Click;
             // 
             // materialLabel2
@@ -181,7 +181,7 @@
             ReloadBtn.UseVisualStyleBackColor = true;
             ReloadBtn.Click += ReloadBtn_Click;
             // 
-            // CPNApplicationHistoryTab
+            // CPNApplicantTab
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -194,7 +194,7 @@
             Controls.Add(SearchBtn);
             Controls.Add(searchTextBox);
             Controls.Add(scrollview);
-            Name = "CPNApplicationHistoryTab";
+            Name = "CPNApplicantTab";
             Size = new Size(1592, 824);
             Load += CPNApplicationHistoryTab_Load;
             ResumeLayout(false);

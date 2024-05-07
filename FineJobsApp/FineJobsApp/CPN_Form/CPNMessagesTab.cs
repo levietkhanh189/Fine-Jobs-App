@@ -35,5 +35,12 @@ namespace FineJobsApp.CPN_Form
             webView21.ZoomFactor = 0.5;
         }
 
+        public async void MailTo(string email)
+        {
+            await initizated();
+            webView21.CoreWebView2.Navigate("https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=" + email);
+            webView21.ZoomFactor = 0.5;
+        }
+
     }
 }

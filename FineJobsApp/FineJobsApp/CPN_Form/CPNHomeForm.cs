@@ -49,7 +49,15 @@ namespace FineJobsApp
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            SetUpUserControl();
+        }
+
+        private void HRPermission()
+        {
+            if (ControllerManager.Instance.UserModel.UserType == "HR")
+            {
+                HomeTabControl.TabPages.Remove(HomeTabControl.TabPages[1]);
+                HomeTabControl.TabPages.Remove(HomeTabControl.TabPages[5]);
+            }
         }
 
         public void SetUpUserControl()
@@ -57,10 +65,11 @@ namespace FineJobsApp
             AddUserControl(new CPNDashboardTab(), 0);
             AddUserControl(new CPNCompanyInfoTab(), 1);
             AddUserControl(new CPNListJobsTab(), 2);
-            AddUserControl(new CPNApplicationHistoryTab(), 3);
-            AddUserControl(new CPNMessagesTab(), 4);
-            AddUserControl(new CPNSettingTab(), 5);
-            AddUserControl(new CPNExitTab(), 6);
+            AddUserControl(new CPNApplicantTab(), 3);
+            AddUserControl(new CPNApplicationHistoryTab(), 4);
+            AddUserControl(new CPNMessagesTab(), 5);
+            AddUserControl(new CPNSettingTab(), 6);
+            AddUserControl(new CPNExitTab(), 7);
         }
 
         public void AddUserControl(UserControl userControl, int index)
@@ -77,7 +86,14 @@ namespace FineJobsApp
 
         private void HomeTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void CPNHomeForm_Load(object sender, EventArgs e)
+        {
+            SetUpUserControl();
+
+            HRPermission();
         }
     }
 
@@ -86,6 +102,7 @@ namespace FineJobsApp
         DashboardTab,
         CompanyInfoTab,
         ListJobsTab,
+        ApplicantTab,
         ApplicationHistoryTab,
         MessagesTab,
         SettingTab,

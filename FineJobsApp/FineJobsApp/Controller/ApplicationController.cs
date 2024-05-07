@@ -6,6 +6,21 @@ public class ApplicationController
     {
     }
 
+    public List<ApplicationModel> GetApplicationsForToday()
+    {
+        return DALManager.Instance.Application.GetApplicationsForToday(ControllerManager.Instance.UserModel.UserID);
+    }
+
+    public List<ApplicationModel> GetApplicationsByStatus(string status)
+    {
+        return DALManager.Instance.Application.GetApplicationsByStatus(status, ControllerManager.Instance.UserModel.UserID);
+    }
+
+    public List<ApplicationModel> GetApplicationsBySearch(string keyword)
+    {
+        return DALManager.Instance.Application.SearchApplications(keyword, ControllerManager.Instance.UserModel.UserID);
+    }
+
     public List<ApplicationModel> GetApplicationsByCurrentCompany()
     {
         return ServiceManager.Instance.Application.GetApplicationByCurrentCompany();

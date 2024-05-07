@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Npgsql; // Use Npgsql for PostgreSQL
+using Npgsql;
 using System.Linq;
 
 public class ProfileDAL
@@ -91,6 +91,74 @@ public class ProfileDAL
             }
         }
     }
+    public List<ProfileModel> SearchProfiles(string keyword)
+    {
+        List<ProfileModel> profiles = new List<ProfileModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = @"
+            SELECT * FROM Profiles
+            WHERE LOWER(FullName) LIKE @Keyword
+            OR LOWER(Skills) LIKE @Keyword
+            OR LOWER(Experience) LIKE @Keyword
+            OR LOWER(Education) LIKE @Keyword";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@Keyword", "%" + keyword.ToLower() + "%");
+
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        profiles.Add(new ProfileModel
+                        {
+                            ProfileID = (int)reader["ProfileID"],
+                            UserID = (int)reader["UserID"],
+                            FullName = (string)reader["FullName"],
+                            Skills = (string)reader["Skills"],
+                            Experience = (string)reader["Experience"],
+                            Education = (string)reader["Education"],
+                            ResumeLink = (string)reader["ResumeLink"]
+                        });
+                    }
+                }
+            }
+        }
+        return profiles;
+    }
+
+    public List<ProfileModel> GetAllProfiles()
+    {
+        List<ProfileModel> profiles = new List<ProfileModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "SELECT * FROM Profiles";
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        profiles.Add(new ProfileModel
+                        {
+                            ProfileID = (int)reader["ProfileID"],
+                            UserID = (int)reader["UserID"],
+                            FullName = (string)reader["FullName"],
+                            Skills = (string)reader["Skills"],
+                            Experience = (string)reader["Experience"],
+                            Education = (string)reader["Education"],
+                            ResumeLink = (string)reader["ResumeLink"]
+                        });
+                    }
+                }
+            }
+        }
+        return profiles;
+    }
+
 
     public void UpdateProfile(ProfileModel profile)
     {

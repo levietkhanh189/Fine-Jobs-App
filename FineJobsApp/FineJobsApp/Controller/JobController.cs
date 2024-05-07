@@ -15,6 +15,7 @@ public class JobController
     {
         // Xử lý ứng tuyển công việc
     }
+
     public JobModel GetJob(int jobID)
     {
         return DALManager.Instance.Job.GetJob(jobID);
@@ -26,7 +27,7 @@ public class JobController
     }
     public void UpdateJob(JobModel jobModel)
     {
-        DALManager.Instance.Job.UpdateJob(jobModel);
+        DALManager.Instance.Job.UpdateJob (jobModel);
     }
 
     public List<JobModel> GetJobsByCurrentComapy()
@@ -36,6 +37,6 @@ public class JobController
 
     public List<JobModel> SearchJobs(string keyword)
     {
-        return DALManager.Instance.Job.SearchJobs( keyword);
+        return DALManager.Instance.Job.SearchJobs( keyword, ControllerManager.Instance.UserModel.UserID);
     }
 }

@@ -21,17 +21,37 @@ namespace FineJobsApp.CPN_Form
         private void CPNListJobsTab_Load(object sender, EventArgs e)
         {
             LoadData();
+            HRPermission();
+        }
+
+        private void HRPermission()
+        {
+            if (ControllerManager.Instance.UserModel.UserType == "HR")
+            {
+                CreatJobBtn.Hide();
+            }
         }
 
         private void LoadData()
         {
             models = ControllerManager.Instance.JobController.GetJobsByCurrentComapy();
+            ScrollviewAddJobs();
+        }
+
+        public void LoadCurrentOpenJob()
+        {
+            models = ControllerManager.Instance.JobController.SearchJobs("Open");
+            ScrollviewAddJobs();
+        }
+
+        private void ScrollviewAddJobs()
+        {
+            scrollview.Controls.Clear();
             foreach (var job in models)
             {
                 scrollview.Controls.Add(CreateJob(job));
             }
         }
-
         public CPNJob CreateJob(JobModel model)
         {
             CPNJob job = new CPNJob();
@@ -47,7 +67,19 @@ namespace FineJobsApp.CPN_Form
 
         private void ReloadBtn_Click(object sender, EventArgs e)
         {
+            SearchTextbox.Text = "";
             LoadData();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            LoadSearchJob(SearchTextbox.Text);
+        }
+
+        public void LoadSearchJob(string keyword)
+        {
+            models = ControllerManager.Instance.JobController.SearchJobs(keyword);
+            ScrollviewAddJobs();
         }
     }
 }

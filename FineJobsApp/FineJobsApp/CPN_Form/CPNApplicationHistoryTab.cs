@@ -31,12 +31,26 @@ namespace FineJobsApp.CPN_Form
             LoadApplications(models);
         }
 
+        public void LoadApplicationForToday()
+        {
+            models = ControllerManager.Instance.ApplicationController.GetApplicationsForToday();
+            LoadApplications(models);
+        }
+
+        public void LoadApplicationInterview()
+        {
+            models = ControllerManager.Instance.ApplicationController.GetApplicationsByStatus("Interview");
+            LoadApplications(models);
+        }
+
         public void LoadApplications(List<ApplicationModel> applicationModels)
         {
             scrollview.Controls.Clear();
             foreach (var application in applicationModels)
             {
-                scrollview.Controls.Add(CreateApplication(application));
+                CPNApplication appli = CreateApplication(application);
+                if(appli != null)
+                    scrollview.Controls.Add(appli);
             }
         }
 
@@ -44,8 +58,14 @@ namespace FineJobsApp.CPN_Form
         {
             CPNApplication application = new CPNApplication();
             ProfileModel profile = ControllerManager.Instance.ProfileController.GetProfile(model.ApplicantID);
+            if(profile == null)
+                return null;
             JobModel job = ControllerManager.Instance.JobController.GetJob(model.JobID);
+            if (job == null)
+                return null;
             UserModel user = ControllerManager.Instance.UserController.GetUserByUserID(model.ApplicantID);
+            if (user == null)
+                return null;
             application.InitializeComponentsValues(profile.FullName, job.Title, profile.Education, profile.Experience, profile.Skills, model.Status);
             application.AddData(user, profile, model);
             return application;
@@ -58,11 +78,18 @@ namespace FineJobsApp.CPN_Form
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            LoadApplicationSearch(searchTextBox.Text);
+        }
 
+        public void LoadApplicationSearch(string keyword)
+        {
+            models = ControllerManager.Instance.ApplicationController.GetApplicationsBySearch(keyword);
+            LoadApplications(models);
         }
 
         private void ReloadBtn_Click(object sender, EventArgs e)
         {
+            searchTextBox.Text = "";
             LoadData();
         }
     }

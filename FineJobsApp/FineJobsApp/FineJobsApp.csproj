@@ -7,11 +7,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
-    <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+    <ForceDesignerDpiUnaware>false</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2420.47" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -24,9 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CPN_Form\CPNSignUpForm.cs">
-      <SubType>Form</SubType>
+    <Compile Update="CPN_Form\CPNApplicantTab.cs">
+      <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="CPN_Form\CPNApplicant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CPN_Form\CPNSignUpForm.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

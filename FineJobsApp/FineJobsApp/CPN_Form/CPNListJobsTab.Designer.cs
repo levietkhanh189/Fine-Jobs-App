@@ -84,6 +84,7 @@
             SearchBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             SearchBtn.UseAccentColor = false;
             SearchBtn.UseVisualStyleBackColor = true;
+            SearchBtn.Click += SearchBtn_Click;
             // 
             // SearchTextbox
             // 

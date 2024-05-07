@@ -90,14 +90,14 @@ namespace FineJobsApp.CPN_Form
             jobModel.SkillRequirements = SkillTextBox.Text;
             jobModel.Description = DescriptionTextbox.Text;
             jobModel.CreatedAt = DateTime.Now;
-            jobModel.Status = "Active";
+            jobModel.Status = "Open";
             jobModel.CompanyID = ControllerManager.Instance.UserModel.UserID;
             ControllerManager.Instance.JobController.AddJob(jobModel);
         }
 
         private void UpdateJob()
         {
-            if (jobModel == null)
+            if (jobModel != null)
             {
                 jobModel.Title = JobNameTextbox.Text;
                 jobModel.Location = LocationTextbox.Text;
@@ -132,8 +132,24 @@ namespace FineJobsApp.CPN_Form
 
         private void CPNCreateNewJob_Load(object sender, EventArgs e)
         {
-
+            HRPermission();
         }
+
+        private void HRPermission()
+        {
+
+            if (ControllerManager.Instance.UserModel.UserType == "HR")
+            {
+                LockControl(true);
+
+                SaveButton.Hide();
+            }
+            else
+            {
+                SaveButton.Show();
+            }
+        }
+
 
     }
     public enum JobFormType

@@ -103,6 +103,36 @@ public class UserDAL
         }
     }
 
+    public List<UserModel> GetUsersByUsername(string username)
+{
+    List<UserModel> users = new List<UserModel>();
+    using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+    {
+        connection.Open();
+        string sql = "SELECT * FROM Users WHERE Username LIKE @Username";
+        using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+        {
+            command.Parameters.AddWithValue("@Username", "%" + username + "%");
+
+            using (NpgsqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    users.Add(new UserModel((int)reader["UserID"],
+                            (string)reader["Username"],
+                            (string)reader["Password"],
+                            (string)reader["Email"],
+                            (string)reader["UserType"],
+                            Convert.ToDateTime(reader["CreatedAt"])
+                    ));
+                }
+            }
+        }
+    }
+    return users;
+}
+
+
     public void DeleteUser(int userID)
     {
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))

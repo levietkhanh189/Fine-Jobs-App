@@ -12,23 +12,27 @@ public class ApplicationDAL
         this.connectionString = connectionString;
     }
 
-    public List<ApplicationModel> GetApplicationsForToday()
+    public List<ApplicationModel> GetApplicationsForToday(int companyId)
     {
         List<ApplicationModel> applications = new List<ApplicationModel>();
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
-            string sql = "SELECT * FROM Applications WHERE ApplyDate >= CURRENT_DATE AND ApplyDate < CURRENT_DATE + INTERVAL '1 day'";
+            string sql = "SELECT * FROM Applications WHERE ApplyDate >= CURRENT_DATE AND ApplyDate < CURRENT_DATE + INTERVAL '1 day' AND JobID IN (SELECT JobID FROM Jobs WHERE CompanyID = @CompanyID)";
             NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@CompanyID", companyId);
+
             connection.Open();
             NpgsqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                ApplicationModel application = new ApplicationModel();
-                application.ApplicationID = Convert.ToInt32(reader["ApplicationID"]);
-                application.JobID = Convert.ToInt32(reader["JobID"]);
-                application.ApplicantID = Convert.ToInt32(reader["ApplicantID"]);
-                application.Status = reader["Status"].ToString();
-                application.ApplyDate = Convert.ToDateTime(reader["ApplyDate"]);
+                ApplicationModel application = new ApplicationModel
+                {
+                    ApplicationID = Convert.ToInt32(reader["ApplicationID"]),
+                    JobID = Convert.ToInt32(reader["JobID"]),
+                    ApplicantID = Convert.ToInt32(reader["ApplicantID"]),
+                    Status = reader["Status"].ToString(),
+                    ApplyDate = Convert.ToDateTime(reader["ApplyDate"])
+                };
                 applications.Add(application);
             }
             connection.Close();
@@ -36,31 +40,36 @@ public class ApplicationDAL
         return applications;
     }
 
-    public List<ApplicationModel> GetApplicationsByStatus(string status)
+
+    public List<ApplicationModel> GetApplicationsByStatus(string status, int companyId)
     {
         List<ApplicationModel> applications = new List<ApplicationModel>();
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
-            // Chỉ lấy những application có trạng thái phù hợp với status được cung cấp
-            string sql = "SELECT * FROM Applications WHERE Status = @Status";
+            string sql = "SELECT * FROM Applications WHERE Status = @Status AND JobID IN (SELECT JobID FROM Jobs WHERE CompanyID = @CompanyID)";
             NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@Status", status);
+            command.Parameters.AddWithValue("@CompanyID", companyId);
+
             connection.Open();
             NpgsqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                ApplicationModel application = new ApplicationModel();
-                application.ApplicationID = Convert.ToInt32(reader["ApplicationID"]);
-                application.JobID = Convert.ToInt32(reader["JobID"]);
-                application.ApplicantID = Convert.ToInt32(reader["ApplicantID"]);
-                application.Status = reader["Status"].ToString();
-                application.ApplyDate = Convert.ToDateTime(reader["ApplyDate"]);
+                ApplicationModel application = new ApplicationModel
+                {
+                    ApplicationID = Convert.ToInt32(reader["ApplicationID"]),
+                    JobID = Convert.ToInt32(reader["JobID"]),
+                    ApplicantID = Convert.ToInt32(reader["ApplicantID"]),
+                    Status = reader["Status"].ToString(),
+                    ApplyDate = Convert.ToDateTime(reader["ApplyDate"])
+                };
                 applications.Add(application);
             }
             connection.Close();
         }
         return applications;
     }
+
 
 
     public List<ApplicationModel> GetApplicationsByJobID(int jobID)
@@ -87,6 +96,43 @@ public class ApplicationDAL
         }
         return applications;
     }
+
+    public List<ApplicationModel> SearchApplications(string keyword, int companyId)
+    {
+        List<ApplicationModel> applications = new List<ApplicationModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = @"
+            SELECT * FROM Applications 
+            WHERE (CAST(ApplicationID AS TEXT) LIKE @Keyword 
+                OR CAST(JobID AS TEXT) LIKE @Keyword 
+                OR CAST(ApplicantID AS TEXT) LIKE @Keyword 
+                OR Status LIKE @Keyword) 
+                AND JobID IN (SELECT JobID FROM Jobs WHERE CompanyID = @CompanyID)";
+
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+            command.Parameters.AddWithValue("@CompanyID", companyId);
+
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ApplicationModel application = new ApplicationModel
+                {
+                    ApplicationID = Convert.ToInt32(reader["ApplicationID"]),
+                    JobID = Convert.ToInt32(reader["JobID"]),
+                    ApplicantID = Convert.ToInt32(reader["ApplicantID"]),
+                    Status = reader["Status"].ToString(),
+                    ApplyDate = Convert.ToDateTime(reader["ApplyDate"])
+                };
+                applications.Add(application);
+            }
+            connection.Close();
+        }
+        return applications;
+    }
+
 
     public ApplicationModel GetApplicationByApplicationID(int applicationID)
     {

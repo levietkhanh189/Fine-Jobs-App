@@ -28,11 +28,13 @@ namespace FineJobsApp
             }
         }
 
+       
+
         public static T ShowForm<T>() where T : Form, new()
         {
             Form form = GetForm<T>();
             form.Show();
-           // form.BringToFront();
+            form.BringToFront();
             return GetForm<T>();
         }
 

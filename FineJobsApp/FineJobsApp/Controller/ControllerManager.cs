@@ -43,6 +43,11 @@ public class ControllerManager
 
     public void SetUserModel(UserModel userModel)
     {
+        if (userModel.UserType == "HR")
+        {
+            userModel.UserID = Convert.ToInt32(userModel.Username);
+        }
+
         UserModel = userModel;
     }
 }

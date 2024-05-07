@@ -13,6 +13,7 @@ namespace FineJobsApp.CPN_Form
     public partial class CPNJob : UserControl
     {
         private JobModel jobModel;
+
         public CPNJob()
         {
             InitializeComponent();
@@ -20,7 +21,8 @@ namespace FineJobsApp.CPN_Form
 
         private void FindApplication_Click(object sender, EventArgs e)
         {
-
+            CPNApplicationHistoryTab applicationHistoryTab = FormManager.GetForm<CPNHomeForm>().ChangeTab<CPNApplicationHistoryTab>(HomeTab.ApplicationHistoryTab);
+            applicationHistoryTab.LoadApplicationSearch(jobModel.JobID +"");
         }
 
         public void InitializeJobComponents(JobModel jobModel, string jobName, string jobType, string jobStatus, string countText)
@@ -54,7 +56,9 @@ namespace FineJobsApp.CPN_Form
         }
         private void JobCard_Click(object sender, EventArgs e)
         {
-            FormManager.ShowDialogForm<CPNCreateNewJob>().InitializeJobComponents(JobFormType.Update, jobModel.Title, jobModel.JobType, jobModel.SalaryRange, jobModel.SkillRequirements, jobModel.Description);
+            CPNCreateNewJob jobForm = FormManager.ShowDialogForm<CPNCreateNewJob>();
+            jobForm.InitializeJobComponents(JobFormType.Update, jobModel.Title, jobModel.JobType, jobModel.SalaryRange, jobModel.SkillRequirements, jobModel.Description, jobModel.Location);
+            jobForm.AddJobModel(jobModel);
         }
     }
 }

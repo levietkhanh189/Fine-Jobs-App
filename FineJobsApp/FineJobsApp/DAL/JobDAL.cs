@@ -12,16 +12,15 @@ public class JobDAL
         this.connectionString = connectionString;
     }
 
-    public List<JobModel> GetJobsByStatus(string status)
+    public List<JobModel> GetJobsByStatus(string status, int companyId)
     {
         List<JobModel> jobs = new List<JobModel>();
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
-            // Tạo câu truy vấn SQL để lấy tất cả các công việc có trạng thái chỉ định
-            string sql = "SELECT * FROM Jobs WHERE Status = @Status";
+            string sql = "SELECT * FROM Jobs WHERE Status = @Status AND CompanyID = @CompanyID";
             NpgsqlCommand command = new NpgsqlCommand(sql, connection);
-            // Thêm giá trị cho tham số @Status
             command.Parameters.AddWithValue("@Status", status);
+            command.Parameters.AddWithValue("@CompanyID", companyId);
 
             connection.Open();
             NpgsqlDataReader reader = command.ExecuteReader();
@@ -44,6 +43,7 @@ public class JobDAL
         }
         return jobs;
     }
+
 
 
     public List<JobModel> GetJobs()
@@ -191,14 +191,15 @@ public class JobDAL
         }
     }
 
-    public List<JobModel> SearchJobs(string keyword)
+    public List<JobModel> SearchJobs(string keyword, int companyId)
     {
         List<JobModel> jobs = new List<JobModel>();
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
-            string sql = "SELECT * FROM Jobs WHERE Title LIKE @Keyword OR Description LIKE @Keyword OR SkillRequirements LIKE @Keyword OR Location LIKE @Keyword OR SalaryRange LIKE @Keyword OR JobType LIKE @Keyword OR Status LIKE @Keyword";
+            string sql = "SELECT * FROM Jobs WHERE (Title LIKE @Keyword OR Description LIKE @Keyword OR SkillRequirements LIKE @Keyword OR Location LIKE @Keyword OR SalaryRange LIKE @Keyword OR JobType LIKE @Keyword OR Status LIKE @Keyword) AND CompanyID = @CompanyID";
             NpgsqlCommand command = new NpgsqlCommand(sql, connection);
             command.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+            command.Parameters.AddWithValue("@CompanyID", companyId);
 
             connection.Open();
             NpgsqlDataReader reader = command.ExecuteReader();
@@ -221,5 +222,6 @@ public class JobDAL
         }
         return jobs;
     }
+
 
 }
