@@ -191,6 +191,37 @@ public class JobDAL
         }
     }
 
+     public List<JobModel> SearchJobs(string keyword)
+    {
+        List<JobModel> jobs = new List<JobModel>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Jobs WHERE Title LIKE @Keyword OR Description LIKE @Keyword OR SkillRequirements LIKE @Keyword OR Location LIKE @Keyword OR SalaryRange LIKE @Keyword OR JobType LIKE @Keyword OR Status LIKE @Keyword";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                JobModel job = new JobModel();
+                job.JobID = Convert.ToInt32(reader["JobID"]);
+                job.CompanyID = Convert.ToInt32(reader["CompanyID"]);
+                job.Title = reader["Title"].ToString();
+                job.Description = reader["Description"].ToString();
+                job.SkillRequirements = reader["SkillRequirements"].ToString();
+                job.Location = reader["Location"].ToString();
+                job.SalaryRange = reader["SalaryRange"].ToString();
+                job.JobType = reader["JobType"].ToString();
+                job.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                job.Status = reader["Status"].ToString();
+                jobs.Add(job);
+            }
+            connection.Close();
+        }
+        return jobs;
+    }
+
     public List<JobModel> SearchJobs(string keyword, int companyId)
     {
         List<JobModel> jobs = new List<JobModel>();

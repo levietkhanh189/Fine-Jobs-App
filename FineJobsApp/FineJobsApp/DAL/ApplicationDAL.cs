@@ -217,4 +217,94 @@ public class ApplicationDAL
         return applications;
     }
 
+    public ApplicationModel GetApplicationByApplicationID(int applicationID)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Applications WHERE ApplicationID = @ApplicationID";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@ApplicationID", applicationID);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read()) // Sử dụng if thay vì while vì chỉ có một kết quả
+            {
+                ApplicationModel application = new ApplicationModel
+                {
+                    ApplicationID = Convert.ToInt32(reader["ApplicationID"]),
+                    JobID = Convert.ToInt32(reader["JobID"]),
+                    ApplicantID = Convert.ToInt32(reader["ApplicantID"]),
+                    Status = reader["Status"].ToString(),
+                    ApplyDate = Convert.ToDateTime(reader["ApplyDate"])
+                };
+                connection.Close();
+                return application;
+            }
+        }
+        return null; // Trả về null nếu không tìm thấy Application với ID cung cấp
+    }
+
+
+    public void AddApplication(ApplicationModel application)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string checkSql = "SELECT COUNT(*) FROM Applications WHERE JobID = @JobID AND ApplicantID = @UserID";
+            NpgsqlCommand checkCommand = new NpgsqlCommand(checkSql, connection);
+            checkCommand.Parameters.AddWithValue("@JobID", application.JobID);
+            checkCommand.Parameters.AddWithValue("@UserID", application.ApplicantID);
+
+            connection.Open();
+            int count = Convert.ToInt32(checkCommand.ExecuteScalar());
+            connection.Close();
+
+            if (count > 0)
+            {
+                // Ứng viên đã áp dụng cho công việc này rồi, bạn có thể thông báo ở đây.
+                Console.WriteLine("Bạn đã apply cho công việc này rồi.");
+                return;
+            }
+
+            string insertSql = "INSERT INTO Applications (JobID, ApplicantID, Status, ApplyDate) VALUES (@JobID, @UserID, @Status, @ApplyDate)";
+            NpgsqlCommand command = new NpgsqlCommand(insertSql, connection);
+            command.Parameters.AddWithValue("@JobID", application.JobID);
+            command.Parameters.AddWithValue("@UserID", application.ApplicantID);
+            command.Parameters.AddWithValue("@Status", application.Status);
+            command.Parameters.AddWithValue("@ApplyDate", application.ApplyDate);
+
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+    }
+
+    //lấy thông tin application theo jobID và userID
+    public ApplicationModel GetApplicationByJobIDAndUserID(int jobID, int userID)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            string sql = "SELECT * FROM Applications WHERE JobID = @JobID AND ApplicantID = @UserID";
+            NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@JobID", jobID);
+            command.Parameters.AddWithValue("@UserID", userID);
+            connection.Open();
+            NpgsqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read()) // Sử dụng if thay vì while vì chỉ có một kết quả
+            {
+                ApplicationModel application = new ApplicationModel
+                {
+                    ApplicationID = Convert.ToInt32(reader["ApplicationID"]),
+                    JobID = Convert.ToInt32(reader["JobID"]),
+                    ApplicantID = Convert.ToInt32(reader["ApplicantID"]),
+                    Status = reader["Status"].ToString(),
+                    ApplyDate = Convert.ToDateTime(reader["ApplyDate"])
+                };
+                connection.Close();
+                return application;
+            }
+        }
+        return null; // Trả về null nếu không tìm thấy Application với JobID và UserID cung cấp
+    }
+
 }

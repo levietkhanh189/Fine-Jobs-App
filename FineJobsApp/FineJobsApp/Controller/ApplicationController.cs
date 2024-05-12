@@ -42,4 +42,16 @@ public class ApplicationController
     {
         return DALManager.Instance.Application.GetApplicationsByUserID(userID).ToList();
     }
+
+    //lấy application theo jobID và userID
+    public ApplicationModel GetApplicationByJobIDAndUserID(int jobID, int userID)
+    {
+        return DALManager.Instance.Application.GetApplicationByJobIDAndUserID(jobID, userID);
+    }
+
+    //add application
+    public void AddApplication(ApplicationModel application)
+    {
+        DALManager.Instance.Application.AddApplication(application);
+    }
 }

@@ -178,4 +178,23 @@ public class ProfileDAL
             }
         }
     }
+
+    public void UpdateCompanyProfile(CompanyProfileModel companyProfile)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "UPDATE CompanyProfiles SET CompanyName = @CompanyName, Description = @Description, Industry = @Industry, Website = @Website, ContactInfo = @ContactInfo WHERE UserID = @UserID";
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@CompanyName", companyProfile.CompanyName);
+                command.Parameters.AddWithValue("@Description", companyProfile.Description);
+                command.Parameters.AddWithValue("@Industry", companyProfile.Industry);
+                command.Parameters.AddWithValue("@Website", companyProfile.Website);
+                command.Parameters.AddWithValue("@ContactInfo", companyProfile.ContactInfo);
+                command.Parameters.AddWithValue("@UserID", companyProfile.UserID);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
 }

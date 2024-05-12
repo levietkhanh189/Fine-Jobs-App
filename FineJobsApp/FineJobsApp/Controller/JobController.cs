@@ -39,4 +39,11 @@ public class JobController
     {
         return DALManager.Instance.Job.SearchJobs( keyword, ControllerManager.Instance.UserModel.UserID);
     }
+
+    // Get job by company id
+    public List<JobModel> GetJobsByCompany(int companyId)
+    {
+        return DALManager.Instance.Job.GetJobsByCompany(companyId);
+    }
+    
 }
