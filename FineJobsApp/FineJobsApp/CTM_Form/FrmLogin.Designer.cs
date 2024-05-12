@@ -46,7 +46,7 @@
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Button;
             materialLabel3.HighEmphasis = true;
-            materialLabel3.Location = new Point(409, 469);
+            materialLabel3.Location = new Point(358, 352);
             materialLabel3.Margin = new Padding(1, 0, 1, 0);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
@@ -65,17 +65,18 @@
             SignupButton.DrawShadows = false;
             SignupButton.HighEmphasis = false;
             SignupButton.Icon = null;
-            SignupButton.Location = new Point(409, 563);
-            SignupButton.Margin = new Padding(2, 3, 2, 3);
+            SignupButton.Location = new Point(358, 422);
+            SignupButton.Margin = new Padding(2);
             SignupButton.MouseState = MaterialSkin.MouseState.HOVER;
             SignupButton.Name = "SignupButton";
             SignupButton.NoAccentTextColor = Color.Empty;
-            SignupButton.Size = new Size(154, 37);
+            SignupButton.Size = new Size(135, 28);
             SignupButton.TabIndex = 15;
             SignupButton.Text = "Sign Up";
             SignupButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             SignupButton.UseAccentColor = false;
             SignupButton.UseVisualStyleBackColor = false;
+            SignupButton.Click += SignupButton_Click_1;
             // 
             // LoginButton
             // 
@@ -86,17 +87,18 @@
             LoginButton.Depth = 0;
             LoginButton.HighEmphasis = true;
             LoginButton.Icon = null;
-            LoginButton.Location = new Point(409, 500);
-            LoginButton.Margin = new Padding(2, 3, 2, 3);
+            LoginButton.Location = new Point(358, 375);
+            LoginButton.Margin = new Padding(2);
             LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             LoginButton.Name = "LoginButton";
             LoginButton.NoAccentTextColor = Color.Empty;
-            LoginButton.Size = new Size(153, 45);
+            LoginButton.Size = new Size(134, 34);
             LoginButton.TabIndex = 14;
             LoginButton.Text = "Login";
             LoginButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             LoginButton.UseAccentColor = false;
             LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click_1;
             // 
             // materialLabel2
             // 
@@ -104,7 +106,7 @@
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel2.Location = new Point(306, 330);
+            materialLabel2.Location = new Point(268, 248);
             materialLabel2.Margin = new Padding(1, 0, 1, 0);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
@@ -118,7 +120,7 @@
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            materialLabel1.Location = new Point(306, 250);
+            materialLabel1.Location = new Point(268, 188);
             materialLabel1.Margin = new Padding(1, 0, 1, 0);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
@@ -134,7 +136,7 @@
             TittleLable.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
             TittleLable.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
             TittleLable.HighEmphasis = true;
-            TittleLable.Location = new Point(361, 208);
+            TittleLable.Location = new Point(316, 156);
             TittleLable.Margin = new Padding(1, 0, 1, 0);
             TittleLable.MouseState = MaterialSkin.MouseState.HOVER;
             TittleLable.Name = "TittleLable";
@@ -152,14 +154,14 @@
             PasswordTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             PasswordTextbox.Hint = "Enter your password";
             PasswordTextbox.LeadingIcon = null;
-            PasswordTextbox.Location = new Point(306, 347);
+            PasswordTextbox.Location = new Point(268, 260);
             PasswordTextbox.Margin = new Padding(1);
             PasswordTextbox.MaxLength = 50;
             PasswordTextbox.MouseState = MaterialSkin.MouseState.OUT;
             PasswordTextbox.Multiline = false;
             PasswordTextbox.Name = "PasswordTextbox";
             PasswordTextbox.Password = true;
-            PasswordTextbox.Size = new Size(344, 50);
+            PasswordTextbox.Size = new Size(301, 50);
             PasswordTextbox.TabIndex = 10;
             PasswordTextbox.Text = "";
             PasswordTextbox.TrailingIcon = null;
@@ -173,22 +175,22 @@
             EmailTextbox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             EmailTextbox.Hint = "Enter your email";
             EmailTextbox.LeadingIcon = null;
-            EmailTextbox.Location = new Point(306, 261);
+            EmailTextbox.Location = new Point(268, 196);
             EmailTextbox.Margin = new Padding(1);
             EmailTextbox.MaxLength = 50;
             EmailTextbox.MouseState = MaterialSkin.MouseState.OUT;
             EmailTextbox.Multiline = false;
             EmailTextbox.Name = "EmailTextbox";
-            EmailTextbox.Size = new Size(344, 50);
+            EmailTextbox.Size = new Size(301, 50);
             EmailTextbox.TabIndex = 9;
             EmailTextbox.Text = "";
             EmailTextbox.TrailingIcon = null;
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1189, 929);
+            ClientSize = new Size(1040, 663);
             Controls.Add(materialLabel3);
             Controls.Add(SignupButton);
             Controls.Add(LoginButton);
@@ -197,8 +199,9 @@
             Controls.Add(TittleLable);
             Controls.Add(PasswordTextbox);
             Controls.Add(EmailTextbox);
-            Margin = new Padding(5);
+            Margin = new Padding(4);
             Name = "FrmLogin";
+            Padding = new Padding(3, 48, 3, 2);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login Form ";
             ResumeLayout(false);

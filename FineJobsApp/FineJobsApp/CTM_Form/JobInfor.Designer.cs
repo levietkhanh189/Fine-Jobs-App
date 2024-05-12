@@ -37,12 +37,14 @@
             SkillRequirements = new Label();
             CompanyButton = new Button();
             Title = new Label();
+            Time = new Label();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(238, 224, 229);
+            panel2.Controls.Add(Time);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(SalaryRange);
             panel2.Controls.Add(button2);
@@ -50,10 +52,9 @@
             panel2.Controls.Add(SkillRequirements);
             panel2.Controls.Add(CompanyButton);
             panel2.Controls.Add(Title);
-            panel2.Location = new Point(3, 4);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(485, 405);
+            panel2.Size = new Size(424, 304);
             panel2.TabIndex = 13;
             // 
             // button1
@@ -62,10 +63,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(52, 296);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(46, 222);
             button1.Name = "button1";
-            button1.Size = new Size(368, 39);
+            button1.Size = new Size(322, 29);
             button1.TabIndex = 7;
             button1.Text = "Apply Now";
             button1.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@
             // 
             SalaryRange.AutoSize = true;
             SalaryRange.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SalaryRange.Location = new Point(19, 165);
+            SalaryRange.Location = new Point(18, 139);
             SalaryRange.Name = "SalaryRange";
-            SalaryRange.Size = new Size(117, 21);
+            SalaryRange.Size = new Size(91, 18);
             SalaryRange.TabIndex = 6;
             SalaryRange.Text = "Salary: 300$";
             // 
@@ -87,10 +87,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(52, 352);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(46, 264);
             button2.Name = "button2";
-            button2.Size = new Size(368, 39);
+            button2.Size = new Size(322, 29);
             button2.TabIndex = 5;
             button2.Text = "More Information";
             button2.UseVisualStyleBackColor = false;
@@ -99,18 +98,18 @@
             // Location
             // 
             Location.AutoSize = true;
-            Location.Location = new Point(21, 255);
+            Location.Location = new Point(18, 191);
             Location.Name = "Location";
-            Location.Size = new Size(120, 20);
+            Location.Size = new Size(99, 15);
             Location.TabIndex = 4;
             Location.Text = "Ho Chi Minh City";
             // 
             // SkillRequirements
             // 
             SkillRequirements.AutoSize = true;
-            SkillRequirements.Location = new Point(19, 204);
+            SkillRequirements.Location = new Point(18, 168);
             SkillRequirements.Name = "SkillRequirements";
-            SkillRequirements.Size = new Size(155, 20);
+            SkillRequirements.Size = new Size(126, 15);
             SkillRequirements.TabIndex = 3;
             SkillRequirements.Text = "[\"C#\", \".NET\", \"Azure\"]";
             // 
@@ -121,10 +120,9 @@
             CompanyButton.ForeColor = Color.Black;
             CompanyButton.Image = (Image)resources.GetObject("CompanyButton.Image");
             CompanyButton.ImageAlign = ContentAlignment.MiddleLeft;
-            CompanyButton.Location = new Point(21, 71);
-            CompanyButton.Margin = new Padding(3, 4, 3, 4);
+            CompanyButton.Location = new Point(19, 68);
             CompanyButton.Name = "CompanyButton";
-            CompanyButton.Size = new Size(427, 68);
+            CompanyButton.Size = new Size(374, 51);
             CompanyButton.TabIndex = 2;
             CompanyButton.Text = "ANDPAD VietNam Co., Ltd";
             CompanyButton.UseVisualStyleBackColor = true;
@@ -134,21 +132,31 @@
             // 
             Title.AutoSize = true;
             Title.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.Location = new Point(19, 29);
+            Title.Location = new Point(18, 37);
             Title.Name = "Title";
-            Title.Size = new Size(309, 21);
+            Title.Size = new Size(253, 18);
             Title.TabIndex = 1;
             Title.Text = "Senior iOS Native Engineer (Swift)";
             Title.Click += Title_Click;
             // 
+            // Time
+            // 
+            Time.AutoSize = true;
+            Time.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Time.ForeColor = Color.SlateGray;
+            Time.Location = new Point(10, 9);
+            Time.Name = "Time";
+            Time.Size = new Size(139, 21);
+            Time.TabIndex = 8;
+            Time.Text = "Ho Chi Minh City";
+            // 
             // JobInfor
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel2);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "JobInfor";
-            Size = new Size(494, 415);
+            Size = new Size(432, 311);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -164,5 +172,6 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label SalaryRange;
         private Button button1;
+        private Label Time;
     }
 }

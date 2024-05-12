@@ -38,7 +38,6 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             button3 = new Button();
             button2 = new Button();
-            button7 = new Button();
             button1 = new Button();
             button5 = new Button();
             panel2 = new Panel();
@@ -55,19 +54,17 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(914, 99);
+            panel1.Size = new Size(800, 74);
             panel1.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(34, 34, 34);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 84);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(0, 63);
             panel3.Name = "panel3";
-            panel3.Size = new Size(914, 15);
+            panel3.Size = new Size(800, 11);
             panel3.TabIndex = 3;
             // 
             // label1
@@ -75,19 +72,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(34, 34, 34);
-            label1.Location = new Point(106, 32);
+            label1.Location = new Point(93, 24);
             label1.Name = "label1";
-            label1.Size = new Size(243, 28);
+            label1.Size = new Size(189, 21);
             label1.TabIndex = 2;
             label1.Text = "FGB | FIND A GOOD JOB";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, 15);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(12, 11);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(72, 66);
+            pictureBox1.Size = new Size(63, 50);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -95,17 +91,15 @@
             // 
             flowLayoutPanel1.BackColor = Color.FromArgb(34, 34, 34);
             flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Controls.Add(flowLayoutPanel2);
             flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button7);
+            flowLayoutPanel1.Controls.Add(flowLayoutPanel2);
             flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Controls.Add(button5);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.ForeColor = Color.FromArgb(34, 34, 34);
-            flowLayoutPanel1.Location = new Point(0, 99);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(0, 74);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(199, 577);
+            flowLayoutPanel1.Size = new Size(174, 433);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // button4
@@ -115,10 +109,9 @@
             button4.ForeColor = SystemColors.HighlightText;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(3, 4);
-            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Location = new Point(3, 3);
             button4.Name = "button4";
-            button4.Size = new Size(192, 81);
+            button4.Size = new Size(168, 61);
             button4.TabIndex = 5;
             button4.Text = "DashBoard";
             button4.TextAlign = ContentAlignment.MiddleRight;
@@ -129,10 +122,9 @@
             // 
             flowLayoutPanel2.BackColor = SystemColors.ActiveCaptionText;
             flowLayoutPanel2.Controls.Add(button3);
-            flowLayoutPanel2.Location = new Point(3, 93);
-            flowLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel2.Location = new Point(3, 134);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(201, 71);
+            flowLayoutPanel2.Size = new Size(176, 53);
             flowLayoutPanel2.TabIndex = 2;
             // 
             // button3
@@ -142,10 +134,9 @@
             button3.ForeColor = SystemColors.HighlightText;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(3, 4);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Location = new Point(3, 3);
             button3.Name = "button3";
-            button3.Size = new Size(192, 61);
+            button3.Size = new Size(168, 46);
             button3.TabIndex = 4;
             button3.Text = "All Job";
             button3.TextAlign = ContentAlignment.MiddleRight;
@@ -159,32 +150,14 @@
             button2.ForeColor = SystemColors.HighlightText;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(3, 172);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(3, 70);
             button2.Name = "button2";
-            button2.Size = new Size(195, 78);
+            button2.Size = new Size(171, 58);
             button2.TabIndex = 3;
             button2.Text = "Top Company";
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.FromArgb(34, 34, 34);
-            button7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.HighlightText;
-            button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(3, 258);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(195, 78);
-            button7.TabIndex = 7;
-            button7.Text = "CV";
-            button7.TextAlign = ContentAlignment.MiddleRight;
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
             // 
             // button1
             // 
@@ -193,10 +166,9 @@
             button1.ForeColor = SystemColors.HighlightText;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 344);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(3, 193);
             button1.Name = "button1";
-            button1.Size = new Size(195, 78);
+            button1.Size = new Size(171, 58);
             button1.TabIndex = 9;
             button1.Text = "My Jobs";
             button1.TextAlign = ContentAlignment.MiddleRight;
@@ -210,10 +182,9 @@
             button5.ForeColor = SystemColors.HighlightText;
             button5.Image = (Image)resources.GetObject("button5.Image");
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 430);
-            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Location = new Point(3, 257);
             button5.Name = "button5";
-            button5.Size = new Size(195, 78);
+            button5.Size = new Size(171, 58);
             button5.TabIndex = 8;
             button5.Text = "User Profile";
             button5.TextAlign = ContentAlignment.MiddleRight;
@@ -225,22 +196,20 @@
             panel2.AutoScroll = true;
             panel2.AutoSize = true;
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(199, 99);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(174, 74);
             panel2.Name = "panel2";
-            panel2.Size = new Size(715, 577);
+            panel2.Size = new Size(626, 433);
             panel2.TabIndex = 2;
             // 
             // FrmHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 676);
+            ClientSize = new Size(800, 507);
             Controls.Add(panel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmHome";
             Text = "FrmHome";
             Load += FrmHome_Load;
@@ -263,7 +232,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;

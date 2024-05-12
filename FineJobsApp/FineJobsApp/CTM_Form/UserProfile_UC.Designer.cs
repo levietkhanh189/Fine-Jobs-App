@@ -29,300 +29,247 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfile_UC));
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            panel5 = new Panel();
+            label10 = new Label();
+            button2 = new Button();
+            panel4 = new Panel();
+            Education = new RichTextBox();
+            label4 = new Label();
+            panel3 = new Panel();
+            ResumeLink = new RichTextBox();
+            FullName = new TextBox();
+            label11 = new Label();
+            panel2 = new Panel();
+            WorkExperien = new RichTextBox();
+            label5 = new Label();
+            panel1 = new Panel();
+            Skills = new RichTextBox();
+            label7 = new Label();
+            pictureBox2 = new PictureBox();
+            label6 = new Label();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // panel5
             // 
-            this.panel5.AutoScroll = true;
-            this.panel5.BackColor = System.Drawing.Color.LightGray;
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.maskedTextBox3);
-            this.panel5.Controls.Add(this.maskedTextBox2);
-            this.panel5.Controls.Add(this.dateTimePicker1);
-            this.panel5.Controls.Add(this.maskedTextBox1);
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.panel1);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Location = new System.Drawing.Point(59, 83);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(507, 541);
-            this.panel5.TabIndex = 9;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            panel5.AutoScroll = true;
+            panel5.BackColor = Color.LightGray;
+            panel5.Controls.Add(label10);
+            panel5.Controls.Add(button2);
+            panel5.Controls.Add(panel4);
+            panel5.Controls.Add(label4);
+            panel5.Controls.Add(panel3);
+            panel5.Controls.Add(FullName);
+            panel5.Controls.Add(label11);
+            panel5.Controls.Add(panel2);
+            panel5.Controls.Add(label5);
+            panel5.Controls.Add(panel1);
+            panel5.Controls.Add(label7);
+            panel5.Controls.Add(pictureBox2);
+            panel5.Location = new Point(59, 78);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(507, 712);
+            panel5.TabIndex = 9;
             // 
-            // label11
+            // label10
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(53, 384);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 19);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Work Experience";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.richTextBox2);
-            this.panel2.Location = new System.Drawing.Point(39, 397);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 103);
-            this.panel2.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 202);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 19);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Education";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(39, 212);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 134);
-            this.panel1.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Phone number:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Address:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "BirthDate";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 90);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 16);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Gmail:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 63);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 16);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Title:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "User Name";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(369, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(125, 134);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(57, 291);
+            label10.Name = "label10";
+            label10.Size = new Size(77, 16);
+            label10.TabIndex = 21;
+            label10.Text = "Education";
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button2.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
-            this.button2.Location = new System.Drawing.Point(199, 649);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 55);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Update Profile";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.BackColor = Color.FromArgb(34, 34, 34);
+            button2.Font = new Font("Arial Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.FromArgb(221, 221, 221);
+            button2.Location = new Point(137, 651);
+            button2.Name = "button2";
+            button2.Size = new Size(195, 52);
+            button2.TabIndex = 7;
+            button2.Text = "Update Profile";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(Education);
+            panel4.Location = new Point(39, 302);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(415, 97);
+            panel4.TabIndex = 20;
+            // 
+            // Education
+            // 
+            Education.Location = new Point(18, 8);
+            Education.Name = "Education";
+            Education.Size = new Size(378, 75);
+            Education.TabIndex = 9;
+            Education.Text = "Share your background education";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(53, 529);
+            label4.Name = "label4";
+            label4.Size = new Size(97, 16);
+            label4.TabIndex = 19;
+            label4.Text = "Resume Link";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(ResumeLink);
+            panel3.Location = new Point(39, 539);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(415, 97);
+            panel3.TabIndex = 12;
+            // 
+            // ResumeLink
+            // 
+            ResumeLink.Location = new Point(18, 9);
+            ResumeLink.Name = "ResumeLink";
+            ResumeLink.Size = new Size(378, 75);
+            ResumeLink.TabIndex = 9;
+            ResumeLink.Text = "Highlight detailed information about your job history";
+            // 
+            // FullName
+            // 
+            FullName.Location = new Point(167, 86);
+            FullName.Name = "FullName";
+            FullName.Size = new Size(196, 23);
+            FullName.TabIndex = 18;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(53, 407);
+            label11.Name = "label11";
+            label11.Size = new Size(127, 16);
+            label11.TabIndex = 12;
+            label11.Text = "Work Experience";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(WorkExperien);
+            panel2.Location = new Point(39, 418);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(415, 97);
+            panel2.TabIndex = 11;
+            // 
+            // WorkExperien
+            // 
+            WorkExperien.Location = new Point(18, 8);
+            WorkExperien.Name = "WorkExperien";
+            WorkExperien.Size = new Size(378, 75);
+            WorkExperien.TabIndex = 9;
+            WorkExperien.Text = "Highlight detailed information about your job history";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(54, 189);
+            label5.Name = "label5";
+            label5.Size = new Size(44, 16);
+            label5.TabIndex = 8;
+            label5.Text = "Skills";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(Skills);
+            panel1.Location = new Point(39, 199);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(415, 80);
+            panel1.TabIndex = 10;
+            // 
+            // Skills
+            // 
+            Skills.Location = new Point(18, 11);
+            Skills.Name = "Skills";
+            Skills.Size = new Size(378, 56);
+            Skills.TabIndex = 8;
+            Skills.Text = "Share your background education";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(48, 86);
+            label7.Name = "label7";
+            label7.Size = new Size(93, 19);
+            label7.TabIndex = 6;
+            label7.Text = "User Name";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(369, 20);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(125, 125);
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(60, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 38);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "User Profile";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(566, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 41);
-            this.button5.TabIndex = 12;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(18, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(378, 103);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "Share your background education";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(18, 9);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(378, 80);
-            this.richTextBox2.TabIndex = 9;
-            this.richTextBox2.Text = "Highlight detailed information about your job history";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(105, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 22);
-            this.textBox1.TabIndex = 13;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(105, 85);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(245, 22);
-            this.maskedTextBox1.TabIndex = 14;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(245, 22);
-            this.dateTimePicker1.TabIndex = 15;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(105, 143);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(245, 22);
-            this.maskedTextBox2.TabIndex = 16;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(137, 171);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(213, 22);
-            this.maskedTextBox3.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(154, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 22);
-            this.textBox2.TabIndex = 18;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Black", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(60, 24);
+            label6.Name = "label6";
+            label6.Size = new Size(141, 30);
+            label6.TabIndex = 6;
+            label6.Text = "User Profile";
             // 
             // UserProfile_UC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label6);
-            this.Name = "UserProfile_UC";
-            this.Size = new System.Drawing.Size(634, 730);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            Controls.Add(panel5);
+            Controls.Add(label6);
+            Name = "UserProfile_UC";
+            Size = new Size(634, 797);
+            Load += UserProfile_UC_Load_1;
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RichTextBox WorkExperien;
+        private System.Windows.Forms.RichTextBox Skills;
+        private System.Windows.Forms.TextBox FullName;
+        private Label label4;
+        private Panel panel3;
+        private RichTextBox ResumeLink;
+        private Label label10;
+        private Panel panel4;
+        private RichTextBox Education;
     }
 }

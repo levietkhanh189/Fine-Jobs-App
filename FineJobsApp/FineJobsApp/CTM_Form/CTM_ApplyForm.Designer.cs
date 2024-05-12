@@ -28,398 +28,259 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label6 = new Label();
+            label16 = new Label();
+            textBoxSkills = new RichTextBox();
+            textBoxExperience = new RichTextBox();
+            label14 = new Label();
             button1 = new Button();
-            label4 = new Label();
-            button2 = new Button();
-            textBoxFullName = new TextBox();
-            label2 = new Label();
-            JobName = new Label();
-            label11 = new Label();
-            panel3 = new Panel();
-            panel1 = new Panel();
-            button3 = new Button();
             label13 = new Label();
             panel6 = new Panel();
-            textBoxResumeLink = new TextBox();
-            label14 = new Label();
-            label1 = new Label();
-            panel2 = new Panel();
-            label3 = new Label();
+            textBoxEducation = new RichTextBox();
+            textBoxResumeLink = new RichTextBox();
+            panel7 = new Panel();
+            textBoxFullName = new TextBox();
+            label15 = new Label();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            label22 = new Label();
+            panel10 = new Panel();
+            JobName = new Label();
             label12 = new Label();
-            label10 = new Label();
-            panel5 = new Panel();
-            textBoxSkills = new TextBox();
-            label7 = new Label();
-            panel4 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
-            textBoxExperience = new TextBox();
-            textBoxEducation = new TextBox();
-            panel3.SuspendLayout();
-            panel1.SuspendLayout();
             panel6.SuspendLayout();
-            panel2.SuspendLayout();
-            panel5.SuspendLayout();
-            panel4.SuspendLayout();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
-            // label6
+            // label16
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Black", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(127, -52);
-            label6.Name = "label6";
-            label6.Size = new Size(126, 38);
-            label6.TabIndex = 14;
-            label6.Text = "User CV";
+            label16.AutoSize = true;
+            label16.BackColor = SystemColors.ControlLightLight;
+            label16.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(38, 191);
+            label16.Name = "label16";
+            label16.Size = new Size(44, 16);
+            label16.TabIndex = 8;
+            label16.Text = "Skills";
             // 
-            // button1
+            // textBoxSkills
             // 
-            button1.Location = new Point(282, 846);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(259, 62);
-            button1.TabIndex = 12;
-            button1.UseVisualStyleBackColor = true;
+            textBoxSkills.Location = new Point(18, 11);
+            textBoxSkills.Name = "textBoxSkills";
+            textBoxSkills.Size = new Size(434, 56);
+            textBoxSkills.TabIndex = 8;
+            textBoxSkills.Text = "Share your background skills";
             // 
-            // label4
+            // textBoxExperience
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(362, 774);
-            label4.Name = "label4";
-            label4.Size = new Size(96, 38);
-            label4.TabIndex = 16;
-            label4.Text = "label4";
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlDarkDark;
-            button2.Location = new Point(158, 754);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(542, 45);
-            button2.TabIndex = 19;
-            button2.Text = "SEND MY CV";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxFullName
-            // 
-            textBoxFullName.Location = new Point(21, 25);
-            textBoxFullName.Margin = new Padding(3, 4, 3, 4);
-            textBoxFullName.Name = "textBoxFullName";
-            textBoxFullName.Size = new Size(492, 27);
-            textBoxFullName.TabIndex = 8;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLightLight;
-            label2.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(175, 199);
-            label2.Name = "label2";
-            label2.Size = new Size(73, 19);
-            label2.TabIndex = 15;
-            label2.Text = "Your CV";
-            // 
-            // JobName
-            // 
-            JobName.AutoSize = true;
-            JobName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            JobName.ForeColor = Color.WhiteSmoke;
-            JobName.Location = new Point(346, 24);
-            JobName.Name = "JobName";
-            JobName.Size = new Size(159, 41);
-            JobName.TabIndex = 1;
-            JobName.Text = "Job Name";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = SystemColors.ControlLightLight;
-            label11.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(174, 80);
-            label11.Name = "label11";
-            label11.Size = new Size(92, 19);
-            label11.TabIndex = 13;
-            label11.Text = "Your name";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.ScrollBar;
-            panel3.Controls.Add(textBoxFullName);
-            panel3.Location = new Point(158, 92);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(542, 75);
-            panel3.TabIndex = 14;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.GrayText;
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(panel6);
-            panel1.Controls.Add(label14);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(panel5);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(JobName);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(813, 908);
-            panel1.TabIndex = 17;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ControlDarkDark;
-            button3.Location = new Point(158, 846);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(542, 45);
-            button3.TabIndex = 27;
-            button3.Text = "SEND MY CV";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = SystemColors.ControlLightLight;
-            label13.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(174, 303);
-            label13.Name = "label13";
-            label13.Size = new Size(110, 19);
-            label13.TabIndex = 25;
-            label13.Text = "Resume Link";
-            // 
-            // panel6
-            // 
-            panel6.BackColor = SystemColors.ScrollBar;
-            panel6.Controls.Add(textBoxResumeLink);
-            panel6.Location = new Point(158, 315);
-            panel6.Margin = new Padding(3, 4, 3, 4);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(542, 75);
-            panel6.TabIndex = 26;
-            // 
-            // textBoxResumeLink
-            // 
-            textBoxResumeLink.Location = new Point(21, 25);
-            textBoxResumeLink.Margin = new Padding(3, 4, 3, 4);
-            textBoxResumeLink.Name = "textBoxResumeLink";
-            textBoxResumeLink.Size = new Size(492, 27);
-            textBoxResumeLink.TabIndex = 8;
+            textBoxExperience.Location = new Point(18, 8);
+            textBoxExperience.Name = "textBoxExperience";
+            textBoxExperience.Size = new Size(434, 75);
+            textBoxExperience.TabIndex = 9;
+            textBoxExperience.Text = "Highlight detailed information about your job history";
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.BackColor = SystemColors.ControlLightLight;
             label14.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(175, 315);
+            label14.Location = new Point(14, 0);
             label14.Name = "label14";
-            label14.Size = new Size(73, 19);
-            label14.TabIndex = 24;
-            label14.Text = "Your CV";
+            label14.Size = new Size(97, 16);
+            label14.TabIndex = 19;
+            label14.Text = "Resume Link";
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ControlLightLight;
-            label1.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(170, 623);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 19);
-            label1.TabIndex = 22;
-            label1.Text = "Education";
+            button1.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlDarkDark;
+            button1.Location = new Point(20, 654);
+            button1.Name = "button1";
+            button1.Size = new Size(474, 34);
+            button1.TabIndex = 22;
+            button1.Text = "SEND MY CV";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // panel2
+            // label13
             // 
-            panel2.BackColor = SystemColors.ScrollBar;
-            panel2.Controls.Add(textBoxEducation);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label12);
-            panel2.Location = new Point(158, 633);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(542, 179);
-            panel2.TabIndex = 23;
+            label13.AutoSize = true;
+            label13.BackColor = SystemColors.ControlLightLight;
+            label13.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(38, 291);
+            label13.Name = "label13";
+            label13.Size = new Size(77, 16);
+            label13.TabIndex = 21;
+            label13.Text = "Education";
             // 
-            // label3
+            // panel6
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(18, 141);
-            label3.Name = "label3";
-            label3.Size = new Size(173, 16);
-            label3.TabIndex = 10;
-            label3.Text = "500 of 500 characters remaining";
+            panel6.BackColor = SystemColors.ScrollBar;
+            panel6.Controls.Add(textBoxEducation);
+            panel6.Location = new Point(20, 302);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(474, 97);
+            panel6.TabIndex = 20;
+            // 
+            // textBoxEducation
+            // 
+            textBoxEducation.Location = new Point(18, 8);
+            textBoxEducation.Name = "textBoxEducation";
+            textBoxEducation.Size = new Size(434, 75);
+            textBoxEducation.TabIndex = 9;
+            textBoxEducation.Text = "Share your background education";
+            // 
+            // textBoxResumeLink
+            // 
+            textBoxResumeLink.Location = new Point(19, 23);
+            textBoxResumeLink.Name = "textBoxResumeLink";
+            textBoxResumeLink.Size = new Size(433, 75);
+            textBoxResumeLink.TabIndex = 9;
+            textBoxResumeLink.Text = "Highlight detailed information about your job history";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = SystemColors.ScrollBar;
+            panel7.Controls.Add(textBoxResumeLink);
+            panel7.Controls.Add(label14);
+            panel7.Location = new Point(20, 525);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(474, 111);
+            panel7.TabIndex = 12;
+            // 
+            // textBoxFullName
+            // 
+            textBoxFullName.Location = new Point(198, 111);
+            textBoxFullName.Name = "textBoxFullName";
+            textBoxFullName.Size = new Size(246, 23);
+            textBoxFullName.TabIndex = 18;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = SystemColors.ControlLightLight;
+            label15.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(34, 407);
+            label15.Name = "label15";
+            label15.Size = new Size(127, 16);
+            label15.TabIndex = 12;
+            label15.Text = "Work Experience";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = SystemColors.ScrollBar;
+            panel8.Controls.Add(textBoxExperience);
+            panel8.Location = new Point(20, 418);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(474, 97);
+            panel8.TabIndex = 11;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = SystemColors.ScrollBar;
+            panel9.Controls.Add(textBoxSkills);
+            panel9.Location = new Point(20, 199);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(474, 80);
+            panel9.TabIndex = 10;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.ForeColor = SystemColors.ControlLightLight;
+            label22.Location = new Point(80, 115);
+            label22.Name = "label22";
+            label22.Size = new Size(93, 19);
+            label22.TabIndex = 6;
+            label22.Text = "User Name";
+            // 
+            // panel10
+            // 
+            panel10.AutoScroll = true;
+            panel10.AutoSize = true;
+            panel10.BackColor = SystemColors.GrayText;
+            panel10.Controls.Add(JobName);
+            panel10.Controls.Add(label16);
+            panel10.Controls.Add(button1);
+            panel10.Controls.Add(label13);
+            panel10.Controls.Add(panel6);
+            panel10.Controls.Add(panel7);
+            panel10.Controls.Add(textBoxFullName);
+            panel10.Controls.Add(label15);
+            panel10.Controls.Add(panel8);
+            panel10.Controls.Add(panel9);
+            panel10.Controls.Add(label22);
+            panel10.Location = new Point(35, 73);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(514, 708);
+            panel10.TabIndex = 18;
+            panel10.Paint += panel10_Paint;
+            // 
+            // JobName
+            // 
+            JobName.AutoSize = true;
+            JobName.BackColor = SystemColors.ControlLightLight;
+            JobName.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            JobName.Location = new Point(198, 28);
+            JobName.Name = "JobName";
+            JobName.Size = new Size(81, 16);
+            JobName.TabIndex = 25;
+            JobName.Text = "JOB NAME";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(17, 21);
+            label12.Font = new Font("Segoe UI Black", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(35, 24);
             label12.Name = "label12";
-            label12.Size = new Size(232, 20);
-            label12.TabIndex = 7;
-            label12.Text = "Share your background education";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.ControlLightLight;
-            label10.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(174, 187);
-            label10.Name = "label10";
-            label10.Size = new Size(50, 19);
-            label10.TabIndex = 20;
-            label10.Text = "Skills";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = SystemColors.ScrollBar;
-            panel5.Controls.Add(textBoxSkills);
-            panel5.Location = new Point(158, 199);
-            panel5.Margin = new Padding(3, 4, 3, 4);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(542, 75);
-            panel5.TabIndex = 21;
-            // 
-            // textBoxSkills
-            // 
-            textBoxSkills.Location = new Point(21, 25);
-            textBoxSkills.Margin = new Padding(3, 4, 3, 4);
-            textBoxSkills.Name = "textBoxSkills";
-            textBoxSkills.Size = new Size(492, 27);
-            textBoxSkills.TabIndex = 8;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.ControlLightLight;
-            label7.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(170, 419);
-            label7.Name = "label7";
-            label7.Size = new Size(96, 19);
-            label7.TabIndex = 17;
-            label7.Text = "Experience";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = SystemColors.ScrollBar;
-            panel4.Controls.Add(textBoxExperience);
-            panel4.Controls.Add(label9);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(158, 429);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(542, 179);
-            panel4.TabIndex = 18;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 7.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ControlDarkDark;
-            label9.Location = new Point(18, 141);
-            label9.Name = "label9";
-            label9.Size = new Size(173, 16);
-            label9.TabIndex = 10;
-            label9.Text = "500 of 500 characters remaining";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(17, 21);
-            label8.Name = "label8";
-            label8.Size = new Size(490, 20);
-            label8.TabIndex = 7;
-            label8.Text = "What skills, work projects or achievements make you a strong candidate?";
-            // 
-            // textBoxExperience
-            // 
-            textBoxExperience.Location = new Point(22, 65);
-            textBoxExperience.Name = "textBoxExperience";
-            textBoxExperience.Size = new Size(480, 27);
-            textBoxExperience.TabIndex = 11;
-            // 
-            // textBoxEducation
-            // 
-            textBoxEducation.Location = new Point(17, 54);
-            textBoxEducation.Name = "textBoxEducation";
-            textBoxEducation.Size = new Size(480, 27);
-            textBoxEducation.TabIndex = 12;
+            label12.Size = new Size(141, 30);
+            label12.TabIndex = 17;
+            label12.Text = "User Profile";
             // 
             // CTM_ApplyForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
-            ClientSize = new Size(834, 618);
-            Controls.Add(panel1);
-            Controls.Add(label4);
-            Controls.Add(label6);
-            Controls.Add(button1);
+            ClientSize = new Size(604, 786);
+            Controls.Add(panel10);
+            Controls.Add(label12);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CTM_ApplyForm";
             Text = "CTM_ApplyForm";
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += CTM_ApplyForm_Load;
             panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label6;
+        private Label label16;
+        private RichTextBox textBoxSkills;
+        private RichTextBox textBoxExperience;
+        private Label label14;
         private Button button1;
-        private Label label4;
-        private Button button2;
-        private TextBox textBoxFullName;
-        private Label label2;
-        private Label JobName;
-        private Label label11;
-        private Panel panel3;
-        private Panel panel1;
-        private Label label10;
-        private Panel panel5;
-        private TextBox textBoxSkills;
-        private Label label1;
-        private Panel panel2;
-        private Label label3;
-        private Label label12;
-        private Label label7;
-        private Panel panel4;
-        private Label label9;
-        private Label label8;
         private Label label13;
         private Panel panel6;
-        private TextBox textBoxResumeLink;
-        private Label label14;
-        private Button button3;
-        private TextBox textBoxEducation;
-        private TextBox textBoxExperience;
+        private RichTextBox textBoxEducation;
+        private RichTextBox textBoxResumeLink;
+        private Panel panel7;
+        private TextBox textBoxFullName;
+        private Label label15;
+        private Panel panel8;
+        private Panel panel9;
+        private Label label22;
+        private Panel panel10;
+        private Label label12;
+        private Label JobName;
     }
 }

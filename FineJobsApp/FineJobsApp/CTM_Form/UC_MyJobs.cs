@@ -16,12 +16,13 @@ namespace AnimationSliding_Sign_In_Sign_Up.CTM_Form
         public UC_MyJobs()
         {
             InitializeComponent();
+            LoadDanhSach();
         }
 
         private void LoadDanhSach()
         {
             // Lấy danh sách đơn ứng tuyển của người dùng hiện tại
-            List<ApplicationModel> applications = ControllerManager.Instance.ApplicationController.GetApplicationsByUserId(CurrentUserID);
+            List<ApplicationModel> applications = ControllerManager.Instance.ApplicationController.GetApplicationsByUserId(ControllerManager.Instance.UserModel.UserID);
 
             if (applications.Count > 0)
             {
@@ -58,14 +59,7 @@ namespace AnimationSliding_Sign_In_Sign_Up.CTM_Form
             }
         }
 
-        private int CurrentUserID
-        {
-            get
-            {
-                // Viết mã để lấy UserID của người dùng hiện tại
-                return 1; // Ví dụ, trả về giá trị mặc định 1
-            }
-        }
+        
 
 
     }

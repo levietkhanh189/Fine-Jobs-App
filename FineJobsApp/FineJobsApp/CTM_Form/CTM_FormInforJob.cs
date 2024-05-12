@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimationSliding_Sign_In_Sign_Up;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,14 @@ namespace FineJobsApp.CTM_Form
 {
     public partial class CTM_FormInforJob : Form
     {
-        CTM_ApplyForm cTM_ApplyForm;
+        CTM_ApplyForm CTM_ApplyForm;
+        FormInforCompany formInforCompany;
         public CTM_FormInforJob(JobModel job)
         {
             InitializeComponent();
             UpdateJobInformation(job);
-            cTM_ApplyForm = new CTM_ApplyForm(job);
+            CTM_ApplyForm = new CTM_ApplyForm(job);
+            formInforCompany = new FormInforCompany(ControllerManager.Instance.CompanyProfileController.GetCompanyByID(job.CompanyID));
         }
 
         public void UpdateJobInformation(JobModel job)
@@ -36,7 +39,15 @@ namespace FineJobsApp.CTM_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cTM_ApplyForm.ShowDialog();
+            //mở form ứng tuyển
+            CTM_ApplyForm.ShowDialog();
+        }
+
+        private void CompanyButton_Click(object sender, EventArgs e)
+        {
+            //mở form thông tin công ty
+            //FormInforCompany formInforCompany = new FormInforCompany();
+            formInforCompany.ShowDialog();
         }
     }
 }

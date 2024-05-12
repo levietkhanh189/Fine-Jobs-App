@@ -13,16 +13,12 @@ namespace AnimationSliding_Sign_In_Sign_Up
 {
     public partial class UC_TopITJob : UserControl
     {
-        public UC_TopITJob(CTM_JobModel j)
+        public UC_TopITJob(JobModel j)
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormInforCompany formInforCompany = new FormInforCompany();
-            formInforCompany.Show();
-        }
+      
 
         private void addUserControl(UserControl userControl)
         {

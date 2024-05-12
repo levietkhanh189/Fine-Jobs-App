@@ -15,32 +15,12 @@ namespace AnimationSliding_Sign_In_Sign_Up
             LoadDanhSach();
         }
 
-        //private void addUserControl(UserControl userControl)
-        //{
-        //    userControl.Dock = DockStyle.Fill;
-        //    panel2.Controls.Clear();
-        //    panel2.Controls.Add(userControl);
-        //    userControl.BringToFront();
-        //}
 
-        private void addUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            panel2.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormInforCompany formInforCompany = new FormInforCompany();
-            formInforCompany.ShowDialog();
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
             // Hiển thị hộp thoại để người dùng nhập từ khóa tìm kiếm
-            string keyword = ""; // Đây là nơi bạn lưu từ khóa tìm kiếm, có thể sử dụng hộp thoại để lấy từ người dùng
+            string keyword = textBoxSearch.Text; // Lấy từ khóa từ TextBox tìm kiếm
 
             // Gọi hàm tìm kiếm từ JobController
             List<JobModel> searchResults = ControllerManager.Instance.JobController.SearchJobs(keyword);
@@ -80,19 +60,6 @@ namespace AnimationSliding_Sign_In_Sign_Up
             }
         }
 
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ApplyJob_UC applyJob_UC = new ApplyJob_UC();
-            addUserControl(applyJob_UC);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            FrmHome frmHome = new FrmHome();
-            frmHome.ShowDialog();
-        }
-
         private void LoadDanhSach()
         {
             // Lấy danh sách công việc từ JobController
@@ -130,5 +97,9 @@ namespace AnimationSliding_Sign_In_Sign_Up
             }
         }
 
+        private void UC_AllJobs_Load_1(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
     }
 }

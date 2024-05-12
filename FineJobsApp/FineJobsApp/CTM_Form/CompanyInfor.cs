@@ -12,10 +12,13 @@ namespace AnimationSliding_Sign_In_Sign_Up.CTM_Form
 {
     public partial class CompanyInfor : UserControl
     {
+        FormInforCompany formInforCompany;
+
         public CompanyInfor(CompanyProfileModel i)
         {
             InitializeComponent();
             UpdateCompanyInformation(i);
+            formInforCompany = new FormInforCompany(i);
         }
 
         public void UpdateCompanyInformation(CompanyProfileModel companyProfileModel)
@@ -29,8 +32,12 @@ namespace AnimationSliding_Sign_In_Sign_Up.CTM_Form
 
         private void CompanyButton_Click(object sender, EventArgs e)
         {
-            FormInforCompany formInforCompany = new FormInforCompany();
             formInforCompany.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,40 +20,21 @@ namespace AnimationSliding_Sign_In_Sign_Up
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            panel2.Controls.Clear();
-            panel2.Controls.Add(userControl);
+            panel1.Controls.Clear();
+            panel1.Controls.Add(userControl);
             userControl.BringToFront();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            FormCV formCV = new FormCV();   
-            formCV.Show();
+            UC_AllJobs uC_AllJobs = new UC_AllJobs();
+            addUserControl(uC_AllJobs);
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             UserProfile_UC userProfile_UC = new UserProfile_UC();
-            userProfile_UC.Show();
+            addUserControl(userProfile_UC);
         }
     }
 }

@@ -16,21 +16,27 @@ namespace AnimationSliding_Sign_In_Sign_Up.CTM_Form
     {
         CTM_FormInforJob cTM_FormInforJob;
         CTM_ApplyForm cTM_ApplyForm;
+        FormInforCompany formInforCompany;
+
         public JobInfor(JobModel j)
         {
             InitializeComponent();
             UpdateJobInformation(j);
             cTM_FormInforJob = new CTM_FormInforJob(j);
             cTM_ApplyForm = new CTM_ApplyForm(j);
+            formInforCompany = new FormInforCompany(ControllerManager.Instance.CompanyProfileController.GetCompanyByID(j.CompanyID));
         }
 
         public void UpdateJobInformation(JobModel job)
         {
+            //cập nhật tên công ty
+            CompanyButton.Text = ControllerManager.Instance.CompanyProfileController.GetCompanyByID(job.CompanyID).CompanyName;
             // Cập nhật thông tin trong các control của JobInfor dựa trên thông tin từ JobModel
             Title.Text = job.Title;
             SkillRequirements.Text = job.SkillRequirements;
             SalaryRange.Text = job.SalaryRange;
             Location.Text = job.Location;
+            Time.Text = job.CreatedAt.ToString();
             //jobTypeLabel.Text = job.JobType;
             //createdAtLabel.Text = job.CreatedAt.ToString();
             //statusLabel.Text = job.Status;
@@ -53,7 +59,6 @@ namespace AnimationSliding_Sign_In_Sign_Up.CTM_Form
 
         private void CompanyButton_Click(object sender, EventArgs e)
         {
-            FormInforCompany formInforCompany = new FormInforCompany();
             formInforCompany.ShowDialog();
         }
     }

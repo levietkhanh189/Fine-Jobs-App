@@ -65,7 +65,7 @@ namespace AnimationSliding_Sign_In_Sign_Up
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (ControllerManager.Instance.CTM_UserController.Login(EmailTextbox.Text, PasswordTextbox.Text, "Company"))
+            if (ControllerManager.Instance.UserController.Login(EmailTextbox.Text, PasswordTextbox.Text, "Applicant"))
             {
                 this.Hide();
                 FormManager.ShowForm<FrmHome>();
@@ -100,6 +100,25 @@ namespace AnimationSliding_Sign_In_Sign_Up
 
         private void CPNLoginForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void LoginButton_Click_1(object sender, EventArgs e)
+        {
+            if (ControllerManager.Instance.UserController.Login(EmailTextbox.Text, PasswordTextbox.Text, "Applicant"))
+            {
+                this.Hide();
+                FormManager.ShowForm<FrmHome>();
+            }
+            else
+            {
+                MessageBox.Show("Email or Password is incorrect");
+            }
+        }
+
+        private void SignupButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManager.ShowForm<CTM_SignUpForm>();
         }
     }
 }

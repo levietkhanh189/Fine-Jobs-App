@@ -41,7 +41,9 @@ namespace AnimationSliding_Sign_In_Sign_Up
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-
+            //gọi usercontrol dashboard
+            DashBoardControl dashBoardControl = new DashBoardControl();
+            addUserControl(dashBoardControl);
         }
 
         private void button3_Click(object sender, EventArgs e)
